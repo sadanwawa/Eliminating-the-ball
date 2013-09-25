@@ -9,7 +9,7 @@ obj/local/armeabi/objs/cocos_extension_static/CCArmature/external_tool/Json/lib_
  /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/sources/cxx-stl/gnu-libstdc++/4.8/include/map \
  /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/sources/cxx-stl/gnu-libstdc++/4.8/include/iostream \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../extensions/CCArmature/external_tool/Json/lib_json/json_tool.h \
- /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-9/arch-arm/usr/include/assert.h \
+ /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/assert.h \
  /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/sources/cxx-stl/gnu-libstdc++/4.8/include/sstream \
  /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/sources/cxx-stl/gnu-libstdc++/4.8/include/iomanip
 
@@ -31,7 +31,7 @@ obj/local/armeabi/objs/cocos_extension_static/CCArmature/external_tool/Json/lib_
 
 /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../extensions/CCArmature/external_tool/Json/lib_json/json_tool.h:
 
-/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-9/arch-arm/usr/include/assert.h:
+/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/assert.h:
 
 /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/sources/cxx-stl/gnu-libstdc++/4.8/include/sstream:
 

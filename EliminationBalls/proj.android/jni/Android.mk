@@ -8,9 +8,18 @@ LOCAL_MODULE_FILENAME := libcocos2dcpp
 
 LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/AppDelegate.cpp \
-                   ../../Classes/HelloWorldScene.cpp
+                   ../../Classes/HelloWorldScene.cpp\
+                   ../../Classes/MainScene.cpp\
+                   ../../Classes/core/BaseLayer.cpp\
+                   ../../Classes/core/BaseScene.cpp\
+                   ../../Classes/manager/ResourceManager.cpp\
+                   ../../Classes/manager/UIManager.cpp                  
+                   
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes\
+					$(LOCAL_PATH)/../../Classes/core\
+					$(LOCAL_PATH)/../../Classes/manager
+					
 
 LOCAL_WHOLE_STATIC_LIBRARIES += cocos2dx_static
 LOCAL_WHOLE_STATIC_LIBRARIES += cocosdenshion_static

@@ -24,6 +24,11 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		69CEB3E317F2EF380088CBDE /* BaseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69CEB3D917F2EF380088CBDE /* BaseLayer.cpp */; };
+		69CEB3E417F2EF380088CBDE /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69CEB3DB17F2EF380088CBDE /* BaseScene.cpp */; };
+		69CEB3E517F2EF380088CBDE /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69CEB3DF17F2EF380088CBDE /* ResourceManager.cpp */; };
+		69CEB3E617F2EF380088CBDE /* UIManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69CEB3E117F2EF380088CBDE /* UIManager.cpp */; };
+		69CEB3F417F2F1A80088CBDE /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69CEB3F217F2F1A60088CBDE /* MainScene.cpp */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -195,6 +200,18 @@
 		1D6058910D05DD3D006BFB54 /* EliminationBalls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EliminationBalls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		69CEB3D817F2EF380088CBDE /* BaseDataVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDataVO.h; sourceTree = "<group>"; };
+		69CEB3D917F2EF380088CBDE /* BaseLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseLayer.cpp; sourceTree = "<group>"; };
+		69CEB3DA17F2EF380088CBDE /* BaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLayer.h; sourceTree = "<group>"; };
+		69CEB3DB17F2EF380088CBDE /* BaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseScene.cpp; sourceTree = "<group>"; };
+		69CEB3DC17F2EF380088CBDE /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScene.h; sourceTree = "<group>"; };
+		69CEB3DD17F2EF380088CBDE /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		69CEB3DF17F2EF380088CBDE /* ResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceManager.cpp; sourceTree = "<group>"; };
+		69CEB3E017F2EF380088CBDE /* ResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceManager.h; sourceTree = "<group>"; };
+		69CEB3E117F2EF380088CBDE /* UIManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIManager.cpp; sourceTree = "<group>"; };
+		69CEB3E217F2EF380088CBDE /* UIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIManager.h; sourceTree = "<group>"; };
+		69CEB3F217F2F1A60088CBDE /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainScene.cpp; path = ../Classes/MainScene.cpp; sourceTree = "<group>"; };
+		69CEB3F317F2F1A70088CBDE /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = ../Classes/MainScene.h; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -255,6 +272,10 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				69CEB3F217F2F1A60088CBDE /* MainScene.cpp */,
+				69CEB3F317F2F1A70088CBDE /* MainScene.h */,
+				69CEB3D717F2EF380088CBDE /* core */,
+				69CEB3DE17F2EF380088CBDE /* manager */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
@@ -321,6 +342,32 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69CEB3D717F2EF380088CBDE /* core */ = {
+			isa = PBXGroup;
+			children = (
+				69CEB3D817F2EF380088CBDE /* BaseDataVO.h */,
+				69CEB3D917F2EF380088CBDE /* BaseLayer.cpp */,
+				69CEB3DA17F2EF380088CBDE /* BaseLayer.h */,
+				69CEB3DB17F2EF380088CBDE /* BaseScene.cpp */,
+				69CEB3DC17F2EF380088CBDE /* BaseScene.h */,
+				69CEB3DD17F2EF380088CBDE /* Singleton.h */,
+			);
+			name = core;
+			path = ../Classes/core;
+			sourceTree = "<group>";
+		};
+		69CEB3DE17F2EF380088CBDE /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				69CEB3DF17F2EF380088CBDE /* ResourceManager.cpp */,
+				69CEB3E017F2EF380088CBDE /* ResourceManager.h */,
+				69CEB3E117F2EF380088CBDE /* UIManager.cpp */,
+				69CEB3E217F2EF380088CBDE /* UIManager.h */,
+			);
+			name = manager;
+			path = ../Classes/manager;
 			sourceTree = "<group>";
 		};
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
@@ -530,6 +577,11 @@
 				1AC3624916D4A1E8000847F2 /* AppController.mm in Sources */,
 				1AC3624B16D4A1E8000847F2 /* main.m in Sources */,
 				1AFCDA8216D4A25900906EA6 /* RootViewController.mm in Sources */,
+				69CEB3E317F2EF380088CBDE /* BaseLayer.cpp in Sources */,
+				69CEB3E417F2EF380088CBDE /* BaseScene.cpp in Sources */,
+				69CEB3E517F2EF380088CBDE /* ResourceManager.cpp in Sources */,
+				69CEB3E617F2EF380088CBDE /* UIManager.cpp in Sources */,
+				69CEB3F417F2F1A80088CBDE /* MainScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
