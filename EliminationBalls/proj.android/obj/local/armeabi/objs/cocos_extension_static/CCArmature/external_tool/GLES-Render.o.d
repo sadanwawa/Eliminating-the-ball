@@ -56,7 +56,7 @@ obj/local/armeabi/objs/cocos_extension_static/CCArmature/external_tool/GLES-Rend
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/include/ccConfig.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/platform/CCPlatformConfig.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/platform/android/CCPlatformDefine.h \
- /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/android/log.h \
+ /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-14/arch-arm/usr/include/android/log.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/cocoa/CCGeometry.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/cocoa/CCObject.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/include/ccMacros.h \
@@ -70,10 +70,10 @@ obj/local/armeabi/objs/cocos_extension_static/CCArmature/external_tool/GLES-Rend
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/cocoa/CCArray.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/support/data_support/ccCArray.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/platform/android/CCGL.h \
- /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/GLES2/gl2platform.h \
- /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/KHR/khrplatform.h \
- /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/GLES2/gl2.h \
- /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/GLES2/gl2ext.h \
+ /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-14/arch-arm/usr/include/GLES2/gl2platform.h \
+ /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-14/arch-arm/usr/include/KHR/khrplatform.h \
+ /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-14/arch-arm/usr/include/GLES2/gl2.h \
+ /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-14/arch-arm/usr/include/GLES2/gl2ext.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/shaders/ccGLStateCache.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/shaders/CCGLProgram.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/kazmath/include/kazmath/kazmath.h \
@@ -104,7 +104,7 @@ obj/local/armeabi/objs/cocos_extension_static/CCArmature/external_tool/GLES-Rend
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/sprite_nodes/CCAnimation.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/cocoa/CCDictionary.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/support/data_support/uthash.h \
- /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/inttypes.h \
+ /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-14/arch-arm/usr/include/inttypes.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/cocoa/CCArray.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/cocoa/CCString.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/sprite_nodes/CCSpriteFrame.h \
@@ -351,7 +351,7 @@ obj/local/armeabi/objs/cocos_extension_static/CCArmature/external_tool/GLES-Rend
 
 /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/platform/android/CCPlatformDefine.h:
 
-/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/android/log.h:
+/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-14/arch-arm/usr/include/android/log.h:
 
 /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/cocoa/CCGeometry.h:
 
@@ -379,13 +379,13 @@ obj/local/armeabi/objs/cocos_extension_static/CCArmature/external_tool/GLES-Rend
 
 /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/platform/android/CCGL.h:
 
-/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/GLES2/gl2platform.h:
+/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-14/arch-arm/usr/include/GLES2/gl2platform.h:
 
-/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/KHR/khrplatform.h:
+/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-14/arch-arm/usr/include/KHR/khrplatform.h:
 
-/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/GLES2/gl2.h:
+/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-14/arch-arm/usr/include/GLES2/gl2.h:
 
-/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/GLES2/gl2ext.h:
+/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-14/arch-arm/usr/include/GLES2/gl2ext.h:
 
 /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/shaders/ccGLStateCache.h:
 
@@ -447,7 +447,7 @@ obj/local/armeabi/objs/cocos_extension_static/CCArmature/external_tool/GLES-Rend
 
 /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/support/data_support/uthash.h:
 
-/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/inttypes.h:
+/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-14/arch-arm/usr/include/inttypes.h:
 
 /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/cocoa/CCArray.h:
 

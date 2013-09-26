@@ -28,8 +28,9 @@ USING_NS_CC_EXT;
 
 namespace CCBI {
     //ccb ui        
-    static const std::string main_menu = "main_menu.ccbi";   
-        
+//    static const std::string ui_help = "ui_help.ccbi";
+//    static const std::string ui_main = "ui_main.ccbi";
+    static const std::string ui_main="ui_main.ccbi";
 }
 
 //弹窗类型
@@ -81,7 +82,7 @@ public:
     const char* tag;//该弹窗tag
     int ease;//打开动画类型  0无动画  1缩放  2渐变  3移动出现
     int totalnums;//该类型弹窗当前总数
-    Point point;    
+    CCPoint point;
 };
 
 class UIManager : public Singleton<UIManager>, public Object
@@ -94,7 +95,7 @@ public:
 
     NodeLoaderLibrary * ccNodeLoaderLibrary;
             
-    void addPopLayer(const char* fileName,Node* parent=NULL,int ease=0,Point p=ccp(0, 0),const char* tag="pop1");
+    void addPopLayer(const char* fileName,Node* parent=NULL,int ease=0,CCPoint p=ccp(0, 0),const char* tag="pop1");
     void openPopLayers();//同时打开多个
     void openPopLayer();//一个关闭再打开另一个
     

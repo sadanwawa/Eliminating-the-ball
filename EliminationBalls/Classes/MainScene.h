@@ -11,8 +11,7 @@
 
 #include "cocos2d.h"
 #include "cocos-ext.h"
-#include "HelloWorldScene.h"
-//#include "UIManager.h"
+#include "UIManager.h"
 #include "core/BaseScene.h"
 
 USING_NS_CC;
@@ -25,6 +24,7 @@ public:
     MainScene();    
     virtual ~MainScene();
     
+    virtual void onEnter();
     virtual bool init();//覆盖
     
     static cocos2d::Scene* scene();//覆盖
