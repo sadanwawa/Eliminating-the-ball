@@ -4,6 +4,7 @@
 //
 
 #include "UIManager.h"
+#include "MainUILayerLoader.h"
 
 // singleton instance pointer
 template<> UIManager* Singleton<UIManager>::msSingleton	= NULL;
@@ -26,7 +27,7 @@ bool UIManager::initialize()//注册所有弹窗
         ccNodeLoaderLibrary = NodeLoaderLibrary::newDefaultNodeLoaderLibrary();
         ccNodeLoaderLibrary->retain();
     }    
-   // ccNodeLoaderLibrary->registerNodeLoader("MainUILayer", MainUILayerLoader::loader());
+   ccNodeLoaderLibrary->registerNodeLoader("MainUILayer", MainUILayerLoader::loader());
        
     return true;
 }
@@ -140,12 +141,7 @@ void UIManager::removeLayerByNode(Node* node){
             node->removeFromParentAndCleanup(true);            
             CC_SAFE_RELEASE(node);//保证删除node对象；
             CC_SAFE_RELEASE((* it));//保证删除nodeData对象；
-            it = _currPops.erase(it);
-//              (* it)->release();
-//              if((* it)){
-//                delete (* it);
-//              }              
-            
+            it = _currPops.erase(it);            
         }else{
             ++it;
         }
@@ -160,10 +156,6 @@ void UIManager::removeLayersByType(const char* fileName){
             CC_SAFE_RELEASE((* it)->pop);//保证删除node对象；
             CC_SAFE_RELEASE((* it));//保证删除nodeData对象；
             it = _currPops.erase(it);//erase放在release后面
-//            (* it)->release();
-//            if((* it)){
-//                delete (* it);
-//            }
             
         }else{
             ++it;
@@ -179,11 +171,7 @@ void UIManager::removeLayerByType(const char* fileName,const char* tag){
             
             CC_SAFE_RELEASE((* it)->pop);//保证删除node对象；
             CC_SAFE_RELEASE((* it));//保证删除nodeData对象；
-            it = _currPops.erase(it);
-//            (* it)->release();
-//            if((* it)){
-//                delete (* it);
-//            }            
+            it = _currPops.erase(it);   
             
         }else{
             ++it;

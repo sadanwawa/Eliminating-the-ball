@@ -329,7 +329,12 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/MainScene.o: \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../extensions/Components/CCComController.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../extensions/Components/CCInputDelegate.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../extensions/CCDeprecated-ext.h \
- jni/../../Classes/HelloWorldScene.h jni/../../Classes/core/BaseScene.h
+ jni/../../Classes/manager/UIManager.h \
+ jni/../../Classes/manager/../core/Singleton.h \
+ jni/../../Classes/manager/../core/BaseScene.h \
+ jni/../../Classes/manager/../core/BaseLayer.h \
+ jni/../../Classes/manager/../core/BaseDataVO.h \
+ jni/../../Classes/core/BaseScene.h
 
 jni/../../Classes/MainScene.h:
 
@@ -991,6 +996,14 @@ jni/../../Classes/MainScene.h:
 
 /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../extensions/CCDeprecated-ext.h:
 
-jni/../../Classes/HelloWorldScene.h:
+jni/../../Classes/manager/UIManager.h:
+
+jni/../../Classes/manager/../core/Singleton.h:
+
+jni/../../Classes/manager/../core/BaseScene.h:
+
+jni/../../Classes/manager/../core/BaseLayer.h:
+
+jni/../../Classes/manager/../core/BaseDataVO.h:
 
 jni/../../Classes/core/BaseScene.h:

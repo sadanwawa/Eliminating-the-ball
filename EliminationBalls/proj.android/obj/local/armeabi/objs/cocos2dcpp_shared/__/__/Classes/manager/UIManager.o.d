@@ -333,7 +333,10 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/manager/UIManager.o: \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../extensions/CCDeprecated-ext.h \
  jni/../../Classes/manager/../core/BaseScene.h \
  jni/../../Classes/manager/../core/BaseLayer.h \
- jni/../../Classes/manager/../core/BaseDataVO.h
+ jni/../../Classes/manager/../core/BaseDataVO.h \
+ jni/../../Classes/scence/MainUILayerLoader.h \
+ jni/../../Classes/scence/MainUILayer.h \
+ jni/../../Classes/manager/UIManager.h
 
 jni/../../Classes/manager/UIManager.h:
 
@@ -1002,3 +1005,9 @@ jni/../../Classes/manager/../core/BaseScene.h:
 jni/../../Classes/manager/../core/BaseLayer.h:
 
 jni/../../Classes/manager/../core/BaseDataVO.h:
+
+jni/../../Classes/scence/MainUILayerLoader.h:
+
+jni/../../Classes/scence/MainUILayer.h:
+
+jni/../../Classes/manager/UIManager.h:

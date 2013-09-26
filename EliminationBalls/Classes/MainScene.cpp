@@ -16,24 +16,31 @@ MainScene::~MainScene(){
     
 }
 
+void MainScene::onEnter(){
+    BaseScene::onEnter();    
+    UIManager::Instance()->addPopLayer(CCBI::ui_main.c_str(),this,0);
+    UIManager::Instance()->openPopLayers();       
+}
+
+
  bool MainScene::init(){
      if(!BaseScene::init()){
          return false;
      }
           
-     Size visibleSize = Director::getInstance()->getVisibleSize();
-     Point origin = Director::getInstance()->getVisibleOrigin();
-     //背景图
-     Sprite* sprite = Sprite::create("HelloWorld.png");
-     sprite->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));     
-     baseNode->addChild(sprite, 0);
-
-     //标题
-     LabelTTF* label = LabelTTF::create("MainScene", "Arial", 24);     
-     label->setPosition(Point(origin.x + visibleSize.width/2,
-                              origin.y + visibleSize.height - label->getContentSize().height));     
-     
-     baseNode->addChild(label, 1);            
+//     Size visibleSize = Director::getInstance()->getVisibleSize();
+//     Point origin = Director::getInstance()->getVisibleOrigin();
+//     //背景图
+//     Sprite* sprite = Sprite::create("HelloWorld.png");
+//     sprite->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));     
+//     baseNode->addChild(sprite, 0);
+//
+//     //标题
+//     LabelTTF* label = LabelTTF::create("MainScene", "Arial", 24);     
+//     label->setPosition(Point(origin.x + visibleSize.width/2,
+//                              origin.y + visibleSize.height - label->getContentSize().height));     
+//     
+//     baseNode->addChild(label, 1);     
      
      return true;
  }

@@ -6,7 +6,7 @@ obj/local/armeabi/objs/cocos2dx_static/support/tinyxml2/tinyxml2.o: \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/include/ccConfig.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/platform/CCPlatformConfig.h \
  /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/platform/android/CCPlatformDefine.h \
- /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/android/log.h \
+ /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-14/arch-arm/usr/include/android/log.h \
  /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/sources/cxx-stl/gnu-libstdc++/4.8/include/cctype \
  /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/sources/cxx-stl/gnu-libstdc++/4.8/include/climits \
  /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdio \
@@ -28,7 +28,7 @@ obj/local/armeabi/objs/cocos2dx_static/support/tinyxml2/tinyxml2.o: \
 
 /Users/yingchen/Desktop/Git-MinGame/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.android/../../../cocos2dx/platform/android/CCPlatformDefine.h:
 
-/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-18/arch-arm/usr/include/android/log.h:
+/Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/platforms/android-14/arch-arm/usr/include/android/log.h:
 
 /Users/yingchen/Desktop/Git-MinGame/AndroidTools/android-ndk-r9/sources/cxx-stl/gnu-libstdc++/4.8/include/cctype:
 
