@@ -73,6 +73,11 @@ void UIManager::addPopLayer(const char* fileName,Node* parent,int ease,Point p,c
     }    
 }
 
+
+
+
+
+
 //弹窗类型：1.全屏  2.居中显示 灰色遮罩 3.固定位置显示  无灰色遮罩（焦点可切换）；
 void UIManager::openPopLayers(){//同时显示多个弹窗；（弹出可自定义时间间隔）
       

@@ -22,6 +22,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		6950509517F535B500EA8280 /* ChessBoardLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509317F535B500EA8280 /* ChessBoardLayer.cpp */; };
+		6950509817F54EC300EA8280 /* ChessLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509617F54EC300EA8280 /* ChessLayer.cpp */; };
 		69CEB3E317F2EF380088CBDE /* BaseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69CEB3D917F2EF380088CBDE /* BaseLayer.cpp */; };
 		69CEB3E417F2EF380088CBDE /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69CEB3DB17F2EF380088CBDE /* BaseScene.cpp */; };
 		69CEB3E517F2EF380088CBDE /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69CEB3DF17F2EF380088CBDE /* ResourceManager.cpp */; };
@@ -205,6 +207,10 @@
 		1D6058910D05DD3D006BFB54 /* EliminationBalls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EliminationBalls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6950509317F535B500EA8280 /* ChessBoardLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChessBoardLayer.cpp; sourceTree = "<group>"; };
+		6950509417F535B500EA8280 /* ChessBoardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessBoardLayer.h; sourceTree = "<group>"; };
+		6950509617F54EC300EA8280 /* ChessLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChessLayer.cpp; sourceTree = "<group>"; };
+		6950509717F54EC300EA8280 /* ChessLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessLayer.h; sourceTree = "<group>"; };
 		69CEB3D817F2EF380088CBDE /* BaseDataVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDataVO.h; sourceTree = "<group>"; };
 		69CEB3D917F2EF380088CBDE /* BaseLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseLayer.cpp; sourceTree = "<group>"; };
 		69CEB3DA17F2EF380088CBDE /* BaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLayer.h; sourceTree = "<group>"; };
@@ -358,6 +364,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6950508417F532ED00EA8280 /* chess */ = {
+			isa = PBXGroup;
+			children = (
+				6950509617F54EC300EA8280 /* ChessLayer.cpp */,
+				6950509717F54EC300EA8280 /* ChessLayer.h */,
+				6950509317F535B500EA8280 /* ChessBoardLayer.cpp */,
+				6950509417F535B500EA8280 /* ChessBoardLayer.h */,
+			);
+			path = chess;
+			sourceTree = "<group>";
+		};
 		69CEB3D717F2EF380088CBDE /* core */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +425,7 @@
 		69CEB42617F406750088CBDE /* scence */ = {
 			isa = PBXGroup;
 			children = (
+				6950508417F532ED00EA8280 /* chess */,
 				69CEB42717F406750088CBDE /* MainUILayer.cpp */,
 				69CEB42817F406750088CBDE /* MainUILayer.h */,
 				69CEB42917F406750088CBDE /* MainUILayerLoader.h */,
@@ -641,6 +659,8 @@
 				69CEB3E617F2EF380088CBDE /* UIManager.cpp in Sources */,
 				69CEB3F417F2F1A80088CBDE /* MainScene.cpp in Sources */,
 				69CEB42A17F406750088CBDE /* MainUILayer.cpp in Sources */,
+				6950509517F535B500EA8280 /* ChessBoardLayer.cpp in Sources */,
+				6950509817F54EC300EA8280 /* ChessLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

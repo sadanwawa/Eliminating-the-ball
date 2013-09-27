@@ -7,6 +7,7 @@
 //
 
 #include "MainUILayer.h"
+#include "ChessLayer.h"
 
 MainUILayer::MainUILayer()
 :txt_hisScorces(NULL),
@@ -67,8 +68,10 @@ bool MainUILayer::onAssignCCBCustomProperty(Object* pTarget, const char* pMember
     return false;
 }
 void MainUILayer::onNodeLoaded(cocos2d::Node * node, cocos2d::extension::NodeLoader * nodeLoader){
-    
-    
+    //棋盘
+    ChessLayer* chess=ChessLayer::create();
+    drawNode->addChild(chess);
+     
 }
 
 void MainUILayer::onClickReStart(cocos2d::Object * sender, Control::EventType pControlEvent){
