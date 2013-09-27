@@ -12,6 +12,7 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 #include "BaseLayer.h"
+#include "data/ChessDataVO.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -30,14 +31,10 @@ public:
     virtual bool init();      
     virtual void draw();
     
-    void initData(int lin,int row,float gra);//行 列 间隔
-    
-    
+    void initData(ChessDataVO* vo);    
     
 private:   
-    int _lin;//行
-    int _row;//列
-    float _gra;//间隔
+    ChessDataVO* _chessDataVO;//当前数据
     
 };
 

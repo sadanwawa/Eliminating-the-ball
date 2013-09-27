@@ -10,9 +10,7 @@
 
 ChessBoardLayer::ChessBoardLayer()
 {
-    _lin=0;//行
-    _row=0;//列
-    _gra=0;//间隔
+    _chessDataVO=NULL;
 }
 ChessBoardLayer::~ChessBoardLayer(){
     
@@ -33,20 +31,19 @@ void ChessBoardLayer::onExit(){
    
 }
 
-void ChessBoardLayer::initData(int lin,int row,float gra){
-    _lin=lin;
-    _row=row;
-    _gra=gra;
+void ChessBoardLayer::initData(ChessDataVO* vo){
+    _chessDataVO=vo;
 }
 
 void ChessBoardLayer::draw(){
     Layer::draw();    
-    glLineWidth(3.0f);//线宽
-    DrawPrimitives::setDrawColor4B(155,0,0,155);//颜色
-    for(int i=0;i<=this->_lin;i++){
-       DrawPrimitives::drawLine(Point(0,_gra*i), Point(_row*_gra,_gra*i));
+    glLineWidth(_chessDataVO->getLineWidth());//线宽    
+    Color4B d=_chessDataVO->getBorderColor();
+    DrawPrimitives::setDrawColor4B(d.r,d.g,d.b,d.a);//颜色
+    for(int i=0;i<=this->_chessDataVO->getLin();i++){
+       DrawPrimitives::drawLine(Point(0,_chessDataVO->getGra()*i), Point(_chessDataVO->getRow()*_chessDataVO->getGra(),_chessDataVO->getGra()*i));
     }   
-    for(int j=0;j<=this->_lin;j++){
-        DrawPrimitives::drawLine(Point(_gra*j,0), Point(_gra*j,_gra*_lin));
+    for(int j=0;j<=this->_chessDataVO->getLin();j++){
+        DrawPrimitives::drawLine(Point(_chessDataVO->getGra()*j,0), Point(_chessDataVO->getGra()*j,_chessDataVO->getGra()*_chessDataVO->getLin()));
     }
 }

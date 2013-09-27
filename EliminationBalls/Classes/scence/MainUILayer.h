@@ -13,6 +13,7 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 #include "UIManager.h"
+#include "chess/data/ChessDataVO.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -51,7 +52,10 @@ private:
     LabelTTF* txt_scorces;
     Node* drawNode;
     ControlButton* btn_restart;
-    ControlButton* btn_start;    
+    ControlButton* btn_start;
+    
+    ChessDataVO* chessData;//当前棋局数据
+    
 };
 
 

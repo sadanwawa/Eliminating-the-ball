@@ -16,7 +16,7 @@ drawNode(NULL),
 btn_restart(NULL),
 btn_start(NULL)
 {
-  
+    chessData=NULL;
 }
 MainUILayer::~MainUILayer(){
     CCLOG("MainUILayer删除。");    
@@ -24,7 +24,8 @@ MainUILayer::~MainUILayer(){
     CC_SAFE_RELEASE(txt_scorces);
     CC_SAFE_RELEASE(drawNode);
     CC_SAFE_RELEASE(btn_restart);
-    CC_SAFE_RELEASE(btn_start);    
+    CC_SAFE_RELEASE(btn_start);
+    if(chessData){delete chessData;chessData=NULL;}
 }
 
 bool MainUILayer::init(){
@@ -70,6 +71,8 @@ bool MainUILayer::onAssignCCBCustomProperty(Object* pTarget, const char* pMember
 void MainUILayer::onNodeLoaded(cocos2d::Node * node, cocos2d::extension::NodeLoader * nodeLoader){
     //棋盘
     ChessLayer* chess=ChessLayer::create();
+    chessData=new ChessDataVO(9,9,30);
+    chess->initData(chessData);    
     drawNode->addChild(chess);
      
 }
@@ -79,7 +82,9 @@ void MainUILayer::onClickReStart(cocos2d::Object * sender, Control::EventType pC
     
 }
 void MainUILayer::onClickStart(cocos2d::Object * sender, Control::EventType pControlEvent){
-     
+    
+    //随机生成小球
+    
 }
 
 bool MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){   

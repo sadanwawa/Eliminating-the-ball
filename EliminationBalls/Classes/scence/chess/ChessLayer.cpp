@@ -9,16 +9,11 @@
 #include "ChessLayer.h"
 
 ChessLayer::ChessLayer()
-{
-    _lin=9;//行
-    _row=9;//列
-    _gra=30;
-    _width=300;//宽
-    _height=300;//高
+{    
     chessBoard=NULL;
     chessBalls=NULL;
     chessEffect=NULL;
-    this->setContentSize(Size(_row*_gra,_lin*_gra));
+    
 }
 ChessLayer::~ChessLayer(){
     CCLOG("ChessLayer删除。");    
@@ -34,12 +29,17 @@ bool ChessLayer::init(){
     return true;
 }
 
+void ChessLayer::initData(ChessDataVO*vo){    
+    _chessDataVO=vo;
+    this->setContentSize(Size(_chessDataVO->getWidth(),_chessDataVO->getHeight()));
+}
+
 void ChessLayer::onEnter(){
     BaseLayer::onEnter();
     //棋盘
     if(!chessBoard){
         chessBoard=ChessBoardLayer::create();
-        chessBoard->initData(9, 9, 30);
+        chessBoard->initData(_chessDataVO);
         this->addChild(chessBoard);
     }
     //棋子
@@ -51,7 +51,11 @@ void ChessLayer::onEnter(){
     if(!chessEffect){
         chessEffect=Node::create();
         this->addChild(chessEffect);
-    }   
+    }
+    
+    //初始化棋盘节点数据
+    
+    
 }
 
 void ChessLayer::onExit(){

@@ -13,6 +13,7 @@
 #include "cocos-ext.h"
 #include "BaseLayer.h"
 #include "ChessBoardLayer.h"
+#include "data/ChessDataVO.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -28,25 +29,16 @@ public:
     virtual ~ChessLayer();        
     virtual void onEnter();
     virtual void onExit();    
-    virtual bool init();  
-    
+    virtual bool init();    
     virtual bool ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);   
-       
+    void initData(ChessDataVO*vo);//
     
 private:
     
     ChessBoardLayer* chessBoard;//棋盘
     Node* chessBalls;//小球
-    Node* chessEffect;//特效层
-    
-    int _lin;//行
-    int _row;//列
-    float _gra;//间隔
-        
-    float _width;
-    float _height;
-    
-    
+    Node* chessEffect;//特效层    
+    ChessDataVO* _chessDataVO;//当前数据        
     
 };
 
