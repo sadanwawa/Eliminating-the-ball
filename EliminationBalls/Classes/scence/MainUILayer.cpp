@@ -69,22 +69,13 @@ bool MainUILayer::onAssignCCBCustomProperty(Object* pTarget, const char* pMember
     return false;
 }
 void MainUILayer::onNodeLoaded(cocos2d::Node * node, cocos2d::extension::NodeLoader * nodeLoader){
-<<<<<<< HEAD
-    //创建棋盘对象
-    
-    //画线
-    
-    //记录位置数组
-    
-    
-=======
+
     //棋盘
     ChessLayer* chess=ChessLayer::create();
     chessData=new ChessDataVO(9,9,30);
     chess->initData(chessData);    
     drawNode->addChild(chess);
-     
->>>>>>> 8ea2742be0f6540613bf01d02e932519f5a71b75
+
 }
 
 void MainUILayer::onClickReStart(cocos2d::Object * sender, Control::EventType pControlEvent){
