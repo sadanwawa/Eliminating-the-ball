@@ -67,6 +67,11 @@ bool MainUILayer::onAssignCCBCustomProperty(Object* pTarget, const char* pMember
     return false;
 }
 void MainUILayer::onNodeLoaded(cocos2d::Node * node, cocos2d::extension::NodeLoader * nodeLoader){
+    //创建棋盘对象
+    
+    //画线
+    
+    //记录位置数组
     
     
 }
