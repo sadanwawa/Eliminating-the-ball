@@ -73,7 +73,7 @@ void MainUILayer::onNodeLoaded(cocos2d::Node * node, cocos2d::extension::NodeLoa
 
     //棋
     chess=ChessLayer::create();
-    chessData=new ChessDataVO(9,10,32);
+    chessData=new ChessDataVO(9,9,32);
     chess->initData(chessData);    
     drawNode->addChild(chess);
 
