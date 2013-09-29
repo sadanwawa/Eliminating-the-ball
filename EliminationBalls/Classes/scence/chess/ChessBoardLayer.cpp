@@ -43,7 +43,7 @@ void ChessBoardLayer::draw(){
     for(int i=0;i<=this->_chessDataVO->getLin();i++){
        DrawPrimitives::drawLine(Point(0,_chessDataVO->getGra()*i), Point(_chessDataVO->getRow()*_chessDataVO->getGra(),_chessDataVO->getGra()*i));
     }   
-    for(int j=0;j<=this->_chessDataVO->getLin();j++){
+    for(int j=0;j<=this->_chessDataVO->getRow();j++){
         DrawPrimitives::drawLine(Point(_chessDataVO->getGra()*j,0), Point(_chessDataVO->getGra()*j,_chessDataVO->getGra()*_chessDataVO->getLin()));
     }
 }

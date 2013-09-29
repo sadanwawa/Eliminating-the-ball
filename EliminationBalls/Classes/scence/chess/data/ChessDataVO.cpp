@@ -47,6 +47,6 @@ void ChessDataVO::addPosVO(int i){
     int row=i%_row;//列
     posvo->lin=lin;
     posvo->row=row;
-    posvo->point=Point(row*_gra,lin*_gra);
+    posvo->point=Point(row*_gra+_gra/2,lin*_gra+_gra/2);
     _PosVOVec.push_back(posvo);
 };

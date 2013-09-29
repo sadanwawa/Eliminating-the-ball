@@ -33,6 +33,9 @@ public:
     virtual bool ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);   
     void initData(ChessDataVO*vo);//
     
+    //
+    void createNewBalls();
+    
 private:
     
     ChessBoardLayer* chessBoard;//棋盘

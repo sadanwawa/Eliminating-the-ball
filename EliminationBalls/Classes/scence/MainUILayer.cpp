@@ -17,6 +17,7 @@ btn_restart(NULL),
 btn_start(NULL)
 {
     chessData=NULL;
+    chess=NULL;
 }
 MainUILayer::~MainUILayer(){
     CCLOG("MainUILayer删除。");    
@@ -70,9 +71,9 @@ bool MainUILayer::onAssignCCBCustomProperty(Object* pTarget, const char* pMember
 }
 void MainUILayer::onNodeLoaded(cocos2d::Node * node, cocos2d::extension::NodeLoader * nodeLoader){
 
-    //棋盘
-    ChessLayer* chess=ChessLayer::create();
-    chessData=new ChessDataVO(9,9,30);
+    //棋
+    chess=ChessLayer::create();
+    chessData=new ChessDataVO(9,10,32);
     chess->initData(chessData);    
     drawNode->addChild(chess);
 
@@ -83,8 +84,16 @@ void MainUILayer::onClickReStart(cocos2d::Object * sender, Control::EventType pC
     
 }
 void MainUILayer::onClickStart(cocos2d::Object * sender, Control::EventType pControlEvent){
-    
     //随机生成小球
+    
+    
+    int len=chessData->getPosVoVec().size();
+    for(int i=0;i<len;i++){
+        Point point=chessData->getPosVoVec()[i]->point;
+        
+        UIManager::Instance()->addPopLayer(CCBI::ui_ball_blue.c_str(),chess,1,point);
+        UIManager::Instance()->openPopLayers();
+    }
     
 }
 

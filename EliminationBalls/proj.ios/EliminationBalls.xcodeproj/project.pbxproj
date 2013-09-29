@@ -22,6 +22,19 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		69020E0517F67F8B006BDA07 /* ui_ball_black.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69020DF817F67F8B006BDA07 /* ui_ball_black.ccbi */; };
+		69020E0617F67F8B006BDA07 /* ui_ball_blue.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69020DF917F67F8B006BDA07 /* ui_ball_blue.ccbi */; };
+		69020E0717F67F8B006BDA07 /* ui_ball_brown.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69020DFA17F67F8B006BDA07 /* ui_ball_brown.ccbi */; };
+		69020E0817F67F8B006BDA07 /* ui_ball_fuchsia.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69020DFB17F67F8B006BDA07 /* ui_ball_fuchsia.ccbi */; };
+		69020E0917F67F8B006BDA07 /* ui_ball_green.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69020DFC17F67F8B006BDA07 /* ui_ball_green.ccbi */; };
+		69020E0A17F67F8B006BDA07 /* ui_ball_purple.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69020DFD17F67F8B006BDA07 /* ui_ball_purple.ccbi */; };
+		69020E0B17F67F8B006BDA07 /* ui_ball_red.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69020DFE17F67F8B006BDA07 /* ui_ball_red.ccbi */; };
+		69020E0C17F67F8B006BDA07 /* ui_ball_white.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69020DFF17F67F8B006BDA07 /* ui_ball_white.ccbi */; };
+		69020E0D17F67F8B006BDA07 /* ui_ball_yellow.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0017F67F8B006BDA07 /* ui_ball_yellow.ccbi */; };
+		69020E0E17F67F8B006BDA07 /* ui_test-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0117F67F8B006BDA07 /* ui_test-hd.plist */; };
+		69020E0F17F67F8B006BDA07 /* ui_test-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0217F67F8B006BDA07 /* ui_test-hd.pvr.ccz */; };
+		69020E1017F67F8B006BDA07 /* ui_test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0317F67F8B006BDA07 /* ui_test.plist */; };
+		69020E1117F67F8B006BDA07 /* ui_test.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0417F67F8B006BDA07 /* ui_test.pvr.ccz */; };
 		6950509517F535B500EA8280 /* ChessBoardLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509317F535B500EA8280 /* ChessBoardLayer.cpp */; };
 		6950509817F54EC300EA8280 /* ChessLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509617F54EC300EA8280 /* ChessLayer.cpp */; };
 		6950509D17F5897600EA8280 /* ChessDataVO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509C17F5897600EA8280 /* ChessDataVO.cpp */; };
@@ -208,6 +221,19 @@
 		1D6058910D05DD3D006BFB54 /* EliminationBalls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EliminationBalls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		69020DF817F67F8B006BDA07 /* ui_ball_black.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_ball_black.ccbi; sourceTree = "<group>"; };
+		69020DF917F67F8B006BDA07 /* ui_ball_blue.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_ball_blue.ccbi; sourceTree = "<group>"; };
+		69020DFA17F67F8B006BDA07 /* ui_ball_brown.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_ball_brown.ccbi; sourceTree = "<group>"; };
+		69020DFB17F67F8B006BDA07 /* ui_ball_fuchsia.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_ball_fuchsia.ccbi; sourceTree = "<group>"; };
+		69020DFC17F67F8B006BDA07 /* ui_ball_green.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_ball_green.ccbi; sourceTree = "<group>"; };
+		69020DFD17F67F8B006BDA07 /* ui_ball_purple.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_ball_purple.ccbi; sourceTree = "<group>"; };
+		69020DFE17F67F8B006BDA07 /* ui_ball_red.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_ball_red.ccbi; sourceTree = "<group>"; };
+		69020DFF17F67F8B006BDA07 /* ui_ball_white.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_ball_white.ccbi; sourceTree = "<group>"; };
+		69020E0017F67F8B006BDA07 /* ui_ball_yellow.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_ball_yellow.ccbi; sourceTree = "<group>"; };
+		69020E0117F67F8B006BDA07 /* ui_test-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ui_test-hd.plist"; sourceTree = "<group>"; };
+		69020E0217F67F8B006BDA07 /* ui_test-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ui_test-hd.pvr.ccz"; sourceTree = "<group>"; };
+		69020E0317F67F8B006BDA07 /* ui_test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ui_test.plist; sourceTree = "<group>"; };
+		69020E0417F67F8B006BDA07 /* ui_test.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_test.pvr.ccz; sourceTree = "<group>"; };
 		6950509317F535B500EA8280 /* ChessBoardLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChessBoardLayer.cpp; sourceTree = "<group>"; };
 		6950509417F535B500EA8280 /* ChessBoardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessBoardLayer.h; sourceTree = "<group>"; };
 		6950509617F54EC300EA8280 /* ChessLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChessLayer.cpp; sourceTree = "<group>"; };
@@ -452,6 +478,19 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				69020DF817F67F8B006BDA07 /* ui_ball_black.ccbi */,
+				69020DF917F67F8B006BDA07 /* ui_ball_blue.ccbi */,
+				69020DFA17F67F8B006BDA07 /* ui_ball_brown.ccbi */,
+				69020DFB17F67F8B006BDA07 /* ui_ball_fuchsia.ccbi */,
+				69020DFC17F67F8B006BDA07 /* ui_ball_green.ccbi */,
+				69020DFD17F67F8B006BDA07 /* ui_ball_purple.ccbi */,
+				69020DFE17F67F8B006BDA07 /* ui_ball_red.ccbi */,
+				69020DFF17F67F8B006BDA07 /* ui_ball_white.ccbi */,
+				69020E0017F67F8B006BDA07 /* ui_ball_yellow.ccbi */,
+				69020E0117F67F8B006BDA07 /* ui_test-hd.plist */,
+				69020E0217F67F8B006BDA07 /* ui_test-hd.pvr.ccz */,
+				69020E0317F67F8B006BDA07 /* ui_test.plist */,
+				69020E0417F67F8B006BDA07 /* ui_test.pvr.ccz */,
 				69CEB42B17F417390088CBDE /* ui_help.ccbi */,
 				69CEB3F917F405E40088CBDE /* ccbResources */,
 				69CEB40A17F405E50088CBDE /* fonts */,
@@ -654,6 +693,19 @@
 				69CEB41917F405E50088CBDE /* Marker Felt.ttf in Resources */,
 				69CEB41A17F405E50088CBDE /* ui_main.ccbi in Resources */,
 				69CEB42C17F4173A0088CBDE /* ui_help.ccbi in Resources */,
+				69020E0517F67F8B006BDA07 /* ui_ball_black.ccbi in Resources */,
+				69020E0617F67F8B006BDA07 /* ui_ball_blue.ccbi in Resources */,
+				69020E0717F67F8B006BDA07 /* ui_ball_brown.ccbi in Resources */,
+				69020E0817F67F8B006BDA07 /* ui_ball_fuchsia.ccbi in Resources */,
+				69020E0917F67F8B006BDA07 /* ui_ball_green.ccbi in Resources */,
+				69020E0A17F67F8B006BDA07 /* ui_ball_purple.ccbi in Resources */,
+				69020E0B17F67F8B006BDA07 /* ui_ball_red.ccbi in Resources */,
+				69020E0C17F67F8B006BDA07 /* ui_ball_white.ccbi in Resources */,
+				69020E0D17F67F8B006BDA07 /* ui_ball_yellow.ccbi in Resources */,
+				69020E0E17F67F8B006BDA07 /* ui_test-hd.plist in Resources */,
+				69020E0F17F67F8B006BDA07 /* ui_test-hd.pvr.ccz in Resources */,
+				69020E1017F67F8B006BDA07 /* ui_test.plist in Resources */,
+				69020E1117F67F8B006BDA07 /* ui_test.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
