@@ -31,6 +31,16 @@ namespace CCBI {
 //    static const std::string ui_help = "ui_help.ccbi";
 //    static const std::string ui_main = "ui_main.ccbi";
     static const std::string ui_main="ui_main.ccbi";
+    static const std::string ui_ball_white="ui_ball_white.ccbi";
+    static const std::string ui_ball_yellow="ui_ball_yellow.ccbi";
+    static const std::string ui_ball_blue="ui_ball_blue.ccbi";
+    static const std::string ui_ball_red="ui_ball_red.ccbi";
+    static const std::string ui_ball_purple="ui_ball_purple.ccbi";
+    static const std::string ui_ball_brown="ui_ball_brown.ccbi";
+    static const std::string ui_ball_green="ui_ball_green.ccbi";
+    static const std::string ui_ball_fuchsia="ui_ball_fuchsia.ccbi";
+    static const std::string ui_ball_black="ui_ball_black.ccbi";
+    
 }
 
 //弹窗类型

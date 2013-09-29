@@ -74,3 +74,10 @@ bool ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
     //没有找到目标 调用BaseLayer::ccTouchBegan(pTouch, pEvent) 继续响应;
     return false;
 }
+
+void ChessLayer::createNewBalls(){
+    
+}
+
+
+

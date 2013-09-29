@@ -49,7 +49,8 @@ public:
     inline float getGra(){return _gra;};    
     inline float getWidth(){return _lin*_gra;};
     inline float getHeight(){return _row*_gra;};    
-    inline float getLineWidth(){return _lineWidth;};    
+    inline float getLineWidth(){return _lineWidth;};
+    
     Color4B getBorderColor(){return _borderColor;};
         
     std::vector<PosVO*> getPosVoVec(){return _PosVOVec;};

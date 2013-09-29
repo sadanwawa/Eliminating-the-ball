@@ -14,6 +14,7 @@
 #include "cocos-ext.h"
 #include "UIManager.h"
 #include "chess/data/ChessDataVO.h"
+#include "ChessLayer.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -54,6 +55,7 @@ private:
     ControlButton* btn_restart;
     ControlButton* btn_start;
     
+    ChessLayer* chess;//棋局对象
     ChessDataVO* chessData;//当前棋局数据
     
 };
