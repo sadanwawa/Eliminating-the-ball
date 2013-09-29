@@ -36,6 +36,8 @@ typedef enum
     BALL_TYPE5     = 5,
     BALL_TYPE6     = 6,
     BALL_TYPE7     = 7,
+    BALL_TYPE8     = 8,
+    BALL_TYPE9     = 9,
     
 }BALL_TYPE;
 
@@ -73,8 +75,23 @@ private:
     std::vector<PosVO*> _PosVOVec;//所有节点数据
     
     
+    //随机一种小球
+    int getColorByRandom();
     
+    //随机一个位置
+    int getPosByRandom();
     
+    std::vector<int> _readyBallsVec;//预备小球数组
+    
+    std::vector<int> _BallsTypeVec;//小球池子
+
+    std::vector<int> _emptyPosVec;//空节点数组
+    
+    void checkAllEmptyPos();//选出所有空节点    
+
+    int _currEmptyNum;//当前空节点数
+
+
 };
 
 

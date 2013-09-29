@@ -107,8 +107,9 @@ void UIManager::openPopLayers(){//同时显示多个弹窗；（弹出可自定�
         }else if(_onOpenList[0]->ease==1){
             
             parentNode->addChild(_onOpenList[0]->pop);//
-            _onOpenList[0]->pop->setPosition(_onOpenList[0]->point.x,_onOpenList[0]->point.y);
             _onOpenList[0]->pop->setScale(0.02);
+            _onOpenList[0]->pop->setAnchorPoint(Point(0.5f,0.5f));
+            _onOpenList[0]->pop->setPosition(_onOpenList[0]->point.x,_onOpenList[0]->point.y);            
             _onOpenList[0]->pop->setVisible(false);
                      
             FiniteTimeAction*  actionB = Sequence::create(
