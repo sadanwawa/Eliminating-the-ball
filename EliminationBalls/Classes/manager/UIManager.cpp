@@ -28,8 +28,8 @@ bool UIManager::initialize()//注册所有弹窗
         ccNodeLoaderLibrary = NodeLoaderLibrary::newDefaultNodeLoaderLibrary();
         ccNodeLoaderLibrary->retain();
     }    
-   ccNodeLoaderLibrary->registerNodeLoader("MainUILayer", MainUILayerLoader::loader());
-       
+   ccNodeLoaderLibrary->registerNodeLoader("MainUILayer", MainUILayerLoader::loader());    
+//   ccNodeLoaderLibrary->registerNodeLoader("BaseLayer", BaseLayerLoader::loader());   
     return true;
 }
 
