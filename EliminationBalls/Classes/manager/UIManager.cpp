@@ -12,7 +12,8 @@ template<> UIManager* Singleton<UIManager>::msSingleton	= NULL;
 UIManager::UIManager()
 {
     main_Node=NULL;
-    ccNodeLoaderLibrary=NULL;   
+    ccNodeLoaderLibrary=NULL;
+    _isOpening=false;
 }
 
 UIManager::~UIManager()
@@ -27,8 +28,8 @@ bool UIManager::initialize()//注册所有弹窗
         ccNodeLoaderLibrary = NodeLoaderLibrary::newDefaultNodeLoaderLibrary();
         ccNodeLoaderLibrary->retain();
     }    
-   ccNodeLoaderLibrary->registerNodeLoader("MainUILayer", MainUILayerLoader::loader());
-       
+   ccNodeLoaderLibrary->registerNodeLoader("MainUILayer", MainUILayerLoader::loader());    
+//   ccNodeLoaderLibrary->registerNodeLoader("BaseLayer", BaseLayerLoader::loader());   
     return true;
 }
 
@@ -49,85 +50,110 @@ void UIManager::setCurrScene(Node* node){
     }    
 }
 
-void UIManager::addPopLayer(const char* fileName,Node* parent,int ease,Point p,const char* tag)
-{    
+void UIManager::addPopLayer(std::string fileName,Node* parent,int ease,float x,float y,std::string tag)
+{   //只添加数据。。。。
     Node* pNode=NULL;    
     /* Create an autorelease CCBReader. */
     cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);    
     /* Read a ccbi file. */
-    Node * node = ccbReader->readNodeGraphFromFile(fileName, parent);
+    Node * node = ccbReader->readNodeGraphFromFile(fileName.c_str(), parent);
+    
+    //BaseLayer
+    
+    //BaseNode    
+    
     node->retain();//为了保证创建的对象不会自动回收；
     ccbReader->release();//用完接着release    
     if(node != NULL) {
         pNode=node;
-                
         PopData* popdata=new PopData();
-        popdata->retain();
+        popdata->retain();                
         popdata->pop=pNode;
+        BaseLayer* layer=dynamic_cast<BaseLayer*>(node);
+        BaseNode* node=dynamic_cast<BaseNode*>(node);
+        
+        if(layer){
+            popdata->layer=layer;
+        }else{
+            popdata->node=node;
+        }
+                
         popdata->parent=parent;
         popdata->popType=fileName;
         popdata->tag=tag;
-        popdata->point=p;
+        popdata->x=x;
+        popdata->y=y;
         popdata->ease=ease;               
         _onOpenList.push_back(popdata);        
     }    
 }
 
-
-
-
-
-
 //弹窗类型：1.全屏  2.居中显示 灰色遮罩 3.固定位置显示  无灰色遮罩（焦点可切换）；
-void UIManager::openPopLayers(){//同时显示多个弹窗；（弹出可自定义时间间隔）
-      
+void UIManager::openPopLayers(float Ddelay){//同时显示多个弹窗；（弹出可自定义时间间隔）
+//    if(_isOpening){
+//        return;
+//    }
+//    _isOpening=true;
     int size=_onOpenList.size();
     CCASSERT(size<100,"to open too many pops!");
     float delay=0;
-        
-    while(_onOpenList.size()>0){//同时打开  延时处理
-        Node* parentNode= _onOpenList[0]->parent!=NULL? _onOpenList[0]->parent:main_Node->getPopsNode();
-        if(_onOpenList[0]->ease==0){
+    
+    std::vector<Node*> popVec;
+    popVec.clear();
+    while(_onOpenList.size()>0){//同时打开  延时处理        
+        PopData* currPopData=_onOpenList[0];
+        Node* parentNode= currPopData->parent!=NULL? currPopData->parent:main_Node->getPopsNode();
+                
+        if(currPopData->ease==0){
             // 
             // CallFuncND is no longer needed. It can simulated with std::bind()
             //必须是显示对象才可用 runAction();
-            parentNode->addChild(_onOpenList[0]->pop);//
-            _onOpenList[0]->pop->setPosition(_onOpenList[0]->point.x,_onOpenList[0]->point.y);
-            _onOpenList[0]->pop->setVisible(false);
+            parentNode->addChild(currPopData->pop);//
+            currPopData->pop->setPosition(currPopData->x,currPopData->y);
+            currPopData->pop->setVisible(false);
             
             FiniteTimeAction* actionA = Sequence::create(
                                            DelayTime::create(delay),//延时 
-                                           CallFuncN::create(CC_CALLBACK_1(UIManager::showPopLayer, this, _onOpenList[0])),
+                                           CallFuncN::create(CC_CALLBACK_1(UIManager::showPopLayer, this, currPopData)),
                                            NULL);            
-            _onOpenList[0]->pop->runAction(actionA);
+            currPopData->pop->runAction(actionA);
+                       
             
-            _currPops.push_back(_onOpenList[0]);
-            deleteFromOpenList(_onOpenList[0]);
+        }else if(currPopData->ease==1){
             
-        }else if(_onOpenList[0]->ease==1){
-            
-            parentNode->addChild(_onOpenList[0]->pop);//
-            _onOpenList[0]->pop->setScale(0.02);
-            _onOpenList[0]->pop->setAnchorPoint(Point(0.5f,0.5f));
-            _onOpenList[0]->pop->setPosition(_onOpenList[0]->point.x,_onOpenList[0]->point.y);            
-            _onOpenList[0]->pop->setVisible(false);
+            parentNode->addChild(currPopData->pop);//
+            currPopData->pop->setScale(0.02);
+            currPopData->pop->setAnchorPoint(Point(0.5f,0.5f));
+            currPopData->pop->setPosition(currPopData->x,currPopData->y);            
+            currPopData->pop->setVisible(false);
                      
             FiniteTimeAction*  actionB = Sequence::create(
                                                           DelayTime::create(delay),//延时
-                                                          CallFuncN::create(CC_CALLBACK_1(UIManager::showPopLayer, this, _onOpenList[0])),
+                                                          CallFuncN::create(CC_CALLBACK_1(UIManager::showPopLayer, this, currPopData)),
                                                           ScaleTo::create(0.8,1),                                                                                                 
                                                           CallFunc::create( CC_CALLBACK_0(UIManager::playOpenActionOver,this)),
                                                           NULL);
-            _onOpenList[0]->pop->runAction(actionB);
-            
-            _currPops.push_back(_onOpenList[0]);
-            deleteFromOpenList(_onOpenList[0]);
-                        
+            currPopData->pop->runAction(actionB);
+                                   
         }
-        std::cout<<"===========new Pop=========about--->"<<_onOpenList[0]->popType<<std::endl;
-        //TextureCache::getInstance()->dumpCachedTextureInfo();
-        
-        delay+=0.3;
+         std::cout<<"===========new Pop=========about--->"<<currPopData->popType<<std::endl;
+        _currPops.push_back(currPopData);
+        popVec.push_back(currPopData->pop);
+        deleteFromOpenList(currPopData);
+               
+        //TextureCache::getInstance()->dumpCachedTextureInfo();        
+        delay+=Ddelay;
+    }
+    
+    for(int i=0;i<popVec.size();i++){
+        //更新当前pop   updataUI()
+        BaseLayer* layer=dynamic_cast<BaseLayer*>(popVec[i]);
+        BaseNode* node=dynamic_cast<BaseNode*>(popVec[i]);
+        if(layer){
+            layer->updataUI();
+        }else{
+            node->updataUI();
+        }        
     }    
 }
 
@@ -154,7 +180,7 @@ void UIManager::removeLayerByNode(Node* node){
     }    
 }
 
-void UIManager::removeLayersByType(const char* fileName){
+void UIManager::removeLayersByType(std::string fileName){
     for(std::vector<PopData*>::iterator it=_currPops.begin(); it!=_currPops.end(); )
     {
         if((* it)->popType==fileName){
@@ -169,10 +195,10 @@ void UIManager::removeLayersByType(const char* fileName){
     }    
 }
 
-void UIManager::removeLayerByType(const char* fileName,const char* tag){
+void UIManager::removeLayerByType(std::string fileName,std::string tag){
     for(std::vector<PopData*>::iterator it=_currPops.begin(); it!=_currPops.end(); )
     {
-        if((* it)->popType==fileName&&((* it)->tag==tag||(* it)->totalnums==1||(* it)->tag==NULL)){
+        if((* it)->popType==fileName&&((* it)->tag==tag||(* it)->totalnums==1||(* it)->tag=="")){
             (* it)->pop->removeFromParentAndCleanup(true);   
             
             CC_SAFE_RELEASE((* it)->pop);//保证删除node对象；
@@ -185,12 +211,12 @@ void UIManager::removeLayerByType(const char* fileName,const char* tag){
     }    
 }
 
-Node* UIManager::getLayerByType(const char* fileName,const char* tag){
+Node* UIManager::getLayerByType(std::string fileName,std::string tag){
     
     Node* node=NULL;
     for(std::vector<PopData*>::iterator it=_currPops.begin(); it!=_currPops.end(); )
     {
-        if((* it)->popType==fileName&&((* it)->tag==tag||(* it)->totalnums==1||(* it)->tag==NULL)){
+        if((* it)->popType==fileName&&((* it)->tag==tag||(* it)->totalnums==1||(* it)->tag=="")){
             node=(* it)->pop;
             break;
         }else{
@@ -213,7 +239,7 @@ void UIManager::deleteFromOpenList(PopData* data){
     }    
 }
 
-int UIManager::getPopTotalNums(const char* fileName){
+int UIManager::getPopTotalNums(std::string fileName){
     int totalNums=0;
     int size=_currPops.size();
     for(int i=0;i<size;i++){
@@ -224,7 +250,7 @@ int UIManager::getPopTotalNums(const char* fileName){
     return totalNums;
 }
 
-void UIManager::updataPopTotalNums(const char* fileName,int totalNums){    
+void UIManager::updataPopTotalNums(std::string fileName,int totalNums){
     int size=_currPops.size();
     for(int i=0;i<size;i++){
         if(_currPops[i]->popType==fileName){            
@@ -239,53 +265,7 @@ void UIManager::updataPopTotalNums(const char* fileName,int totalNums){
 //弹窗类型：1.全屏  2.居中显示 灰色遮罩 3.固定位置显示  无灰色遮罩（焦点可切换）；
 void UIManager::openPopLayer(){//同时显示多个弹窗；（弹出可自定义时间间隔）
     
-    int size=_onOpenList.size();
-    CCASSERT(size<100,"to open too many pops!");
-    float delay=0;
     
-    while(_onOpenList.size()>0){//同时打开  延时处理
-        Node* parentNode= _onOpenList[0]->parent!=NULL? _onOpenList[0]->parent:main_Node->getPopsNode();
-        if(_onOpenList[0]->ease==0){
-            //
-            // CallFuncND is no longer needed. It can simulated with std::bind()
-            //必须是显示对象才可用 runAction();
-            parentNode->addChild(_onOpenList[0]->pop);//
-            _onOpenList[0]->pop->setPosition(_onOpenList[0]->point.x,_onOpenList[0]->point.y);
-            _onOpenList[0]->pop->setVisible(false);
-            
-            FiniteTimeAction* actionA = Sequence::create(
-                                                         DelayTime::create(delay),//延时
-                                                         CallFuncN::create(CC_CALLBACK_1(UIManager::showPopLayer, this, _onOpenList[0])),
-                                                         NULL);
-            _onOpenList[0]->pop->runAction(actionA);
-            
-            _currPops.push_back(_onOpenList[0]);
-            deleteFromOpenList(_onOpenList[0]);
-            
-        }else if(_onOpenList[0]->ease==1){
-            
-            parentNode->addChild(_onOpenList[0]->pop);//
-            _onOpenList[0]->pop->setPosition(_onOpenList[0]->point.x,_onOpenList[0]->point.y);
-            _onOpenList[0]->pop->setScale(0.02);
-            _onOpenList[0]->pop->setVisible(false);
-            
-            FiniteTimeAction*  actionB = Sequence::create(
-                                                          DelayTime::create(delay),//延时
-                                                          CallFuncN::create(CC_CALLBACK_1(UIManager::showPopLayer, this, _onOpenList[0])),
-                                                          ScaleTo::create(0.8,1),
-                                                          CallFunc::create( CC_CALLBACK_0(UIManager::playOpenActionOver,this)),
-                                                          NULL);
-            _onOpenList[0]->pop->runAction(actionB);
-            
-            _currPops.push_back(_onOpenList[0]);
-            deleteFromOpenList(_onOpenList[0]);
-            
-        }
-        std::cout<<"===========new Pop=========about--->"<<_onOpenList[0]->popType<<std::endl;
-        TextureCache::getInstance()->dumpCachedTextureInfo();
-        
-        delay+=0.3;
-    }    
 }
 
 

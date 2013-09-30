@@ -35,6 +35,8 @@
 		69020E0F17F67F8B006BDA07 /* ui_test-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0217F67F8B006BDA07 /* ui_test-hd.pvr.ccz */; };
 		69020E1017F67F8B006BDA07 /* ui_test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0317F67F8B006BDA07 /* ui_test.plist */; };
 		69020E1117F67F8B006BDA07 /* ui_test.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0417F67F8B006BDA07 /* ui_test.pvr.ccz */; };
+		6924ED9017F91E12006F27E1 /* GlobalUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6924ED8E17F91E12006F27E1 /* GlobalUtil.cpp */; };
+		6924ED9E17F9557A006F27E1 /* BaseNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6924ED9C17F9557A006F27E1 /* BaseNode.cpp */; };
 		6950509517F535B500EA8280 /* ChessBoardLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509317F535B500EA8280 /* ChessBoardLayer.cpp */; };
 		6950509817F54EC300EA8280 /* ChessLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509617F54EC300EA8280 /* ChessLayer.cpp */; };
 		6950509D17F5897600EA8280 /* ChessDataVO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509C17F5897600EA8280 /* ChessDataVO.cpp */; };
@@ -234,6 +236,10 @@
 		69020E0217F67F8B006BDA07 /* ui_test-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ui_test-hd.pvr.ccz"; sourceTree = "<group>"; };
 		69020E0317F67F8B006BDA07 /* ui_test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ui_test.plist; sourceTree = "<group>"; };
 		69020E0417F67F8B006BDA07 /* ui_test.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_test.pvr.ccz; sourceTree = "<group>"; };
+		6924ED8E17F91E12006F27E1 /* GlobalUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GlobalUtil.cpp; sourceTree = "<group>"; };
+		6924ED8F17F91E12006F27E1 /* GlobalUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalUtil.h; sourceTree = "<group>"; };
+		6924ED9C17F9557A006F27E1 /* BaseNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseNode.cpp; sourceTree = "<group>"; };
+		6924ED9D17F9557A006F27E1 /* BaseNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNode.h; sourceTree = "<group>"; };
 		6950509317F535B500EA8280 /* ChessBoardLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChessBoardLayer.cpp; sourceTree = "<group>"; };
 		6950509417F535B500EA8280 /* ChessBoardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessBoardLayer.h; sourceTree = "<group>"; };
 		6950509617F54EC300EA8280 /* ChessLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChessLayer.cpp; sourceTree = "<group>"; };
@@ -324,6 +330,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6924ED8D17F91E12006F27E1 /* utils */,
 				69CEB42617F406750088CBDE /* scence */,
 				69CEB3F217F2F1A60088CBDE /* MainScene.cpp */,
 				69CEB3F317F2F1A70088CBDE /* MainScene.h */,
@@ -394,6 +401,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6924ED8D17F91E12006F27E1 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				6924ED8E17F91E12006F27E1 /* GlobalUtil.cpp */,
+				6924ED8F17F91E12006F27E1 /* GlobalUtil.h */,
+			);
+			name = utils;
+			path = ../Classes/utils;
+			sourceTree = "<group>";
+		};
 		6950508417F532ED00EA8280 /* chess */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +436,8 @@
 		69CEB3D717F2EF380088CBDE /* core */ = {
 			isa = PBXGroup;
 			children = (
+				6924ED9C17F9557A006F27E1 /* BaseNode.cpp */,
+				6924ED9D17F9557A006F27E1 /* BaseNode.h */,
 				69CEB3D817F2EF380088CBDE /* BaseDataVO.h */,
 				69CEB3D917F2EF380088CBDE /* BaseLayer.cpp */,
 				69CEB3DA17F2EF380088CBDE /* BaseLayer.h */,
@@ -729,6 +748,8 @@
 				6950509517F535B500EA8280 /* ChessBoardLayer.cpp in Sources */,
 				6950509817F54EC300EA8280 /* ChessLayer.cpp in Sources */,
 				6950509D17F5897600EA8280 /* ChessDataVO.cpp in Sources */,
+				6924ED9017F91E12006F27E1 /* GlobalUtil.cpp in Sources */,
+				6924ED9E17F9557A006F27E1 /* BaseNode.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

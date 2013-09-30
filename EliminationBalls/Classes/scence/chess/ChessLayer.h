@@ -41,7 +41,9 @@ private:
     ChessBoardLayer* chessBoard;//棋盘
     Node* chessBalls;//小球
     Node* chessEffect;//特效层    
-    ChessDataVO* _chessDataVO;//当前数据        
+    ChessDataVO* _chessDataVO;//当前数据
+    
+   
     
 };
 
