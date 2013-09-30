@@ -18,7 +18,7 @@ MainScene::~MainScene(){
 
 void MainScene::onEnter(){
     BaseScene::onEnter();    
-    UIManager::Instance()->addPopLayer(CCBI::ui_main.c_str(),this,0);
+    UIManager::Instance()->addPopLayer(CCBI::ui_main,this,0);
     UIManager::Instance()->openPopLayers();       
 }
 

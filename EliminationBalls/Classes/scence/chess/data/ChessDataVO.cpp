@@ -15,21 +15,28 @@ ChessDataVO::ChessDataVO(int lin,int row,float gra){
     //棋盘线宽
     _lineWidth=3.0f;
     //棋盘颜色
-    _borderColor=Color4B(125,0,0,125);
-    
+    _borderColor=Color4B(125,0,0,125);    
     //小球池子
     _BallsTypeVec={1,2,3,4,5,6,7,8,9};
-    
+    //备选区小球个数
+    _readyNum=3;    
     _readyBallsVec.clear();    
     initPosVOs();//初始化节点数据
     
-    //
-    
+    //初始化被选区小球数据
+    initReadyBalls();
     
 };
 ChessDataVO::~ChessDataVO(){
     
 };
+
+void ChessDataVO::initReadyBalls(){    
+    for(int i=0;i<_readyNum;i++){
+        int randomColor=getColorByRandom();
+        _readyBallsVec.push_back(randomColor);
+    }    
+}
 
 void ChessDataVO::initPosVOs(){
     clearPosVOs();

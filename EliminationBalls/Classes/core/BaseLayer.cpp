@@ -17,7 +17,7 @@ BaseLayer::~BaseLayer(){
 
 const char* BaseLayer::description()
 {
-    return String::createWithFormat("<BaseLayer | Tag = %d>", _tag)->getCString();
+    return "";
 }
 
 void BaseLayer::onEnter(){
@@ -39,7 +39,9 @@ bool BaseLayer::init(){
 void BaseLayer::updataUI(BaseDataVO* data=NULL){
     _dataVo=data;
 }
-
+void BaseLayer::updataUI(){
+    
+}
 void BaseLayer::onNodeLoaded(cocos2d::Node * node, NodeLoader * nodeLoader){
         
 }

@@ -10,6 +10,7 @@
 #define minGameTest_BaseLayer_h
 
 #include "BaseDataVO.h"
+#include "BaseNode.h"
 #include "cocos2d.h"
 #include "cocos-ext.h"
 
@@ -30,7 +31,7 @@ public:
     
     virtual void onNodeLoaded(cocos2d::Node * node, NodeLoader * nodeLoader);
     virtual void updataUI(BaseDataVO* data);
-    
+    virtual void updataUI();
     virtual bool ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);
     
     virtual BaseDataVO* getDataVO(){return _dataVo;};

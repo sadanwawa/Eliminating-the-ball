@@ -25,23 +25,6 @@ struct PosVO{
     BallVO* ballVO=NULL;    
 };
 
-
-//小球颜色
-typedef enum
-{
-    BALL_TYPE1     = 1,
-    BALL_TYPE2     = 2,
-    BALL_TYPE3     = 3,
-    BALL_TYPE4     = 4,
-    BALL_TYPE5     = 5,
-    BALL_TYPE6     = 6,
-    BALL_TYPE7     = 7,
-    BALL_TYPE8     = 8,
-    BALL_TYPE9     = 9,
-    
-}BALL_TYPE;
-
-
 class ChessDataVO :public Object{
 public:
     ChessDataVO(int lin,int row,float gra);
@@ -56,6 +39,9 @@ public:
     Color4B getBorderColor(){return _borderColor;};
         
     std::vector<PosVO*> getPosVoVec(){return _PosVOVec;};
+    
+    std::vector<int> getReadyBallsVec(){return _readyBallsVec;};
+    
     
 private:
     
@@ -90,7 +76,10 @@ private:
     void checkAllEmptyPos();//选出所有空节点    
 
     int _currEmptyNum;//当前空节点数
-
+    
+    int _readyNum;//备选区小球个数
+    
+    void initReadyBalls();//初始化备选区小球类型
 
 };
 

@@ -78,21 +78,33 @@ public:
     PopData(){
     
         pop=NULL;
+        layer=NULL;
+        node=NULL;
+        
         parent=NULL;
         popType="";  //ccbi名称 作为弹窗类型
         tag="pop1";//该弹窗tag
         ease=0;//打开动画类型  0无动画  1缩放  2渐变  3移动出现
         totalnums=1;//该类型弹窗当前总数
-            
+        
+        x=0;
+        y=0;
+        
     };
-    ~PopData(){};    
+    ~PopData(){};
     Node* pop;
+    
+    BaseLayer* layer;
+    BaseNode* node;
+    
     Node* parent;
-    const char* popType;  //ccbi名称 作为弹窗类型
-    const char* tag;//该弹窗tag
+    std::string popType;  //ccbi名称 作为弹窗类型
+    std::string tag;//该弹窗tag
     int ease;//打开动画类型  0无动画  1缩放  2渐变  3移动出现
     int totalnums;//该类型弹窗当前总数
-    CCPoint point;
+        
+    float x;
+    float y;
 };
 
 class UIManager : public Singleton<UIManager>, public Object
@@ -105,8 +117,8 @@ public:
 
     NodeLoaderLibrary * ccNodeLoaderLibrary;
             
-    void addPopLayer(const char* fileName,Node* parent=NULL,int ease=0,CCPoint p=ccp(0, 0),const char* tag="pop1");
-    void openPopLayers();//同时打开多个
+    void addPopLayer(std::string fileName,Node* parent=NULL,int ease=0,float x=0,float y=0,std::string tag="pop1");
+    void openPopLayers(float Ddelay=0.3);//同时打开多个 时间间隔
     void openPopLayer();//一个关闭再打开另一个
     
     void setCurrScene(Node* node);
@@ -114,11 +126,11 @@ public:
     //只在当前scene中调用  不同场景切换时不需要调用
     void removeLayerByNode(Node* node);
     //移除某一类型的弹窗；
-    void removeLayersByType(const char* fileName);
+    void removeLayersByType(std::string fileName);
     //根据类型和tag移除某个弹窗
-    void removeLayerByType(const char* fileName,const char* tag="pop1");
+    void removeLayerByType(std::string fileName,std::string tag="pop1");
     
-    Node* getLayerByType(const char* fileName,const char* tag="pop1");
+    Node* getLayerByType(std::string fileName,std::string tag="pop1");
     
     
 protected:
@@ -132,14 +144,17 @@ private:
     //sence中的baseLayer
     BaseScene* main_Node;
         
-    int getPopTotalNums(const char* fileName);//取得当前类型弹窗总数
-    void updataPopTotalNums(const char* fileName,int totalNums);//更新当前类型弹窗总数
+    int getPopTotalNums(std::string fileName);//取得当前类型弹窗总数
+    void updataPopTotalNums(std::string fileName,int totalNums);//更新当前类型弹窗总数
     
     //删除待打开弹窗数据
     void deleteFromOpenList(PopData* data);
         
     void showPopLayer(Object* sender, PopData* data);
     void playOpenActionOver();
+    
+    bool _isOpening;
+
 
 };
 
