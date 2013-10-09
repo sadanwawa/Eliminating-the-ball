@@ -5,6 +5,7 @@
 
 #include "UIManager.h"
 #include "MainUILayerLoader.h"
+#include "BallLayerLoader.h"
 
 // singleton instance pointer
 template<> UIManager* Singleton<UIManager>::msSingleton	= NULL;
@@ -29,7 +30,7 @@ bool UIManager::initialize()//注册所有弹窗
         ccNodeLoaderLibrary->retain();
     }    
    ccNodeLoaderLibrary->registerNodeLoader("MainUILayer", MainUILayerLoader::loader());    
-//   ccNodeLoaderLibrary->registerNodeLoader("BaseLayer", BaseLayerLoader::loader());   
+   ccNodeLoaderLibrary->registerNodeLoader("BallLayer", BallLayerLoader::loader());   
     return true;
 }
 

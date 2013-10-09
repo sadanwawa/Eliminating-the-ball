@@ -100,9 +100,9 @@ void MainUILayer::initReadyBalls(){
     for(int i=0;i<len;i++){
         std::string ballPlist=GlobalUtil::Instance()->getPlistByBallType(readyballsVec[i]);
         Point point=Point(readyArea->getPositionX()+readyArea->getContentSize().width-i*38-38/2,readyArea->getPositionY()+38/2);
-        UIManager::Instance()->addPopLayer(ballPlist,this,0,point.x,point.y);
+        UIManager::Instance()->addPopLayer(ballPlist,this,1,point.x,point.y);
     }
-    //UIManager::Instance()->openPopLayers(0.1);
+    UIManager::Instance()->openPopLayers(0.1);
 }
 
 bool MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){   

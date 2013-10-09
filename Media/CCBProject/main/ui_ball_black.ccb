@@ -166,7 +166,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>BaseLayer</string>
+		<string>BallLayer</string>
 		<key>displayName</key>
 		<string>CCLayer</string>
 		<key>memberVarAssignmentName</key>
