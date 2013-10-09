@@ -9,6 +9,7 @@
 #include "MainUILayer.h"
 #include "ChessLayer.h"
 #include "GlobalUtil.h"
+#include "DataFormatUtil.h"
 
 MainUILayer::MainUILayer()
 :txt_hisScorces(NULL),
@@ -41,9 +42,9 @@ bool MainUILayer::init(){
 
 void MainUILayer::onEnter(){
     BaseLayer::onEnter();    
-//    this->setTouchMode(Touch::DispatchMode::ALL_AT_ONCE);//ALL_AT_ONCE    
-//    Director::getInstance()->getTouchDispatcher()->addTargetedDelegate(this,100,true);
-       
+    //this->setTouchMode(Touch::DispatchMode::ONE_BY_ONE);//ALL_AT_ONCE
+    //this->setTouchEnabled(true);
+    //Director::getInstance()->getTouchDispatcher()->addTargetedDelegate(this,0,true);
 }
 void MainUILayer::onExit(){
     BaseLayer::onExit();    
@@ -83,26 +84,61 @@ void MainUILayer::onClickReStart(cocos2d::Object * sender, Control::EventType pC
     
 }
 void MainUILayer::onClickStart(cocos2d::Object * sender, Control::EventType pControlEvent){
-    //随机生成小球
-    initReadyBalls();
-    return;
-    int len=chessData->getPosVoVec().size();
+    if(chessData->getCurrEmptyNum()<1)return;
+    //消除准备区小球
+    clearReadyBalls();
+    //更新小球数据
+    chessData->createNewBalls();
+    //更新准备区小球
+    initReadyBalls();   
+    //放入棋盘小球
+    initCreateBalls();
+}
+
+void MainUILayer::clearReadyBalls(){//清除备选区小球
+    
+    std::vector<int> readyVec=chessData->getReadyBallsVec();//新的准备区小球数据
+    int len=readyVec.size();
+    std::string tag="";
     for(int i=0;i<len;i++){
-        Point point=chessData->getPosVoVec()[i]->point;        
-        UIManager::Instance()->addPopLayer(CCBI::ui_ball_blue,chess,1,point.x,point.y);
+        std::string ballPlist=GlobalUtil::Instance()->getPlistByBallType(readyVec[i]);
+        tag="readyBall";
+        UIManager::Instance()->removeLayerByType(ballPlist,tag);
     }
-    UIManager::Instance()->openPopLayers(0.1);
+
 }
 
 void MainUILayer::initReadyBalls(){
     std::vector<int> readyballsVec=chessData->getReadyBallsVec();
     int len=readyballsVec.size();
+    std::string tag="";
     for(int i=0;i<len;i++){
         std::string ballPlist=GlobalUtil::Instance()->getPlistByBallType(readyballsVec[i]);
-        Point point=Point(readyArea->getPositionX()+readyArea->getContentSize().width-i*38-38/2,readyArea->getPositionY()+38/2);
-        UIManager::Instance()->addPopLayer(ballPlist,this,1,point.x,point.y);
+        Point point=Point(readyArea->getPositionX()+readyArea->getContentSize().width-i*38-38/2,readyArea->getPositionY()+38/2);        
+        tag="readyBall";
+        UIManager::Instance()->addPopLayer(ballPlist,this,0,point.x,point.y,tag);
     }
     UIManager::Instance()->openPopLayers(0.1);
+}
+
+void MainUILayer::initCreateBalls(){
+    std::vector<int> creatVec=chessData->getCreateBallsVec();//新放入棋盘小球数据
+    for(int j=0;j<creatVec.size();j++){
+                
+        std::string ballPlist=GlobalUtil::Instance()->getPlistByBallType(creatVec[j]);
+        PosVO* posVO=chessData->getRandomEmptyPosVO();
+        BallVO* ballVO=new BallVO(creatVec[j]);
+        posVO->ballVO=ballVO;
+        posVO->isBall=true;
+        UIManager::Instance()->addPopLayer(ballPlist,chess,0,posVO->point.x,posVO->point.y,"",posVO->ballVO);//添加datavo
+        
+        if(chessData->getCurrEmptyNum()<1){
+            //游戏结束；
+            break;
+        }
+        
+    }
+    UIManager::Instance()->openPopLayers(0.1);    
 }
 
 bool MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){   
@@ -117,7 +153,7 @@ bool MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
     return false;
 }
 
-void MainUILayer::updataUI(){
+void MainUILayer::updataUI(BaseDataVO* datavo){
     //棋
     chess=ChessLayer::create();
     chessData=new ChessDataVO(9,9,32);

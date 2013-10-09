@@ -4,6 +4,19 @@
     <dict>
         <key>frames</key>
         <dict>
+            <key>area.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{62,22},{0,0}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{0,0}}</string>
+                <key>sourceSize</key>
+                <string>{18,19}</string>
+            </dict>
             <key>ball_01.png</key>
             <dict>
                 <key>frame</key>
@@ -144,7 +157,7 @@
             <key>size</key>
             <string>{64,128}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:99625c2a32570cdd2677dfa3fae2e01d$</string>
+            <string>$TexturePacker:SmartUpdate:a3d1af70b484e48e46a090c7e98d78ab$</string>
             <key>textureFileName</key>
             <string>ui_test.pvr.ccz</string>
         </dict>

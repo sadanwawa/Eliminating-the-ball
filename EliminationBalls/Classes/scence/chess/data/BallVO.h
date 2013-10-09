@@ -10,11 +10,12 @@
 
 #include "cocos2d.h"
 #include "cocos-ext.h"
+#include "BaseDataVO.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
 
-class BallVO :public Object{
+class BallVO :public BaseDataVO{
 public:
     BallVO(int type){
         _state=0;

@@ -81,6 +81,7 @@ public:
         layer=NULL;
         node=NULL;
         
+        dataVo=NULL;
         parent=NULL;
         popType="";  //ccbi名称 作为弹窗类型
         tag="pop1";//该弹窗tag
@@ -98,6 +99,9 @@ public:
     BaseNode* node;
     
     Node* parent;
+    
+    BaseDataVO*dataVo;
+    
     std::string popType;  //ccbi名称 作为弹窗类型
     std::string tag;//该弹窗tag
     int ease;//打开动画类型  0无动画  1缩放  2渐变  3移动出现
@@ -117,7 +121,7 @@ public:
 
     NodeLoaderLibrary * ccNodeLoaderLibrary;
             
-    void addPopLayer(std::string fileName,Node* parent=NULL,int ease=0,float x=0,float y=0,std::string tag="pop1");
+    void addPopLayer(std::string fileName,Node* parent=NULL,int ease=0,float x=0,float y=0,std::string tag="pop1",BaseDataVO* vo=NULL);
     void openPopLayers(float Ddelay=0.3);//同时打开多个 时间间隔
     void openPopLayer();//一个关闭再打开另一个
     

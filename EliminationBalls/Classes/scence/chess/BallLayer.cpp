@@ -42,6 +42,7 @@ SEL_MenuHandler BallLayer::onResolveCCBCCMenuItemSelector(cocos2d::Object * pTar
 }
 Control::Handler BallLayer::onResolveCCBCCControlSelector(cocos2d::Object * pTarget, const char * pSelectorName){
     //按钮事件
+     CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onClickSelect", BallLayer::onClickSelect);   
     return NULL;
 }
 bool BallLayer::onAssignCCBMemberVariable(cocos2d::Object * pTarget, const char * pMemberVariableName, cocos2d::Node * pNode){
@@ -55,7 +56,6 @@ void BallLayer::onNodeLoaded(cocos2d::Node * node, cocos2d::extension::NodeLoade
     
 }
 
-
 bool BallLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){   
     //判断自定义触摸逻辑  如果找到目标并不再继续响应 return true;
     if(BaseLayer::ccTouchBegan(pTouch, pEvent)){
@@ -68,7 +68,13 @@ bool BallLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
     return false;
 }
 
-void BallLayer::updataUI(){
+void BallLayer::updataUI(BallVO* datavo){
     
 }
+
+void BallLayer::onClickSelect(cocos2d::Object * sender, Control::EventType pControlEvent){
+    
+    
+}
+
 
