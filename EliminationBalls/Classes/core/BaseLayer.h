@@ -30,8 +30,7 @@ public:
     virtual bool init();
     
     virtual void onNodeLoaded(cocos2d::Node * node, NodeLoader * nodeLoader);
-    virtual void updataUI(BaseDataVO* data);
-    virtual void updataUI();
+    virtual void updataUI(BaseDataVO* data=NULL);
     virtual bool ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);
     
     virtual BaseDataVO* getDataVO(){return _dataVo;};

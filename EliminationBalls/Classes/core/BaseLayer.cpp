@@ -36,12 +36,10 @@ bool BaseLayer::init(){
     return true;
 }
 
-void BaseLayer::updataUI(BaseDataVO* data=NULL){
+void BaseLayer::updataUI(BaseDataVO* data){
     _dataVo=data;
 }
-void BaseLayer::updataUI(){
-    
-}
+
 void BaseLayer::onNodeLoaded(cocos2d::Node * node, NodeLoader * nodeLoader){
         
 }

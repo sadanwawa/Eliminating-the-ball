@@ -51,7 +51,7 @@ void UIManager::setCurrScene(Node* node){
     }    
 }
 
-void UIManager::addPopLayer(std::string fileName,Node* parent,int ease,float x,float y,std::string tag)
+void UIManager::addPopLayer(std::string fileName,Node* parent,int ease,float x,float y,std::string tag,BaseDataVO* vo)
 {   //只添加数据。。。。
     Node* pNode=NULL;    
     /* Create an autorelease CCBReader. */
@@ -84,7 +84,8 @@ void UIManager::addPopLayer(std::string fileName,Node* parent,int ease,float x,f
         popdata->tag=tag;
         popdata->x=x;
         popdata->y=y;
-        popdata->ease=ease;               
+        popdata->ease=ease;
+        popdata->dataVo=vo;        
         _onOpenList.push_back(popdata);        
     }    
 }
@@ -100,7 +101,9 @@ void UIManager::openPopLayers(float Ddelay){//同时显示多个弹窗；（弹�
     float delay=0;
     
     std::vector<Node*> popVec;
+    std::vector<BaseDataVO*> voVec;//逻辑数据
     popVec.clear();
+    voVec.clear();
     while(_onOpenList.size()>0){//同时打开  延时处理        
         PopData* currPopData=_onOpenList[0];
         Node* parentNode= currPopData->parent!=NULL? currPopData->parent:main_Node->getPopsNode();
@@ -140,6 +143,7 @@ void UIManager::openPopLayers(float Ddelay){//同时显示多个弹窗；（弹�
          std::cout<<"===========new Pop=========about--->"<<currPopData->popType<<std::endl;
         _currPops.push_back(currPopData);
         popVec.push_back(currPopData->pop);
+        voVec.push_back(currPopData->dataVo);        
         deleteFromOpenList(currPopData);
                
         //TextureCache::getInstance()->dumpCachedTextureInfo();        
@@ -151,9 +155,9 @@ void UIManager::openPopLayers(float Ddelay){//同时显示多个弹窗；（弹�
         BaseLayer* layer=dynamic_cast<BaseLayer*>(popVec[i]);
         BaseNode* node=dynamic_cast<BaseNode*>(popVec[i]);
         if(layer){
-            layer->updataUI();
+            layer->updataUI(voVec[i]);
         }else{
-            node->updataUI();
+            node->updataUI(voVec[i]);
         }        
     }    
 }
@@ -199,7 +203,7 @@ void UIManager::removeLayersByType(std::string fileName){
 void UIManager::removeLayerByType(std::string fileName,std::string tag){
     for(std::vector<PopData*>::iterator it=_currPops.begin(); it!=_currPops.end(); )
     {
-        if((* it)->popType==fileName&&((* it)->tag==tag||(* it)->totalnums==1||(* it)->tag=="")){
+        if((* it)->popType==fileName&&((* it)->tag==tag)){
             (* it)->pop->removeFromParentAndCleanup(true);   
             
             CC_SAFE_RELEASE((* it)->pop);//保证删除node对象；
@@ -217,7 +221,7 @@ Node* UIManager::getLayerByType(std::string fileName,std::string tag){
     Node* node=NULL;
     for(std::vector<PopData*>::iterator it=_currPops.begin(); it!=_currPops.end(); )
     {
-        if((* it)->popType==fileName&&((* it)->tag==tag||(* it)->totalnums==1||(* it)->tag=="")){
+        if((* it)->popType==fileName&&((* it)->tag==tag)){
             node=(* it)->pop;
             break;
         }else{

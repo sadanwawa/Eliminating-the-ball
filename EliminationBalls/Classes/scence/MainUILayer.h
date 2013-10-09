@@ -35,7 +35,7 @@ public:
     virtual void onEnter();
     virtual void onExit();    
     virtual bool init();
-    void updataUI();
+    virtual void updataUI(BaseDataVO* datavo=NULL);
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(Object * pTarget, const char * pSelectorName);
     virtual Control::Handler onResolveCCBCCControlSelector(Object * pTarget, const char * pSelectorName);
     virtual bool onAssignCCBMemberVariable(Object * pTarget, const char * pMemberVariableName, cocos2d::Node * node);
@@ -59,9 +59,11 @@ private:
     ChessLayer* chess;//棋局对象
     ChessDataVO* chessData;//当前棋局数据
     
+    void clearReadyBalls();//清除备选区小球
+    
     void initReadyBalls();//初始化备选区小球
     
-    
+    void initCreateBalls();//添加新的小球
     
     
 };

@@ -35,7 +35,7 @@ public:
     virtual void onEnter();
     virtual void onExit();    
     virtual bool init();
-    void updataUI();
+    void updataUI(BallVO* datavo=NULL);
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(Object * pTarget, const char * pSelectorName);
     virtual Control::Handler onResolveCCBCCControlSelector(Object * pTarget, const char * pSelectorName);
     virtual bool onAssignCCBMemberVariable(Object * pTarget, const char * pMemberVariableName, cocos2d::Node * node);

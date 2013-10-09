@@ -15,7 +15,7 @@ BaseNode::~BaseNode(){
         
 }
 
-void BaseNode::updataUI(){
+void BaseNode::updataUI(BaseDataVO* datavo){
     
     
 }

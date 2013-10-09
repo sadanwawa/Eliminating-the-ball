@@ -68,7 +68,7 @@ bool BallLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
     return false;
 }
 
-void BallLayer::updataUI(){
+void BallLayer::updataUI(BallVO* datavo){
     
 }
 

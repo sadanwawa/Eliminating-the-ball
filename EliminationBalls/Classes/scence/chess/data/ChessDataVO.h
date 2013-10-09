@@ -40,10 +40,24 @@ public:
         
     std::vector<PosVO*> getPosVoVec(){return _PosVOVec;};
     
+    
+    PosVO* getRandomEmptyPosVO();//随机取得空的位置数据
+    PosVO* getPosVOByIndex(int index);//根据编号取得位置数据
+    
     std::vector<int> getReadyBallsVec(){return _readyBallsVec;};
     
+    void createNewBalls();
     
+    std::vector<int> getCreateBallsVec(){return _createBallsVec;};
+    
+    void updataPosVO(PosVO*vo,int ballType);//更新位置数据
+    
+    inline int getCurrEmptyNum(){return _currEmptyNum;};//当前空节点数
+        
 private:
+    
+    PosVO* getEmptyPosVOByIndex(int index);//取得第几个空位置；0,1,2...
+    
     
     void initPosVOs();//初始化节点数据
     void clearPosVOs();//清除节点数据
@@ -63,12 +77,13 @@ private:
     
     //随机一种小球
     int getColorByRandom();
-    
     //随机一个位置
     int getPosByRandom();
-    
+            
     std::vector<int> _readyBallsVec;//预备小球数组
     
+    std::vector<int> _createBallsVec;//放入棋盘小球数组
+        
     std::vector<int> _BallsTypeVec;//小球池子
 
     std::vector<int> _emptyPosVec;//空节点数组
@@ -78,6 +93,7 @@ private:
     int _currEmptyNum;//当前空节点数
     
     int _readyNum;//备选区小球个数
+    int _createNum;//每次生成小球个数
     
     void initReadyBalls();//初始化备选区小球类型
 
