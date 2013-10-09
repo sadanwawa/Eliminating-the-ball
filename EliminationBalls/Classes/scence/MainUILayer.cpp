@@ -42,9 +42,9 @@ bool MainUILayer::init(){
 
 void MainUILayer::onEnter(){
     BaseLayer::onEnter();    
-//    this->setTouchMode(Touch::DispatchMode::ALL_AT_ONCE);//ALL_AT_ONCE    
-//    Director::getInstance()->getTouchDispatcher()->addTargetedDelegate(this,100,true);
-       
+    //this->setTouchMode(Touch::DispatchMode::ONE_BY_ONE);//ALL_AT_ONCE
+    //this->setTouchEnabled(true);
+    //Director::getInstance()->getTouchDispatcher()->addTargetedDelegate(this,0,true);
 }
 void MainUILayer::onExit(){
     BaseLayer::onExit();    
@@ -95,7 +95,6 @@ void MainUILayer::onClickStart(cocos2d::Object * sender, Control::EventType pCon
     initCreateBalls();
 }
 
-
 void MainUILayer::clearReadyBalls(){//清除备选区小球
     
     std::vector<int> readyVec=chessData->getReadyBallsVec();//新的准备区小球数据
@@ -141,8 +140,6 @@ void MainUILayer::initCreateBalls(){
     }
     UIManager::Instance()->openPopLayers(0.1);    
 }
-
-
 
 bool MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){   
     //判断自定义触摸逻辑  如果找到目标并不再继续响应 return true;

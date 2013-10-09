@@ -57,6 +57,7 @@
 		69CEB42A17F406750088CBDE /* MainUILayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69CEB42717F406750088CBDE /* MainUILayer.cpp */; };
 		69CEB42C17F4173A0088CBDE /* ui_help.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69CEB42B17F417390088CBDE /* ui_help.ccbi */; };
 		69DF60C218050EF6005C1C22 /* DataFormatUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69DF60C018050EF6005C1C22 /* DataFormatUtil.cpp */; };
+		69DF60D018056262005C1C22 /* TouchUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69DF60CE18056262005C1C22 /* TouchUtil.cpp */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -278,6 +279,8 @@
 		69CEB42B17F417390088CBDE /* ui_help.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_help.ccbi; sourceTree = "<group>"; };
 		69DF60C018050EF6005C1C22 /* DataFormatUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataFormatUtil.cpp; sourceTree = "<group>"; };
 		69DF60C118050EF6005C1C22 /* DataFormatUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormatUtil.h; sourceTree = "<group>"; };
+		69DF60CE18056262005C1C22 /* TouchUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TouchUtil.cpp; sourceTree = "<group>"; };
+		69DF60CF18056262005C1C22 /* TouchUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchUtil.h; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -411,6 +414,8 @@
 		6924ED8D17F91E12006F27E1 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				69DF60CE18056262005C1C22 /* TouchUtil.cpp */,
+				69DF60CF18056262005C1C22 /* TouchUtil.h */,
 				69DF60C018050EF6005C1C22 /* DataFormatUtil.cpp */,
 				69DF60C118050EF6005C1C22 /* DataFormatUtil.h */,
 				6924ED8E17F91E12006F27E1 /* GlobalUtil.cpp */,
@@ -764,6 +769,7 @@
 				6924ED9E17F9557A006F27E1 /* BaseNode.cpp in Sources */,
 				69ACFE2317F9CC1F004A365C /* BallLayer.cpp in Sources */,
 				69DF60C218050EF6005C1C22 /* DataFormatUtil.cpp in Sources */,
+				69DF60D018056262005C1C22 /* TouchUtil.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

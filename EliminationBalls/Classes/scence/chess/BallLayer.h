@@ -40,6 +40,8 @@ public:
     virtual Control::Handler onResolveCCBCCControlSelector(Object * pTarget, const char * pSelectorName);
     virtual bool onAssignCCBMemberVariable(Object * pTarget, const char * pMemberVariableName, cocos2d::Node * node);
     virtual bool onAssignCCBCustomProperty(Object* pTarget, const char* pMemberVariableName, cocos2d::extension::CCBValue* pCCBValue);
+    
+    void onClickSelect(cocos2d::Object * sender, Control::EventType pControlEvent);
     virtual void onNodeLoaded(cocos2d::Node * node, NodeLoader * nodeLoader);
     
     virtual bool ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);   

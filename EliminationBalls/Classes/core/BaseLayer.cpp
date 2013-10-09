@@ -7,6 +7,7 @@
 //
 
 #include "BaseLayer.h"
+#include "TouchUtil.h"
 
 BaseLayer::BaseLayer(){
     _dataVo=NULL;
@@ -50,7 +51,7 @@ bool BaseLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
             return  Layer::ccTouchBegan(pTouch, pEvent);
         }else{//没有预定义触发事件  根据当前碰触对象区域判断            
             //根据位置和区域  判断是否碰触
-            //return TouchUtil::Instance()->touchNode(this, pTouch);
+            return TouchUtil::Instance()->touchNode(this, pTouch);
             return  Layer::ccTouchBegan(pTouch, pEvent);
         }      
     }    

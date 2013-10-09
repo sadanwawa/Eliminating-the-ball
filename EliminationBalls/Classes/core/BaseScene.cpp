@@ -30,7 +30,10 @@ BaseScene::~BaseScene(){
 
 void BaseScene::onEnter(){
     Layer::onEnter();
-     UIManager::Instance()->setCurrScene(this);    
+     UIManager::Instance()->setCurrScene(this);
+//     this->setTouchMode(Touch::DispatchMode::ONE_BY_ONE);//ALL_AT_ONCE
+//     Director::getInstance()->getTouchDispatcher()->addTargetedDelegate(this,0,true);
+    
 }
 void BaseScene::onExit(){
     Layer::onExit();
