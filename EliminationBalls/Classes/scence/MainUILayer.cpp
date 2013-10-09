@@ -84,7 +84,7 @@ void MainUILayer::onClickReStart(cocos2d::Object * sender, Control::EventType pC
     
 }
 void MainUILayer::onClickStart(cocos2d::Object * sender, Control::EventType pControlEvent){
-    
+    if(chessData->getCurrEmptyNum()<1)return;
     //消除准备区小球
     clearReadyBalls();
     //更新小球数据
@@ -117,7 +117,7 @@ void MainUILayer::initReadyBalls(){
         std::string ballPlist=GlobalUtil::Instance()->getPlistByBallType(readyballsVec[i]);
         Point point=Point(readyArea->getPositionX()+readyArea->getContentSize().width-i*38-38/2,readyArea->getPositionY()+38/2);        
         tag="readyBall";
-        UIManager::Instance()->addPopLayer(ballPlist,this,1,point.x,point.y,tag);
+        UIManager::Instance()->addPopLayer(ballPlist,this,0,point.x,point.y,tag);
     }
     UIManager::Instance()->openPopLayers(0.1);
 }
@@ -125,18 +125,18 @@ void MainUILayer::initReadyBalls(){
 void MainUILayer::initCreateBalls(){
     std::vector<int> creatVec=chessData->getCreateBallsVec();//新放入棋盘小球数据
     for(int j=0;j<creatVec.size();j++){
-        
-        if(chessData->getCurrEmptyNum()<1){
-            //游戏结束；
-            return;
-        }
-        
+                
         std::string ballPlist=GlobalUtil::Instance()->getPlistByBallType(creatVec[j]);
         PosVO* posVO=chessData->getRandomEmptyPosVO();
         BallVO* ballVO=new BallVO(creatVec[j]);
         posVO->ballVO=ballVO;
         posVO->isBall=true;
-        UIManager::Instance()->addPopLayer(ballPlist,chess,1,posVO->point.x,posVO->point.y,"",posVO->ballVO);//添加datavo
+        UIManager::Instance()->addPopLayer(ballPlist,chess,0,posVO->point.x,posVO->point.y,"",posVO->ballVO);//添加datavo
+        
+        if(chessData->getCurrEmptyNum()<1){
+            //游戏结束；
+            break;
+        }
         
     }
     UIManager::Instance()->openPopLayers(0.1);    

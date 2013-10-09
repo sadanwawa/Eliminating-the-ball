@@ -25,7 +25,7 @@ struct PosVO{
     BallVO* ballVO=NULL;    
 };
 
-class ChessDataVO :public Object{
+class ChessDataVO :public BaseDataVO{
 public:
     ChessDataVO(int lin,int row,float gra);
     virtual ~ChessDataVO();

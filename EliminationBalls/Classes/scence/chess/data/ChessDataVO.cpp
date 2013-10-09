@@ -19,9 +19,9 @@ ChessDataVO::ChessDataVO(int lin,int row,float gra){
     //小球池子
     _BallsTypeVec={1,2,3,4,5,6,7,8,9};
     //备选区小球个数
-    _readyNum=3;
+    _readyNum=5;
     //每次生成小球个数
-    _createNum=2;    
+    _createNum=3;
     _readyBallsVec.clear();
     _createBallsVec.clear();
     
