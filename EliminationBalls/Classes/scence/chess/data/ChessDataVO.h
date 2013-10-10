@@ -36,6 +36,9 @@ public:
     inline float getHeight(){return _row*_gra;};    
     inline float getLineWidth(){return _lineWidth;};
     
+    inline int getCurrSelectId(){return _selectId;};
+    inline void setCurrSelectId(int mid){_selectId=mid;};
+    
     Color4B getBorderColor(){return _borderColor;};
         
     std::vector<PosVO*> getPosVoVec(){return _PosVOVec;};
@@ -53,6 +56,10 @@ public:
     void updataPosVO(PosVO*vo,int ballType);//更新位置数据
     
     inline int getCurrEmptyNum(){return _currEmptyNum;};//当前空节点数
+    
+    //根据touch取得当前位置数据
+    PosVO* getPosVOByTouch(Node* node,cocos2d::Touch *pTouch);
+    
         
 private:
     
@@ -96,6 +103,10 @@ private:
     int _createNum;//每次生成小球个数
     
     void initReadyBalls();//初始化备选区小球类型
+    
+    int _selectId;//当前选中小球编号
+    
+    
 
 };
 

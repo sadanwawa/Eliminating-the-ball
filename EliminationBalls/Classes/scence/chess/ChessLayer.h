@@ -14,6 +14,7 @@
 #include "BaseLayer.h"
 #include "ChessBoardLayer.h"
 #include "data/ChessDataVO.h"
+#include "BallLayer.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -35,8 +36,13 @@ public:
     
     Node* getChessNode(){return chessBalls;};
     Node* getChessEffect(){return chessEffect;};
+    ChessDataVO* getDataVO(){return _chessDataVO;};    
     //
     void createNewBalls();
+    
+    
+       
+    
     
 private:
     

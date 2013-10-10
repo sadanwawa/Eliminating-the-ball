@@ -11,16 +11,20 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 #include "BaseDataVO.h"
+#include "GlobalUtil.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
 
 class BallVO :public BaseDataVO{
 public:
-    BallVO(int type){
+    BallVO(int type,int mid=0,std::string plist=""){
         _state=0;
         _select=false;
         _type=type;
+        _mid=mid;
+        _plist=plist;//GlobalUtil::Instance()->getPlistByBallType(type);
+        
     };
     virtual ~BallVO(){
        
@@ -37,13 +41,27 @@ public:
         return _select;
     }
     
+    std::string getPlist(){
+        return _plist;
+    }
+    
+    int getId(){
+        return _mid;
+    }
+
+    
+    
 private:    
     int _type;//小球类型
     
+    int _mid;//小球编号
+    
     int _state;//小球当前状态；0在准备区  1在棋盘区
     
-    bool _select;
-          
+    bool _select;//是否选中
+    
+    std::string _plist;//小球plist
+    
 };
 
 

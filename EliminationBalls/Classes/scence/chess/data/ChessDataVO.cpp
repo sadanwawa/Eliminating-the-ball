@@ -11,6 +11,7 @@ ChessDataVO::ChessDataVO(int lin,int row,float gra){
     _lin=lin;//行
     _row=row;//列
     _gra=gra;
+    _selectId=-1;
     
     //棋盘线宽
     _lineWidth=3.0f;
@@ -147,6 +148,20 @@ PosVO* ChessDataVO::getPosVOByIndex(int index){
     }
     return targetVO;
 }
+
+//根据touch取得当前位置数据
+PosVO* ChessDataVO::getPosVOByTouch(Node* node,cocos2d::Touch *pTouch){
+    int len=_PosVOVec.size();
+    Point point =node->convertTouchToNodeSpace(pTouch);//当前触摸点相对node的位置
+    for(int i=0;i<len;i++){        
+        PosVO* posvo=_PosVOVec[i];
+        if(posvo->point.x+_gra/2>=point.x&&posvo->point.x-_gra/2<=point.x&&posvo->point.y-_gra/2<=point.y&&posvo->point.y+_gra/2>=point.y){
+            return _PosVOVec[i];            
+        }        
+    }    
+    return NULL;
+}
+
 
 void ChessDataVO::updataPosVO(PosVO*vo,int ballType){//更新位置数据
 

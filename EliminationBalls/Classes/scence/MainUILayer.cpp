@@ -9,7 +9,9 @@
 #include "MainUILayer.h"
 #include "ChessLayer.h"
 #include "GlobalUtil.h"
+#include "TouchUtil.h"
 #include "DataFormatUtil.h"
+#include "StaticConstant.h"
 
 MainUILayer::MainUILayer()
 :txt_hisScorces(NULL),
@@ -43,8 +45,8 @@ bool MainUILayer::init(){
 void MainUILayer::onEnter(){
     BaseLayer::onEnter();    
     //this->setTouchMode(Touch::DispatchMode::ONE_BY_ONE);//ALL_AT_ONCE
-    //this->setTouchEnabled(true);
-    //Director::getInstance()->getTouchDispatcher()->addTargetedDelegate(this,0,true);
+    this->setTouchEnabled(true);
+    Director::getInstance()->getTouchDispatcher()->addTargetedDelegate(this,0,true);
 }
 void MainUILayer::onExit(){
     BaseLayer::onExit();    
@@ -102,7 +104,7 @@ void MainUILayer::clearReadyBalls(){//清除备选区小球
     std::string tag="";
     for(int i=0;i<len;i++){
         std::string ballPlist=GlobalUtil::Instance()->getPlistByBallType(readyVec[i]);
-        tag="readyBall";
+        tag=POP_TAG::tag_readyball;
         UIManager::Instance()->removeLayerByType(ballPlist,tag);
     }
 
@@ -114,12 +116,11 @@ void MainUILayer::initReadyBalls(){
     std::string tag="";
     for(int i=0;i<len;i++){
         std::string ballPlist=GlobalUtil::Instance()->getPlistByBallType(readyballsVec[i]);
-        Point point=Point(readyArea->getPositionX()+readyArea->getContentSize().width-i*38-38/2,readyArea->getPositionY()+38/2);        
-        tag="readyBall";
-        
+        Point point=Point(readyArea->getContentSize().width-i*38-38/2,38/2);        
+        tag=POP_TAG::tag_readyball;        
         BallVO* ballVO=new BallVO(readyballsVec[i]);
         ballVO->setState(0);
-        UIManager::Instance()->addPopLayer(ballPlist,this,0,point.x,point.y,tag,ballVO);
+        UIManager::Instance()->addPopLayer(ballPlist,readyArea,0,point.x,point.y,tag,ballVO);
     }
     UIManager::Instance()->openPopLayers(0.1);
 }
@@ -130,11 +131,13 @@ void MainUILayer::initCreateBalls(){
                 
         std::string ballPlist=GlobalUtil::Instance()->getPlistByBallType(creatVec[j]);
         PosVO* posVO=chessData->getRandomEmptyPosVO();
-        BallVO* ballVO=new BallVO(creatVec[j]);
+        BallVO* ballVO=new BallVO(creatVec[j],posVO->mId,ballPlist);
         ballVO->setState(1);
         posVO->ballVO=ballVO;
         posVO->isBall=true;
-        UIManager::Instance()->addPopLayer(ballPlist,chess->getChessNode(),0,posVO->point.x,posVO->point.y,"",posVO->ballVO);//添加datavo
+        
+        std::string tag=POP_TAG::tag_chessball+DataFormatUtil::toString(posVO->mId);
+        UIManager::Instance()->addPopLayer(ballPlist,chess->getChessNode(),0,posVO->point.x,posVO->point.y,tag,posVO->ballVO);//添加datavo
         
         if(chessData->getCurrEmptyNum()<1){
             //游戏结束；
@@ -149,7 +152,9 @@ bool MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
     //判断自定义触摸逻辑  如果找到目标并不再继续响应 return true;
     if(BaseLayer::ccTouchBegan(pTouch, pEvent)){
         //表示点击到当前对象
-        return true;
+        if(TouchUtil::Instance()->touchNode(chess, pTouch)){
+            return chess->ccTouchBegan(pTouch, pEvent);
+        }        
     }
     //return true;
     
@@ -166,5 +171,9 @@ void MainUILayer::updataUI(BaseDataVO* datavo){
     
     //初始化随机小球
     initReadyBalls();//初始化备选区小球
+    
+    
+    
+    
 }
 

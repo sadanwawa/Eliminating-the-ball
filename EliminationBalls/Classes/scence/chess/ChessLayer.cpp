@@ -7,6 +7,8 @@
 //
 
 #include "ChessLayer.h"
+#include "StaticConstant.h"
+#include "DataFormatUtil.h"
 
 ChessLayer::ChessLayer()
 {    
@@ -52,10 +54,7 @@ void ChessLayer::onEnter(){
         chessEffect=Node::create();
         this->addChild(chessEffect);
     }
-    
-    //初始化棋盘节点数据
-    
-    
+    this->setTouchEnabled(true);  
 }
 
 void ChessLayer::onExit(){
@@ -63,10 +62,21 @@ void ChessLayer::onExit(){
    
 }
 
-bool ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){   
+bool ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
     //判断自定义触摸逻辑  如果找到目标并不再继续响应 return true;
     if(BaseLayer::ccTouchBegan(pTouch, pEvent)){
         //表示点击到当前对象
+        //根据pTouch取得当前位置数据；
+        PosVO* posvo=_chessDataVO->getPosVOByTouch(chessBalls, pTouch);
+        if(posvo->isBall){//有球
+               //更新小球
+            std::string tag=POP_TAG::tag_chessball+DataFormatUtil::toString(posvo->mId);
+            BallLayer* ball=dynamic_cast<BallLayer*>(UIManager::Instance()->getLayerByType(posvo->ballVO->getPlist(),tag));
+            return ball->ccTouchBegan(pTouch, pEvent);
+        }else{
+            
+        }
+        
         return true;
     }
     //return true;

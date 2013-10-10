@@ -19,9 +19,9 @@ namespace STC {
 }
 
 namespace POP_TAG {
-    
-    
-    
+    static const std::string tag_readyball="readyball";//准备区小球
+    static const std::string tag_chessball="chessball_";//棋盘小球    
+    static const std::string tag_selectball="sellectballeff";//选中小球特效    
 }
 
 

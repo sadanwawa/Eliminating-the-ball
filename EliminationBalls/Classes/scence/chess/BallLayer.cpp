@@ -10,6 +10,7 @@
 #include "ChessLayer.h"
 #include "GlobalUtil.h"
 #include "ParticaleEffect.h"
+#include "StaticConstant.h"
 
 BallLayer::BallLayer()
 {
@@ -60,7 +61,69 @@ void BallLayer::onNodeLoaded(cocos2d::Node * node, cocos2d::extension::NodeLoade
 bool BallLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){   
     //判断自定义触摸逻辑  如果找到目标并不再继续响应 return true;
     if(BaseLayer::ccTouchBegan(pTouch, pEvent)){
+             
+        
         //表示点击到当前对象
+        if(getDataVO()->getState()==1){
+            //添加选中效果
+            ChessLayer* layer=dynamic_cast<ChessLayer*>(this->getParent()->getParent());
+            ChessDataVO* chessdata=layer->getDataVO();
+            int selectId=chessdata->getCurrSelectId();
+            if(selectId!=-1){//有选中
+                if(selectId!=getDataVO()->getId()){
+                    chessdata->setCurrSelectId(getDataVO()->getId());
+                    getDataVO()->setSelect(true);
+                    
+                    std::string tag=POP_TAG::tag_selectball;
+                    ParticaleEffect* node=dynamic_cast<ParticaleEffect*>(UIManager::Instance()->getLayerByType(CCBI::eff_selectball,tag));
+                    node->setPosition(this->getPosition());
+                    node->resetSystem();                      
+                    return true;
+                }                
+            }            
+            
+            if(!getDataVO()->getSelect()){
+                chessdata->setCurrSelectId(getDataVO()->getId());
+                getDataVO()->setSelect(true);
+                
+                std::string tag=POP_TAG::tag_selectball;
+                ParticaleEffect* node=dynamic_cast<ParticaleEffect*>(UIManager::Instance()->getLayerByType(CCBI::eff_selectball,tag));
+                if(node){                    
+                    node->setPosition(this->getPosition());
+                    node->resetSystem();
+                    return true;
+                }                                
+                layer->getChessEffect();//特效添加目标
+                UIManager::Instance()->addPopLayer(CCBI::eff_selectball,layer->getChessEffect(),0,this->getPositionX(),this->getPositionY()+5,tag);
+                UIManager::Instance()->openPopLayers();
+                
+                node=dynamic_cast<ParticaleEffect*>(UIManager::Instance()->getLayerByType(CCBI::eff_selectball,tag));
+                node->setScale(0.7);
+                
+            }else{
+                chessdata->setCurrSelectId(-1);
+                getDataVO()->setSelect(false);
+                //取消选中效果
+                std::string tag=POP_TAG::tag_selectball;
+                ParticaleEffect* node=dynamic_cast<ParticaleEffect*>(UIManager::Instance()->getLayerByType(CCBI::eff_selectball,tag));
+                node->stopSystem();
+                
+                
+                //            node->runAction(Sequence::create(
+                //                                             DelayTime::create(0.5f),
+                //                                             CCCallFunc::create(this, callfunc_selector(BallLayer::clearSelectEffect)),
+                //                                             NULL
+                //                                             ));            
+                
+            }
+        }
+
+        
+        
+        
+        
+        
+        
         return true;
     }
     //return true;
@@ -74,41 +137,7 @@ void BallLayer::updataUI(BaseDataVO* datavo){
 }
 
 void BallLayer::onClickSelect(cocos2d::Object * sender, Control::EventType pControlEvent){   
-    if(getDataVO()->getState()==1){
-        if(!getDataVO()->getSelect()){
-            getDataVO()->setSelect(true);
-            
-            std::string tag="sellectballeff";
-            ParticaleEffect* node=dynamic_cast<ParticaleEffect*>(UIManager::Instance()->getLayerByType(CCBI::eff_selectball,tag));            
-            if(node){
-                node->resetSystem();
-                return;
-            } 
-            
-            //添加选中效果
-            ChessLayer* layer=dynamic_cast<ChessLayer*>(this->getParent()->getParent());
-            layer->getChessEffect();//特效添加目标            
-            UIManager::Instance()->addPopLayer(CCBI::eff_selectball,layer->getChessEffect(),0,this->getPositionX(),this->getPositionY()+5,tag);
-            UIManager::Instance()->openPopLayers();
-            
-            node=dynamic_cast<ParticaleEffect*>(UIManager::Instance()->getLayerByType(CCBI::eff_selectball,tag));
-            node->setScale(0.7);
-            
-        }else{
-            getDataVO()->setSelect(false);
-            //取消选中效果
-            std::string tag="sellectballeff";
-            ParticaleEffect* node=dynamic_cast<ParticaleEffect*>(UIManager::Instance()->getLayerByType(CCBI::eff_selectball,tag));         
-            node->stopSystem();
-                        
-//            node->runAction(Sequence::create(
-//                                             DelayTime::create(0.5f),
-//                                             CCCallFunc::create(this, callfunc_selector(BallLayer::clearSelectEffect)),
-//                                             NULL
-//                                             ));            
-     
-        }
-    }
+    
 }
 
 void BallLayer::clearSelectEffect(){

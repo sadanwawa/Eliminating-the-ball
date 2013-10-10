@@ -1032,7 +1032,7 @@
 				<key>displayName</key>
 				<string>CCNode</string>
 				<key>memberVarAssignmentName</key>
-				<string>node</string>
+				<string>readyArea</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -1044,8 +1044,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>102</real>
-							<real>2</real>
+							<real>179</real>
+							<real>283</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -1056,8 +1056,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>279</real>
-							<real>279</real>
+							<real>100</real>
+							<real>36</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -1105,7 +1105,7 @@
 				<key>displayName</key>
 				<string>CCNode</string>
 				<key>memberVarAssignmentName</key>
-				<string>readyArea</string>
+				<string>node</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -1117,8 +1117,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>179</real>
-							<real>283</real>
+							<real>102</real>
+							<real>2</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -1129,8 +1129,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>100</real>
-							<real>36</real>
+							<real>279</real>
+							<real>279</real>
 							<integer>0</integer>
 						</array>
 					</dict>
