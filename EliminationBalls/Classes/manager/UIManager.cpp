@@ -32,7 +32,7 @@ bool UIManager::initialize()//注册所有弹窗
     }    
    ccNodeLoaderLibrary->registerNodeLoader("MainUILayer", MainUILayerLoader::loader());    
    ccNodeLoaderLibrary->registerNodeLoader("BallLayer", BallLayerLoader::loader());
-    ccNodeLoaderLibrary->registerNodeLoader("ParticaleEffect", ParticaleEffectLoader::loader());
+   ccNodeLoaderLibrary->registerNodeLoader("ParticaleEffect", ParticaleEffectLoader::loader());
     
     
     return true;
@@ -76,9 +76,15 @@ void UIManager::addPopLayer(std::string fileName,Node* parent,int ease,float x,f
         popdata->pop=pNode;
         BaseLayer* layer=dynamic_cast<BaseLayer*>(node);
         BaseNode* node=dynamic_cast<BaseNode*>(node);
+        BaseParticale* particale=dynamic_cast<BaseParticale*>(node);
+        BaseSprite* sprite=dynamic_cast<BaseSprite*>(node);
         
         if(layer){
             popdata->layer=layer;
+        }else if(particale){
+            popdata->particale=particale;
+        }else if(sprite){
+            popdata->sprite=sprite;
         }else{
             popdata->node=node;
         }
@@ -157,12 +163,19 @@ void UIManager::openPopLayers(float Ddelay){//同时显示多个弹窗；（弹�
     for(int i=0;i<popVec.size();i++){
         //更新当前pop   updataUI()
         BaseLayer* layer=dynamic_cast<BaseLayer*>(popVec[i]);
-        BaseNode* node=dynamic_cast<BaseNode*>(popVec[i]);
+        BaseNode* node=dynamic_cast<BaseNode*>(popVec[i]);        
+        BaseParticale* particale=dynamic_cast<BaseParticale*>(popVec[i]);
+        BaseSprite* sprite=dynamic_cast<BaseSprite*>(popVec[i]);
+        
         if(layer){
             layer->updataUI(voVec[i]);
-        }else{
+        }else if(node){
             node->updataUI(voVec[i]);
-        }        
+        }else if(particale){
+            
+        }else if(sprite){
+            
+        }
     }    
 }
 

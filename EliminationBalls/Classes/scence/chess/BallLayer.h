@@ -51,7 +51,8 @@ public:
 private:    
 
     BaseDataVO* _datavo;
-    
+    //清除选中效果
+    void clearSelectEffect();
     
 };
 

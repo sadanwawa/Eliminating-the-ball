@@ -11,7 +11,7 @@
 
 /* Forward declaration. */
 class CCBReader;
-class ParticaleEffectLoader : public cocos2d::extension::NodeLoader {
+class ParticaleEffectLoader : public cocos2d::extension::ParticleSystemQuadLoader {
 public:
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(ParticaleEffectLoader, loader);    
 protected:

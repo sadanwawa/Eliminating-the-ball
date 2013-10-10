@@ -35,7 +35,6 @@
 		69020E0F17F67F8B006BDA07 /* ui_test-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0217F67F8B006BDA07 /* ui_test-hd.pvr.ccz */; };
 		69020E1017F67F8B006BDA07 /* ui_test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0317F67F8B006BDA07 /* ui_test.plist */; };
 		69020E1117F67F8B006BDA07 /* ui_test.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0417F67F8B006BDA07 /* ui_test.pvr.ccz */; };
-		6924ED9017F91E12006F27E1 /* GlobalUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6924ED8E17F91E12006F27E1 /* GlobalUtil.cpp */; };
 		6924ED9E17F9557A006F27E1 /* BaseNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6924ED9C17F9557A006F27E1 /* BaseNode.cpp */; };
 		6950509517F535B500EA8280 /* ChessBoardLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509317F535B500EA8280 /* ChessBoardLayer.cpp */; };
 		6950509817F54EC300EA8280 /* ChessLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509617F54EC300EA8280 /* ChessLayer.cpp */; };
@@ -58,7 +57,10 @@
 		69CEB42C17F4173A0088CBDE /* ui_help.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69CEB42B17F417390088CBDE /* ui_help.ccbi */; };
 		69DF60C218050EF6005C1C22 /* DataFormatUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69DF60C018050EF6005C1C22 /* DataFormatUtil.cpp */; };
 		69DF60D018056262005C1C22 /* TouchUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69DF60CE18056262005C1C22 /* TouchUtil.cpp */; };
-		69F59F15180624530056250B /* ParticaleEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69F59F12180624530056250B /* ParticaleEffect.cpp */; };
+		69DF60D618064CF5005C1C22 /* BaseParticale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69DF60D218064CF5005C1C22 /* BaseParticale.cpp */; };
+		69DF60D718064CF5005C1C22 /* BaseSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69DF60D418064CF5005C1C22 /* BaseSprite.cpp */; };
+		69DF60E7180652EF005C1C22 /* ParticaleEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69DF60E4180652EF005C1C22 /* ParticaleEffect.cpp */; };
+		69DF60EC18065E8F005C1C22 /* GlobalUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69DF60E918065E8F005C1C22 /* GlobalUtil.cpp */; };
 		69F59F22180628BE0056250B /* eff_selectball.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69F59F21180628BE0056250B /* eff_selectball.ccbi */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -241,8 +243,6 @@
 		69020E0217F67F8B006BDA07 /* ui_test-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ui_test-hd.pvr.ccz"; sourceTree = "<group>"; };
 		69020E0317F67F8B006BDA07 /* ui_test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ui_test.plist; sourceTree = "<group>"; };
 		69020E0417F67F8B006BDA07 /* ui_test.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_test.pvr.ccz; sourceTree = "<group>"; };
-		6924ED8E17F91E12006F27E1 /* GlobalUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GlobalUtil.cpp; sourceTree = "<group>"; };
-		6924ED8F17F91E12006F27E1 /* GlobalUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalUtil.h; sourceTree = "<group>"; };
 		6924ED9C17F9557A006F27E1 /* BaseNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseNode.cpp; sourceTree = "<group>"; };
 		6924ED9D17F9557A006F27E1 /* BaseNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNode.h; sourceTree = "<group>"; };
 		6950509317F535B500EA8280 /* ChessBoardLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChessBoardLayer.cpp; sourceTree = "<group>"; };
@@ -283,9 +283,16 @@
 		69DF60C118050EF6005C1C22 /* DataFormatUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormatUtil.h; sourceTree = "<group>"; };
 		69DF60CE18056262005C1C22 /* TouchUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TouchUtil.cpp; sourceTree = "<group>"; };
 		69DF60CF18056262005C1C22 /* TouchUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchUtil.h; sourceTree = "<group>"; };
-		69F59F12180624530056250B /* ParticaleEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticaleEffect.cpp; sourceTree = "<group>"; };
-		69F59F13180624530056250B /* ParticaleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticaleEffect.h; sourceTree = "<group>"; };
-		69F59F14180624530056250B /* ParticaleEffectLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticaleEffectLoader.h; sourceTree = "<group>"; };
+		69DF60D218064CF5005C1C22 /* BaseParticale.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseParticale.cpp; sourceTree = "<group>"; };
+		69DF60D318064CF5005C1C22 /* BaseParticale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseParticale.h; sourceTree = "<group>"; };
+		69DF60D418064CF5005C1C22 /* BaseSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseSprite.cpp; sourceTree = "<group>"; };
+		69DF60D518064CF5005C1C22 /* BaseSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSprite.h; sourceTree = "<group>"; };
+		69DF60E4180652EF005C1C22 /* ParticaleEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticaleEffect.cpp; sourceTree = "<group>"; };
+		69DF60E5180652EF005C1C22 /* ParticaleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticaleEffect.h; sourceTree = "<group>"; };
+		69DF60E6180652EF005C1C22 /* ParticaleEffectLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticaleEffectLoader.h; sourceTree = "<group>"; };
+		69DF60E918065E8F005C1C22 /* GlobalUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GlobalUtil.cpp; sourceTree = "<group>"; };
+		69DF60EA18065E8F005C1C22 /* GlobalUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalUtil.h; sourceTree = "<group>"; };
+		69DF60EB18065E8F005C1C22 /* StaticConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticConstant.h; sourceTree = "<group>"; };
 		69F59F21180628BE0056250B /* eff_selectball.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = eff_selectball.ccbi; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -346,6 +353,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				69DF60E818065E8E005C1C22 /* common */,
 				6924ED8D17F91E12006F27E1 /* utils */,
 				69CEB42617F406750088CBDE /* scence */,
 				69CEB3F217F2F1A60088CBDE /* MainScene.cpp */,
@@ -424,8 +432,6 @@
 				69DF60CF18056262005C1C22 /* TouchUtil.h */,
 				69DF60C018050EF6005C1C22 /* DataFormatUtil.cpp */,
 				69DF60C118050EF6005C1C22 /* DataFormatUtil.h */,
-				6924ED8E17F91E12006F27E1 /* GlobalUtil.cpp */,
-				6924ED8F17F91E12006F27E1 /* GlobalUtil.h */,
 			);
 			name = utils;
 			path = ../Classes/utils;
@@ -459,7 +465,10 @@
 		69CEB3D717F2EF380088CBDE /* core */ = {
 			isa = PBXGroup;
 			children = (
-				69F59F11180624530056250B /* effect */,
+				69DF60D218064CF5005C1C22 /* BaseParticale.cpp */,
+				69DF60D318064CF5005C1C22 /* BaseParticale.h */,
+				69DF60D418064CF5005C1C22 /* BaseSprite.cpp */,
+				69DF60D518064CF5005C1C22 /* BaseSprite.h */,
 				6924ED9C17F9557A006F27E1 /* BaseNode.cpp */,
 				6924ED9D17F9557A006F27E1 /* BaseNode.h */,
 				69CEB3D817F2EF380088CBDE /* BaseDataVO.h */,
@@ -509,6 +518,7 @@
 		69CEB42617F406750088CBDE /* scence */ = {
 			isa = PBXGroup;
 			children = (
+				69DF60E3180652EF005C1C22 /* effect */,
 				6950508417F532ED00EA8280 /* chess */,
 				69CEB42717F406750088CBDE /* MainUILayer.cpp */,
 				69CEB42817F406750088CBDE /* MainUILayer.h */,
@@ -518,14 +528,25 @@
 			path = ../Classes/scence;
 			sourceTree = "<group>";
 		};
-		69F59F11180624530056250B /* effect */ = {
+		69DF60E3180652EF005C1C22 /* effect */ = {
 			isa = PBXGroup;
 			children = (
-				69F59F12180624530056250B /* ParticaleEffect.cpp */,
-				69F59F13180624530056250B /* ParticaleEffect.h */,
-				69F59F14180624530056250B /* ParticaleEffectLoader.h */,
+				69DF60E4180652EF005C1C22 /* ParticaleEffect.cpp */,
+				69DF60E5180652EF005C1C22 /* ParticaleEffect.h */,
+				69DF60E6180652EF005C1C22 /* ParticaleEffectLoader.h */,
 			);
 			path = effect;
+			sourceTree = "<group>";
+		};
+		69DF60E818065E8E005C1C22 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				69DF60E918065E8F005C1C22 /* GlobalUtil.cpp */,
+				69DF60EA18065E8F005C1C22 /* GlobalUtil.h */,
+				69DF60EB18065E8F005C1C22 /* StaticConstant.h */,
+			);
+			name = common;
+			path = ../Classes/common;
 			sourceTree = "<group>";
 		};
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
@@ -784,12 +805,14 @@
 				6950509517F535B500EA8280 /* ChessBoardLayer.cpp in Sources */,
 				6950509817F54EC300EA8280 /* ChessLayer.cpp in Sources */,
 				6950509D17F5897600EA8280 /* ChessDataVO.cpp in Sources */,
-				6924ED9017F91E12006F27E1 /* GlobalUtil.cpp in Sources */,
 				6924ED9E17F9557A006F27E1 /* BaseNode.cpp in Sources */,
 				69ACFE2317F9CC1F004A365C /* BallLayer.cpp in Sources */,
 				69DF60C218050EF6005C1C22 /* DataFormatUtil.cpp in Sources */,
 				69DF60D018056262005C1C22 /* TouchUtil.cpp in Sources */,
-				69F59F15180624530056250B /* ParticaleEffect.cpp in Sources */,
+				69DF60D618064CF5005C1C22 /* BaseParticale.cpp in Sources */,
+				69DF60D718064CF5005C1C22 /* BaseSprite.cpp in Sources */,
+				69DF60E7180652EF005C1C22 /* ParticaleEffect.cpp in Sources */,
+				69DF60EC18065E8F005C1C22 /* GlobalUtil.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

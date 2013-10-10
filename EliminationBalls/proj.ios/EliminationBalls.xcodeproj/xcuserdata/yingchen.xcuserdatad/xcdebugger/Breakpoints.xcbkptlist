@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/manager/UIManager.cpp"
-         timestampString = "403057020.961436"
+         timestampString = "403067279.908048"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "162"
-         endingLineNumber = "162"
+         startingLineNumber = "171"
+         endingLineNumber = "171"
          landmarkName = "UIManager::openPopLayers(float Ddelay)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/manager/UIManager.cpp"
-         timestampString = "403057020.961436"
+         timestampString = "403067279.908048"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "160"
-         endingLineNumber = "160"
+         startingLineNumber = "166"
+         endingLineNumber = "166"
          landmarkName = "UIManager::openPopLayers(float Ddelay)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/manager/UIManager.cpp"
-         timestampString = "403057020.961436"
+         timestampString = "403067279.908048"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "210"
-         endingLineNumber = "210"
+         startingLineNumber = "223"
+         endingLineNumber = "223"
          landmarkName = "UIManager::removeLayerByType(std::string fileName,std::string tag)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/manager/UIManager.cpp"
-         timestampString = "403057020.961436"
+         timestampString = "403067279.908048"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "197"
-         endingLineNumber = "197"
+         startingLineNumber = "210"
+         endingLineNumber = "210"
          landmarkName = "UIManager::removeLayersByType(std::string fileName)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/chess/BallLayer.cpp"
-         timestampString = "403009061.665257"
+         timestampString = "403069387.151587"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "61"
-         endingLineNumber = "61"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
          landmarkName = "BallLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/chess/BallLayer.cpp"
-         timestampString = "403009061.665257"
+         timestampString = "403069387.151587"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "63"
-         endingLineNumber = "63"
+         startingLineNumber = "64"
+         endingLineNumber = "64"
          landmarkName = "BallLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -246,20 +246,18 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "76"
-         endingLineNumber = "76"
-         landmarkName = "BallLayer::onClickSelect(cocos2d::Object * sender, Control::EventType pControlEvent)"
-         landmarkType = "5">
+         endingLineNumber = "76">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/chess/BallLayer.cpp"
-         timestampString = "403024525.888154"
+         timestampString = "403069387.151587"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
+         startingLineNumber = "73"
+         endingLineNumber = "73"
          landmarkName = "BallLayer::updataUI(BaseDataVO* datavo)"
          landmarkType = "5">
       </FileBreakpoint>

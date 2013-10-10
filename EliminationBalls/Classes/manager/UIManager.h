@@ -22,6 +22,8 @@
 #include <string>
 #include "../core/BaseScene.h"
 #include "../core/BaseLayer.h"
+#include "../core/BaseSprite.h"
+#include "../core/BaseParticale.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -82,6 +84,8 @@ public:
         pop=NULL;
         layer=NULL;
         node=NULL;
+        sprite=NULL;
+        particale=NULL;
         
         dataVo=NULL;
         parent=NULL;
@@ -99,6 +103,8 @@ public:
     
     BaseLayer* layer;
     BaseNode* node;
+    BaseSprite* sprite;
+    BaseParticale* particale;
     
     Node* parent;
     

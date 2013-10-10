@@ -9,6 +9,7 @@
 #include "BallLayer.h"
 #include "ChessLayer.h"
 #include "GlobalUtil.h"
+#include "ParticaleEffect.h"
 
 BallLayer::BallLayer()
 {
@@ -72,30 +73,45 @@ void BallLayer::updataUI(BaseDataVO* datavo){
     _datavo=datavo;
 }
 
-void BallLayer::onClickSelect(cocos2d::Object * sender, Control::EventType pControlEvent){
-    
+void BallLayer::onClickSelect(cocos2d::Object * sender, Control::EventType pControlEvent){   
     if(getDataVO()->getState()==1){
         if(!getDataVO()->getSelect()){
             getDataVO()->setSelect(true);
+            
+            std::string tag="sellectballeff";
+            ParticaleEffect* node=dynamic_cast<ParticaleEffect*>(UIManager::Instance()->getLayerByType(CCBI::eff_selectball,tag));            
+            if(node){
+                node->resetSystem();
+                return;
+            } 
+            
             //添加选中效果
             ChessLayer* layer=dynamic_cast<ChessLayer*>(this->getParent()->getParent());
-            layer->getChessEffect();//特效添加目标
-            std::string tag="sellectballeff";
-            UIManager::Instance()->addPopLayer(CCBI::eff_selectball,layer->getChessEffect(),0,this->getPositionX(),this->getPositionY(),tag);
+            layer->getChessEffect();//特效添加目标            
+            UIManager::Instance()->addPopLayer(CCBI::eff_selectball,layer->getChessEffect(),0,this->getPositionX(),this->getPositionY()+5,tag);
             UIManager::Instance()->openPopLayers();
+            
+            node=dynamic_cast<ParticaleEffect*>(UIManager::Instance()->getLayerByType(CCBI::eff_selectball,tag));
+            node->setScale(0.7);
             
         }else{
             getDataVO()->setSelect(false);
             //取消选中效果
-            //添加选中效果
-            ChessLayer* layer=dynamic_cast<ChessLayer*>(this->getParent()->getParent());
-            layer->getChessEffect();//特效移除目标
-            
             std::string tag="sellectballeff";
-            UIManager::Instance()->removeLayerByType(CCBI::eff_selectball,tag);
-
+            ParticaleEffect* node=dynamic_cast<ParticaleEffect*>(UIManager::Instance()->getLayerByType(CCBI::eff_selectball,tag));         
+            node->stopSystem();
+                        
+//            node->runAction(Sequence::create(
+//                                             DelayTime::create(0.5f),
+//                                             CCCallFunc::create(this, callfunc_selector(BallLayer::clearSelectEffect)),
+//                                             NULL
+//                                             ));            
+     
         }
     }
 }
 
-
+void BallLayer::clearSelectEffect(){
+        std::string tag="sellectballeff";
+        UIManager::Instance()->removeLayerByType(CCBI::eff_selectball,tag);
+}
