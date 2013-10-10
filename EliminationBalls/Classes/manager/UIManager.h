@@ -41,6 +41,8 @@ namespace CCBI {
     static const std::string ui_ball_fuchsia="ui_ball_fuchsia.ccbi";
     static const std::string ui_ball_black="ui_ball_black.ccbi";
     
+    static const std::string eff_selectball="eff_selectball.ccbi";
+    
 }
 
 //弹窗类型

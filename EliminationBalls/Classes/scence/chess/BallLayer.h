@@ -35,7 +35,7 @@ public:
     virtual void onEnter();
     virtual void onExit();    
     virtual bool init();
-    void updataUI(BallVO* datavo=NULL);
+    void updataUI(BaseDataVO* datavo=NULL);
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(Object * pTarget, const char * pSelectorName);
     virtual Control::Handler onResolveCCBCCControlSelector(Object * pTarget, const char * pSelectorName);
     virtual bool onAssignCCBMemberVariable(Object * pTarget, const char * pMemberVariableName, cocos2d::Node * node);
@@ -45,11 +45,12 @@ public:
     virtual void onNodeLoaded(cocos2d::Node * node, NodeLoader * nodeLoader);
     
     virtual bool ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);   
-        
+    
+    BallVO* getDataVO(){return dynamic_cast<BallVO*>(_datavo);};
+    
 private:    
 
-        
-    
+    BaseDataVO* _datavo;
     
     
 };

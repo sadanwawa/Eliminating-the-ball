@@ -58,6 +58,8 @@
 		69CEB42C17F4173A0088CBDE /* ui_help.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69CEB42B17F417390088CBDE /* ui_help.ccbi */; };
 		69DF60C218050EF6005C1C22 /* DataFormatUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69DF60C018050EF6005C1C22 /* DataFormatUtil.cpp */; };
 		69DF60D018056262005C1C22 /* TouchUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69DF60CE18056262005C1C22 /* TouchUtil.cpp */; };
+		69F59F15180624530056250B /* ParticaleEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69F59F12180624530056250B /* ParticaleEffect.cpp */; };
+		69F59F22180628BE0056250B /* eff_selectball.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69F59F21180628BE0056250B /* eff_selectball.ccbi */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -281,6 +283,10 @@
 		69DF60C118050EF6005C1C22 /* DataFormatUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormatUtil.h; sourceTree = "<group>"; };
 		69DF60CE18056262005C1C22 /* TouchUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TouchUtil.cpp; sourceTree = "<group>"; };
 		69DF60CF18056262005C1C22 /* TouchUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchUtil.h; sourceTree = "<group>"; };
+		69F59F12180624530056250B /* ParticaleEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticaleEffect.cpp; sourceTree = "<group>"; };
+		69F59F13180624530056250B /* ParticaleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticaleEffect.h; sourceTree = "<group>"; };
+		69F59F14180624530056250B /* ParticaleEffectLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticaleEffectLoader.h; sourceTree = "<group>"; };
+		69F59F21180628BE0056250B /* eff_selectball.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = eff_selectball.ccbi; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -453,6 +459,7 @@
 		69CEB3D717F2EF380088CBDE /* core */ = {
 			isa = PBXGroup;
 			children = (
+				69F59F11180624530056250B /* effect */,
 				6924ED9C17F9557A006F27E1 /* BaseNode.cpp */,
 				6924ED9D17F9557A006F27E1 /* BaseNode.h */,
 				69CEB3D817F2EF380088CBDE /* BaseDataVO.h */,
@@ -511,9 +518,20 @@
 			path = ../Classes/scence;
 			sourceTree = "<group>";
 		};
+		69F59F11180624530056250B /* effect */ = {
+			isa = PBXGroup;
+			children = (
+				69F59F12180624530056250B /* ParticaleEffect.cpp */,
+				69F59F13180624530056250B /* ParticaleEffect.h */,
+				69F59F14180624530056250B /* ParticaleEffectLoader.h */,
+			);
+			path = effect;
+			sourceTree = "<group>";
+		};
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				69F59F21180628BE0056250B /* eff_selectball.ccbi */,
 				69020DF817F67F8B006BDA07 /* ui_ball_black.ccbi */,
 				69020DF917F67F8B006BDA07 /* ui_ball_blue.ccbi */,
 				69020DFA17F67F8B006BDA07 /* ui_ball_brown.ccbi */,
@@ -742,6 +760,7 @@
 				69020E0F17F67F8B006BDA07 /* ui_test-hd.pvr.ccz in Resources */,
 				69020E1017F67F8B006BDA07 /* ui_test.plist in Resources */,
 				69020E1117F67F8B006BDA07 /* ui_test.pvr.ccz in Resources */,
+				69F59F22180628BE0056250B /* eff_selectball.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,6 +789,7 @@
 				69ACFE2317F9CC1F004A365C /* BallLayer.cpp in Sources */,
 				69DF60C218050EF6005C1C22 /* DataFormatUtil.cpp in Sources */,
 				69DF60D018056262005C1C22 /* TouchUtil.cpp in Sources */,
+				69F59F15180624530056250B /* ParticaleEffect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

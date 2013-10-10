@@ -6,6 +6,7 @@
 #include "UIManager.h"
 #include "MainUILayerLoader.h"
 #include "BallLayerLoader.h"
+#include "ParticaleEffectLoader.h"
 
 // singleton instance pointer
 template<> UIManager* Singleton<UIManager>::msSingleton	= NULL;
@@ -30,7 +31,10 @@ bool UIManager::initialize()//注册所有弹窗
         ccNodeLoaderLibrary->retain();
     }    
    ccNodeLoaderLibrary->registerNodeLoader("MainUILayer", MainUILayerLoader::loader());    
-   ccNodeLoaderLibrary->registerNodeLoader("BallLayer", BallLayerLoader::loader());   
+   ccNodeLoaderLibrary->registerNodeLoader("BallLayer", BallLayerLoader::loader());
+    ccNodeLoaderLibrary->registerNodeLoader("ParticaleEffect", ParticaleEffectLoader::loader());
+    
+    
     return true;
 }
 

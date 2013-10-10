@@ -203,7 +203,7 @@ void TouchUtil::removeChildDelegate(Node* node){
 void TouchUtil::setLayerTouchOrder(Layer* node,int order){
     if(!node->isVisible())return;
     currTouchOrder-=1;
-    Director::getInstance()->getTouchDispatcher()->addAndResetTouchDelegate(node,currTouchOrder);
+    //Director::getInstance()->getTouchDispatcher()->addAndResetTouchDelegate(node,currTouchOrder);
     node->setTouchPriority(currTouchOrder);
     std::cout<<"~~~当前触摸级别:"<<currTouchOrder<<std::endl;
 }

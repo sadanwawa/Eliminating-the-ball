@@ -116,7 +116,10 @@ void MainUILayer::initReadyBalls(){
         std::string ballPlist=GlobalUtil::Instance()->getPlistByBallType(readyballsVec[i]);
         Point point=Point(readyArea->getPositionX()+readyArea->getContentSize().width-i*38-38/2,readyArea->getPositionY()+38/2);        
         tag="readyBall";
-        UIManager::Instance()->addPopLayer(ballPlist,this,0,point.x,point.y,tag);
+        
+        BallVO* ballVO=new BallVO(readyballsVec[i]);
+        ballVO->setState(0);
+        UIManager::Instance()->addPopLayer(ballPlist,this,0,point.x,point.y,tag,ballVO);
     }
     UIManager::Instance()->openPopLayers(0.1);
 }
@@ -128,9 +131,10 @@ void MainUILayer::initCreateBalls(){
         std::string ballPlist=GlobalUtil::Instance()->getPlistByBallType(creatVec[j]);
         PosVO* posVO=chessData->getRandomEmptyPosVO();
         BallVO* ballVO=new BallVO(creatVec[j]);
+        ballVO->setState(1);
         posVO->ballVO=ballVO;
         posVO->isBall=true;
-        UIManager::Instance()->addPopLayer(ballPlist,chess,0,posVO->point.x,posVO->point.y,"",posVO->ballVO);//添加datavo
+        UIManager::Instance()->addPopLayer(ballPlist,chess->getChessNode(),0,posVO->point.x,posVO->point.y,"",posVO->ballVO);//添加datavo
         
         if(chessData->getCurrEmptyNum()<1){
             //游戏结束；

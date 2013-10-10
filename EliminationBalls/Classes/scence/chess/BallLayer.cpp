@@ -68,13 +68,34 @@ bool BallLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
     return false;
 }
 
-void BallLayer::updataUI(BallVO* datavo){
-    
+void BallLayer::updataUI(BaseDataVO* datavo){
+    _datavo=datavo;
 }
 
 void BallLayer::onClickSelect(cocos2d::Object * sender, Control::EventType pControlEvent){
     
-    
+    if(getDataVO()->getState()==1){
+        if(!getDataVO()->getSelect()){
+            getDataVO()->setSelect(true);
+            //添加选中效果
+            ChessLayer* layer=dynamic_cast<ChessLayer*>(this->getParent()->getParent());
+            layer->getChessEffect();//特效添加目标
+            std::string tag="sellectballeff";
+            UIManager::Instance()->addPopLayer(CCBI::eff_selectball,layer->getChessEffect(),0,this->getPositionX(),this->getPositionY(),tag);
+            UIManager::Instance()->openPopLayers();
+            
+        }else{
+            getDataVO()->setSelect(false);
+            //取消选中效果
+            //添加选中效果
+            ChessLayer* layer=dynamic_cast<ChessLayer*>(this->getParent()->getParent());
+            layer->getChessEffect();//特效移除目标
+            
+            std::string tag="sellectballeff";
+            UIManager::Instance()->removeLayerByType(CCBI::eff_selectball,tag);
+
+        }
+    }
 }
 
 
