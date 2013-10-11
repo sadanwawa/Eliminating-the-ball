@@ -36,6 +36,7 @@
 		69020E1017F67F8B006BDA07 /* ui_test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0317F67F8B006BDA07 /* ui_test.plist */; };
 		69020E1117F67F8B006BDA07 /* ui_test.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0417F67F8B006BDA07 /* ui_test.pvr.ccz */; };
 		6924ED9E17F9557A006F27E1 /* BaseNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6924ED9C17F9557A006F27E1 /* BaseNode.cpp */; };
+		6941C5C81807C95900DCC0D0 /* AStarModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6941C5C61807C95900DCC0D0 /* AStarModel.cpp */; };
 		6950509517F535B500EA8280 /* ChessBoardLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509317F535B500EA8280 /* ChessBoardLayer.cpp */; };
 		6950509817F54EC300EA8280 /* ChessLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509617F54EC300EA8280 /* ChessLayer.cpp */; };
 		6950509D17F5897600EA8280 /* ChessDataVO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509C17F5897600EA8280 /* ChessDataVO.cpp */; };
@@ -245,6 +246,9 @@
 		69020E0417F67F8B006BDA07 /* ui_test.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_test.pvr.ccz; sourceTree = "<group>"; };
 		6924ED9C17F9557A006F27E1 /* BaseNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseNode.cpp; sourceTree = "<group>"; };
 		6924ED9D17F9557A006F27E1 /* BaseNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNode.h; sourceTree = "<group>"; };
+		6941C5C61807C95900DCC0D0 /* AStarModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AStarModel.cpp; sourceTree = "<group>"; };
+		6941C5C71807C95900DCC0D0 /* AStarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStarModel.h; sourceTree = "<group>"; };
+		6941C5C91807D36000DCC0D0 /* StepVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepVO.h; sourceTree = "<group>"; };
 		6950509317F535B500EA8280 /* ChessBoardLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChessBoardLayer.cpp; sourceTree = "<group>"; };
 		6950509417F535B500EA8280 /* ChessBoardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessBoardLayer.h; sourceTree = "<group>"; };
 		6950509617F54EC300EA8280 /* ChessLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChessLayer.cpp; sourceTree = "<group>"; };
@@ -353,6 +357,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6941C5BA1807AA8F00DCC0D0 /* astar */,
 				69DF60E818065E8E005C1C22 /* common */,
 				6924ED8D17F91E12006F27E1 /* utils */,
 				69CEB42617F406750088CBDE /* scence */,
@@ -435,6 +440,17 @@
 			);
 			name = utils;
 			path = ../Classes/utils;
+			sourceTree = "<group>";
+		};
+		6941C5BA1807AA8F00DCC0D0 /* astar */ = {
+			isa = PBXGroup;
+			children = (
+				6941C5C91807D36000DCC0D0 /* StepVO.h */,
+				6941C5C61807C95900DCC0D0 /* AStarModel.cpp */,
+				6941C5C71807C95900DCC0D0 /* AStarModel.h */,
+			);
+			name = astar;
+			path = ../Classes/astar;
 			sourceTree = "<group>";
 		};
 		6950508417F532ED00EA8280 /* chess */ = {
@@ -813,6 +829,7 @@
 				69DF60D718064CF5005C1C22 /* BaseSprite.cpp in Sources */,
 				69DF60E7180652EF005C1C22 /* ParticaleEffect.cpp in Sources */,
 				69DF60EC18065E8F005C1C22 /* GlobalUtil.cpp in Sources */,
+				6941C5C81807C95900DCC0D0 /* AStarModel.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

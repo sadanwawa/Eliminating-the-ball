@@ -73,8 +73,18 @@ bool ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
             std::string tag=POP_TAG::tag_chessball+DataFormatUtil::toString(posvo->mId);
             BallLayer* ball=dynamic_cast<BallLayer*>(UIManager::Instance()->getLayerByType(posvo->ballVO->getPlist(),tag));
             return ball->ccTouchBegan(pTouch, pEvent);
-        }else{
-            
+        }else{//当前点击位置为空
+            //有选中小球
+            if(_chessDataVO->getCurrSelectId()!=-1){
+                //搜索最短路径
+                //起始点
+                PosVO* currPosVO =_chessDataVO->getPosVOByIndex(_chessDataVO->getCurrSelectId());
+                Point pointA=currPosVO->point;                
+                //目标点
+                Point pointB=posvo->point;
+                CCLOG("起始点:(%f,%f),目标点:(%f,%f)",pointA.x,pointA.y,pointB.x,pointB.y);
+                
+            }           
         }
         
         return true;
