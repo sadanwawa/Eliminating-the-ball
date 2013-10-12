@@ -27,218 +27,216 @@ void AStarModel::insertInOpenSteps(StepVO* stepVO)
 }
 
 //计算估算值 当前位置  到目标位置
-int AStarModel::computeHScoreFromCoord(Point currPoint,Point targetPoint)
+int AStarModel::computeHScoreFromCoord(GPoint* currPoint,GPoint* targetPoint)
 {	
-    return abs(targetPoint.x-currPoint.x)+fabsf(targetPoint.y-currPoint.x);	
+    return (abs(targetPoint->lin-currPoint->lin)+abs(targetPoint->row-currPoint->row))*10;
 }
 
 int AStarModel::costToMoveFromStep(StepVO* fromStep,StepVO* toStep)
 {
-	return ((fromStep->point.x != toStep->point.x) && (fromStep->point.y!= toStep->point.y)) ? 14 : 10;
+	return ((fromStep->point->lin != toStep->point->lin) && (fromStep->point->row!= toStep->point->row)) ? 14 : 10;
 }
 
 //通过位置(行列)取得当前节点
-StepVO* AStarModel::getStepVOByGPoint(Point pt){
+StepVO* AStarModel::getStepVOByGPoint(GPoint* pt){
     
+    int len=_allStepVOs->count();
+    for(int i=0;i<len;i++){
+        StepVO* step=dynamic_cast<StepVO*>(_allStepVOs->objectAtIndex(i));
+        if(step->point->lin==pt->lin&&step->point->row==pt->row){
+            return step;
+        }        
+    }
     return NULL;
 }
 
-bool AStarModel::checkInArea(Point pt){
-    return  pt.x>=1&&pt.x<=totalRowNum&&pt.y>=1&&pt.y<=totalLineNum;
+bool AStarModel::checkInArea(GPoint* pt){
+    return  pt->lin>=1&&pt->lin<=totalRowNum&&pt->row>=1&&pt->row<=totalLineNum;
 }
 
 Array* AStarModel::getALLNextToWalkableStepVOs(StepVO* stepvo)
 {	
-    Array* arr=Array::create();    
+    Array* arr=Array::create();
+    arr->retain();
     bool t = false;
     bool l = false;
     bool b = false;
     bool r = false;
 	
-    Point pt=stepvo->point;
+    GPoint* pt=stepvo->point;
     
     //Top
-    Point p=Point(pt.x,pt.y+1);
-    if(p.y<=totalLineNum&&stepvo->isWalkAble){
-        arr->addObject(getStepVOByGPoint(p));
+    GPoint* p=new GPoint();
+    p->lin=pt->lin;
+    p->row=pt->row+1;
+    StepVO* vo=getStepVOByGPoint(p);
+    if(p->row<=totalLineNum&&vo->isWalkAble){
+        arr->addObject(vo);
         t=true;
     }
     
     //Left
-    p=Point(pt.x-1,pt.y);
-    if(p.x>=1&&stepvo->isWalkAble){
-        arr->addObject(getStepVOByGPoint(p));
+    
+    p->lin=pt->lin-1;
+    p->row=pt->row;
+    vo=getStepVOByGPoint(p);
+    if(p->lin>=1&&vo->isWalkAble){
+        arr->addObject(vo);
         l=true;
     }
     
     //Bottom
-    p=Point(pt.x,pt.y-1);
-    if(p.y>=1&&stepvo->isWalkAble){
-        arr->addObject(getStepVOByGPoint(p));
+    p->lin=pt->lin;
+    p->row=pt->row-1;
+    vo=getStepVOByGPoint(p);
+    if(p->row>=1&&vo->isWalkAble){
+        arr->addObject(vo);
         b=true;
     }
 	
 	// Right
-    p=Point(pt.x+1,pt.y);
-    if(p.x<=totalRowNum&&stepvo->isWalkAble){
-        arr->addObject(getStepVOByGPoint(p));
+    p->lin=pt->lin+1;
+    p->row=pt->row;
+    vo=getStepVOByGPoint(p);
+    if(p->lin<=totalRowNum&&vo->isWalkAble){
+        arr->addObject(vo);
         r=true;
     }
     
-    // Top Left
-    p=Point(pt.x-1,pt.y+1);
-    if(t && l && checkInArea(p)&&stepvo->isWalkAble){
-        arr->addObject(getStepVOByGPoint(p));       
-    }
-    
-	//  Bottom Left
-    p=Point(pt.x-1,pt.y-1);
-    if(b && l && checkInArea(p)&&stepvo->isWalkAble){
-        arr->addObject(getStepVOByGPoint(p));
-    }
-	
-	// Top Right
-	p=Point(pt.x+1,pt.y+1);
-    if(t && r && checkInArea(p)&&stepvo->isWalkAble){
-        arr->addObject(getStepVOByGPoint(p));
-    }
-		
-	// Bottom Right
-    p=Point(pt.x+1,pt.y-1);
-    if(b && r && checkInArea(p)&&stepvo->isWalkAble){
-        arr->addObject(getStepVOByGPoint(p));
-    }
-         
+//    // Top Left
+//    p->lin=pt->lin-1;
+//    p->row=pt->row+1;
+//    vo=getStepVOByGPoint(p);
+//    if(t && l && checkInArea(p)&&vo->isWalkAble){
+//        arr->addObject(vo);
+//    }
+//    
+//	//  Bottom Left
+//    p->lin=pt->lin-1;
+//    p->row=pt->row-1;
+//    vo=getStepVOByGPoint(p);
+//    if(b && l && checkInArea(p)&&vo->isWalkAble){
+//        arr->addObject(vo);
+//    }
+//	
+//	// Top Right
+//    p->lin=pt->lin+1;
+//    p->row=pt->row+1;
+//    vo=getStepVOByGPoint(p);
+//    if(t && r && checkInArea(p)&&vo->isWalkAble){
+//        arr->addObject(vo);
+//    }
+//		
+//	// Bottom Right
+//    p->lin=pt->lin+1;
+//    p->row=pt->row-1;
+//    vo=getStepVOByGPoint(p);
+//    if(b && r && checkInArea(p)&&vo->isWalkAble){
+//        arr->addObject(vo);
+//    }
+    delete  p;
 	return arr;
 }
 
-
-bool AStarModel::searchPathByPoint(Point pointA,Point pointB){
-
-    _openList=Array::create();
-    _closeList=Array::create();
-    _shortPath="";
-    
-/*
-    // Init shortest path properties
-	self.spOpenSteps = [NSMutableArray array];
-	self.spClosedSteps = [NSMutableArray array];
-	self.shortestPath = nil;
-	
-    
-    
-    
-    
-	// Get current tile coordinate and desired tile coord
-	CGPoint fromTileCoor = [_layer tileCoordForPosition:self.position];
-    CGPoint toTileCoord = [_layer tileCoordForPosition:target];
-	
-	// Check that there is a path to compute ;-)
-	if (CGPointEqualToPoint(fromTileCoor, toTileCoord)) {
-		return;
-	}
-	
-	// Must check that the desired location is walkable
-	// In our case it's really easy, because only wall are unwalkable
-    if ([_layer isWallAtTileCoord:toTileCoord]) {
-        currentPlayedEffect = [[SimpleAudioEngine sharedEngine] playEffect:@"hitWall.wav"];
-		return;
-    }
-	
-	// Start by adding the from position to the open list
-	[self insertInOpenSteps:[[[ShortestPathStep alloc] initWithPosition:fromTileCoor] autorelease]];
-	
+// Go backward from a step (the final one) to reconstruct the shortest computed path
+//从当前节点（目标节点）查找到最短路径
+void AStarModel::constructPath(StepVO* targeVO)
+{		
 	do {
-		// Get the lowest F cost step
-		// Because the list is ordered, the first step is always the one with the lowest F cost
-		ShortestPathStep *currentStep = [self.spOpenSteps objectAtIndex:0];
+        if(targeVO->parent!=NULL){
+            _shortPath->addObject(targeVO);
+        }
+        targeVO=targeVO->parent;       
+	} while (targeVO != NULL); // Until there is not more parent
+	
+	// Call the popStepAndAnimate to initiate the animations
+	//[self popStepAndAnimate];
+}
+
+
+bool AStarModel::searchPathByPoint(GPoint* pointA,GPoint* pointB){
+
+    CCLOG("起始点:(%d,%d),目标点:(%d,%d)",pointA->lin,pointA->row,pointB->lin,pointB->row);
+    _openList=Array::create();
+    _openList->retain();
+    _closeList=Array::create();
+    _closeList->retain();
         
-		// Add the current step to the closed set
-		[self.spClosedSteps addObject:currentStep];
+    _shortPath=Array::create();
+    _shortPath->retain();
+
+    //StepVO* targetStep=getStepVOByGPoint(pointB);
+    //当前节点加入open列表
+    insertInOpenSteps(getStepVOByGPoint(pointA));
+    
+    do{        //_openList[0]总是f最小的那个
+        StepVO* stepvo=dynamic_cast<StepVO*>(_openList->objectAtIndex(0));
+         CCLOG("当前点:(%d,%d)",stepvo->point->lin,stepvo->point->row);
+        //当前节点放入close列表
+        _closeList->addObject(stepvo);
+        //当前节点从open列表移除
+        _openList->removeObjectAtIndex(0);
         
-		// Remove it from the open list
-		// Note that if we wanted to first removing from the open list, care should be taken to the memory
-		[self.spOpenSteps removeObjectAtIndex:0];
-		
-		// If the currentStep is at the desired tile coordinate, we have done
-		if (CGPointEqualToPoint(currentStep.position, toTileCoord)) {
-			[self constructPathAndStartAnimationFromStep:currentStep];
-			self.spOpenSteps = nil; // Set to nil to release unused memory
-			self.spClosedSteps = nil; // Set to nil to release unused memory
-			break;
-		}
-		
-		// Get the adjacent tiles coord of the current step
-		NSArray *adjSteps = [_layer walkableAdjacentTilesCoordForTileCoord:currentStep.position];
-		for (NSValue *v in adjSteps) {
-            
-			ShortestPathStep *step = [[ShortestPathStep alloc] initWithPosition:[v CGPointValue]];
-			
-			// Check if the step isn't already in the closed set
-			if ([self.spClosedSteps containsObject:step]) {
-				[step release]; // Must releasing it to not leaking memory ;-)
-				continue; // Ignore it
-			}
-			
-			// Compute the cost form the current step to that step
-			int moveCost = [self costToMoveFromStep:currentStep toAdjacentStep:step];
+        if((stepvo->point->lin==pointB->lin)&&(stepvo->point->row==pointB->row)){//找到目标点
+            constructPath(stepvo);//逆向检索路径
+            _openList=NULL;
+            _closeList=NULL;
+            break;           
+        }
+        
+        //取得所有相邻可通过节点
+        Array* nextSteps=getALLNextToWalkableStepVOs(stepvo);
+        int len=nextSteps->count();
+        for(int i=0;i<len;i++){
+            StepVO* step=dynamic_cast<StepVO*>(nextSteps->objectAtIndex(i));            
+            // Check if the step isn't already in the closed set
+            //如果在close列表中
+            if(_closeList->containsObject(step)){                
+                continue;
+            }
+            // Compute the cost form the current step to that step
+            //从当前位置移动到相邻位置的花费
+			int moveCost = costToMoveFromStep(stepvo,step);
 			
 			// Check if the step is already in the open list
-			NSUInteger index = [self.spOpenSteps indexOfObject:step];
-			
-			if (index == NSNotFound) { // Not on the open list, so add it
-				
-				// Set the current step as the parent
-				step.parent = currentStep;
-                
-				// The G score is equal to the parent G score + the cost to move from the parent to it
-				step.gScore = currentStep.gScore + moveCost;
-				
-				// Compute the H score which is the estimated movement cost to move from that step to the desired tile coordinate
-				step.hScore = [self computeHScoreFromCoord:step.position toCoord:toTileCoord];
-				
-				// Adding it with the function which is preserving the list ordered by F score
-				[self insertInOpenSteps:step];
-				
-				// Done, now release the step
-				[step release];
-			}
-			else { // Already in the open list
-				
-				[step release]; // Release the freshly created one
-				step = [self.spOpenSteps objectAtIndex:index]; // To retrieve the old one (which has its scores already computed ;-)
-				
-				// Check to see if the G score for that step is lower if we use the current step to get there
-				if ((currentStep.gScore + moveCost) < step.gScore) {
-					
-					// The G score is equal to the parent G score + the cost to move from the parent to it
-					step.gScore = currentStep.gScore + moveCost;
-					
-					// Because the G Score has changed, the F score may have changed too
-					// So to keep the open list ordered we have to remove the step, and re-insert it with
-					// the insert function which is preserving the list ordered by F score
-					
-					// We have to retain it before removing it from the list
-					[step retain];
-					
-					// Now we can removing it from the list without be afraid that it can be released
-					[self.spOpenSteps removeObjectAtIndex:index];
-					
-					// Re-insert it with the function which is preserving the list ordered by F score
-					[self insertInOpenSteps:step];
-					
-					// Now we can release it because the oredered list retain it
-					[step release];
-				}
-			}
-		}
-		
-	} while ([self.spOpenSteps count] > 0);
-	
-	if (self.shortestPath == nil) { // No path found
-		currentPlayedEffect = [[SimpleAudioEngine sharedEngine] playEffect:@"hitWall.wav"];
-	}
-*/        
-    return true;
+            //检测step是否在open表中			
+            //Integer index=_openList->indexOfObject(step);
+            if(!_openList->containsObject(step)){//不在open列表，添加                
+                // Set the current step as the parent
+				step->parent = stepvo;
+                step->valueG = stepvo->valueG+moveCost;                
+                step->valueH=computeHScoreFromCoord(step->point,pointB);
+                insertInOpenSteps(step);				                
+            }else{//在open列表中
+                               
+                if((stepvo->valueG+moveCost)<step->valueG){//新的路径代价比较小
+                    step->valueG=stepvo->valueG+moveCost;                    
+                    //从当前openlist 移除
+                    int index=_openList->indexOfObject(step);//当前位置
+                    _openList->removeObjectAtIndex(index);
+                    //_openList->removeObject(step);
+                    
+                    //插入合适位置
+                    insertInOpenSteps(step);
+                }
+            }
+        }
+        
+        nextSteps->release();        
+        
+    }while (_openList->count()>0);
+    
+    int len=_shortPath->count();
+    
+    if(_shortPath->count()>0){
+        //找到路径
+        for(int i=0;i<len;i++){
+            StepVO* vo=dynamic_cast<StepVO*>(_shortPath->objectAtIndex(i));            
+            CCLOG("当前点:(%d,%d)",vo->point->lin,vo->point->row);
+            
+        }        
+        return true;
+    }    
+    return false;
 }
 

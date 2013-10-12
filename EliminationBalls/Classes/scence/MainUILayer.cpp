@@ -12,6 +12,7 @@
 #include "TouchUtil.h"
 #include "DataFormatUtil.h"
 #include "StaticConstant.h"
+#include "AStarModel.h"
 
 MainUILayer::MainUILayer()
 :txt_hisScorces(NULL),
@@ -172,8 +173,7 @@ void MainUILayer::updataUI(BaseDataVO* datavo){
     //初始化随机小球
     initReadyBalls();//初始化备选区小球
     
-    
-    
+    AStarModel::Instance()->initAStar(9,9);//初始化A*节点数据
     
 }
 

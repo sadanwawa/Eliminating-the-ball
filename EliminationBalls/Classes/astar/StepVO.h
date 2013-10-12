@@ -12,6 +12,7 @@
 #include "cocos-ext.h"
 #include "BaseDataVO.h"
 
+//编号位置
 struct GPoint{
     int lin=0;
     int row=0;
@@ -24,7 +25,7 @@ class StepVO :public BaseDataVO{
 public:
     
     //舞台左下角开始，行列
-    StepVO(Point pt){//pt从1开始
+    StepVO(GPoint* pt){//pt从1开始
         point=pt;
         valueH=0.0f;
         valueG=0.0f;        
@@ -37,11 +38,11 @@ public:
         skewValue=14;//斜向通行值
     };
     virtual ~StepVO(){
-       
+        //delete point;
     };    
     
     //行列位置
-    Point point;
+    GPoint* point;
     //用int主要是为了提高效率；默认每步为10
     int valueH;//估算值
     int valueG;//当前走过步长值
