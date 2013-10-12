@@ -9,6 +9,7 @@
 #include "ChessLayer.h"
 #include "StaticConstant.h"
 #include "DataFormatUtil.h"
+#include "AStarModel.h"
 
 ChessLayer::ChessLayer()
 {    
@@ -84,6 +85,33 @@ bool ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
                 Point pointB=posvo->point;
                 CCLOG("起始点:(%f,%f),目标点:(%f,%f)",pointA.x,pointA.y,pointB.x,pointB.y);
                 
+                //取得A＊所有节点数据并更新=======
+                Array* allsteps=AStarModel::Instance()->getAllStepVOs();
+                CCLOG("leng %d",allsteps->count());
+                
+                std::vector<PosVO*> posVoVec=_chessDataVO->getPosVoVec();
+                int len=posVoVec.size();
+                
+                for(int i=0;i<len;i++){
+                    PosVO* pos=posVoVec[i];
+                    StepVO* step=dynamic_cast<StepVO*>(allsteps->objectAtIndex(i));
+                    step->isWalkAble=!pos->isBall;
+                    step->parent=NULL;
+                }
+                
+                GPoint* gptA=new GPoint();
+                GPoint* gptB=new GPoint();
+                gptA->lin=currPosVO->lin+1;
+                gptA->row=currPosVO->row+1;
+                gptB->lin=posvo->lin+1;
+                gptB->row=posvo->row+1;
+                
+                AStarModel::Instance()->searchPathByPoint(gptA,gptB);
+                
+//                delete gptA;
+//                delete gptB;
+                
+                               
             }           
         }
         

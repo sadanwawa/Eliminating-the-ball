@@ -28,7 +28,7 @@ public:
         _closeList=NULL;
         totalLineNum=0;
         totalRowNum=0;
-        shortPath="";
+        _shortPath=NULL;
         
     };
     ~AStarModel(){
@@ -36,17 +36,36 @@ public:
         
     };    
       
-    //初始化所有位置数据 
-    void initAStar(Array* vec,int lin,int row){
-                
-        
-        
-        _allStepVOs=vec;
+    //初始化所有节点数据 
+    void initAStar(int lin,int row){
+        _allStepVOs=Array::create();
+        _allStepVOs->retain();
+
+        for(int i=1;i<=lin;i++){
+            for(int j=1;j<=row;j++){
+                 GPoint* pt=new GPoint();
+                 pt->lin=i;
+                 pt->row=j;
+                 StepVO* vo=new StepVO(pt);
+                 vo->retain();
+                _allStepVOs->addObject(vo);
+                std::cout<<i<<","<<j<<"/n"<<std::endl;
+            }           
+        }                
         totalLineNum=lin;
         totalRowNum=row;
     }
+        
+    //更新节点状态
+    
+    
+    //取得节点数组
+    Array* getAllStepVOs(){
+        return _allStepVOs;
+    }
+        
     //搜索路径
-    bool searchPathByPoint(Point pointA,Point pointB);
+    bool searchPathByPoint(GPoint* pointA,GPoint* pointB);
            
     //地图行 列
     int totalLineNum;
@@ -60,27 +79,28 @@ private:
 //    std::vector<StepVO*> _openList;    
 //    std::vector<StepVO*> _closeList;
     
-//Array 仅cocos支持 但可直接插入操作
+//Array 仅cocos支持 但可直接插入操作  元素必须为Object  所有要手动retain  release
     Array* _allStepVOs;//所有位置列表
     Array* _openList;    
     Array* _closeList;
     
-    std::string _shortPath;
+    Array* _shortPath;
     
     void insertInOpenSteps(StepVO* stepVO);//open中插入当前step
     
-    int computeHScoreFromCoord(Point currPoint,Point targetPoint);//计算估算距离
+    int computeHScoreFromCoord(GPoint* currPoint,GPoint* targetPoint);//计算估算距离
     
     int costToMoveFromStep(StepVO* fromStep,StepVO* toStep);
     
     //取得可通行的相邻节点
     Array* getALLNextToWalkableStepVOs(StepVO* stepvo);
     //通过位置(行列)取得当前节点
-    StepVO* getStepVOByGPoint(Point pt);
+    StepVO* getStepVOByGPoint(GPoint* pt);
     //检测pt是否未超出地图区域
-    bool checkInArea(Point pt);
+    bool checkInArea(GPoint* pt);
     
-
+    //从当前节点（目标节点）逆向找到最短路径
+    void constructPath(StepVO* targeVO);
     
     
 };
