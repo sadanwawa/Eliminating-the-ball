@@ -28,6 +28,8 @@ public:
         _closeList=NULL;
         totalLineNum=0;
         totalRowNum=0;
+        shortPath="";
+        
     };
     ~AStarModel(){
         
@@ -63,6 +65,7 @@ private:
     Array* _openList;    
     Array* _closeList;
     
+    std::string _shortPath;
     
     void insertInOpenSteps(StepVO* stepVO);//open中插入当前step
     

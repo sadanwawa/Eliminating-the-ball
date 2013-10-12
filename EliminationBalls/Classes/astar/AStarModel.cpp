@@ -115,6 +115,10 @@ Array* AStarModel::getALLNextToWalkableStepVOs(StepVO* stepvo)
 
 bool AStarModel::searchPathByPoint(Point pointA,Point pointB){
 
+    _openList=Array::create();
+    _closeList=Array::create();
+    _shortPath="";
+    
 /*
     // Init shortest path properties
 	self.spOpenSteps = [NSMutableArray array];
