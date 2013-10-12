@@ -56,7 +56,8 @@ bool AStarModel::checkInArea(GPoint* pt){
 
 Array* AStarModel::getALLNextToWalkableStepVOs(StepVO* stepvo)
 {	
-    Array* arr=Array::create();    
+    Array* arr=Array::create();
+    arr->retain();
     bool t = false;
     bool l = false;
     bool b = false;
@@ -68,9 +69,9 @@ Array* AStarModel::getALLNextToWalkableStepVOs(StepVO* stepvo)
     GPoint* p=new GPoint();
     p->lin=pt->lin;
     p->row=pt->row+1;
-    
-    if(p->row<=totalLineNum&&stepvo->isWalkAble){
-        arr->addObject(getStepVOByGPoint(p));
+    StepVO* vo=getStepVOByGPoint(p);
+    if(p->row<=totalLineNum&&vo->isWalkAble){
+        arr->addObject(vo);
         t=true;
     }
     
@@ -78,53 +79,60 @@ Array* AStarModel::getALLNextToWalkableStepVOs(StepVO* stepvo)
     
     p->lin=pt->lin-1;
     p->row=pt->row;
-    if(p->lin>=1&&stepvo->isWalkAble){
-        arr->addObject(getStepVOByGPoint(p));
+    vo=getStepVOByGPoint(p);
+    if(p->lin>=1&&vo->isWalkAble){
+        arr->addObject(vo);
         l=true;
     }
     
     //Bottom
     p->lin=pt->lin;
     p->row=pt->row-1;
-    if(p->row>=1&&stepvo->isWalkAble){
-        arr->addObject(getStepVOByGPoint(p));
+    vo=getStepVOByGPoint(p);
+    if(p->row>=1&&vo->isWalkAble){
+        arr->addObject(vo);
         b=true;
     }
 	
 	// Right
     p->lin=pt->lin+1;
     p->row=pt->row;
-    if(p->lin<=totalRowNum&&stepvo->isWalkAble){
-        arr->addObject(getStepVOByGPoint(p));
+    vo=getStepVOByGPoint(p);
+    if(p->lin<=totalRowNum&&vo->isWalkAble){
+        arr->addObject(vo);
         r=true;
     }
     
 //    // Top Left
 //    p->lin=pt->lin-1;
 //    p->row=pt->row+1;
-//    if(t && l && checkInArea(p)&&stepvo->isWalkAble){
-//        arr->addObject(getStepVOByGPoint(p));       
+//    vo=getStepVOByGPoint(p);
+//    if(t && l && checkInArea(p)&&vo->isWalkAble){
+//        arr->addObject(vo);
 //    }
 //    
 //	//  Bottom Left
 //    p->lin=pt->lin-1;
 //    p->row=pt->row-1;
-//    if(b && l && checkInArea(p)&&stepvo->isWalkAble){
-//        arr->addObject(getStepVOByGPoint(p));
+//    vo=getStepVOByGPoint(p);
+//    if(b && l && checkInArea(p)&&vo->isWalkAble){
+//        arr->addObject(vo);
 //    }
 //	
 //	// Top Right
 //    p->lin=pt->lin+1;
 //    p->row=pt->row+1;
-//    if(t && r && checkInArea(p)&&stepvo->isWalkAble){
-//        arr->addObject(getStepVOByGPoint(p));
+//    vo=getStepVOByGPoint(p);
+//    if(t && r && checkInArea(p)&&vo->isWalkAble){
+//        arr->addObject(vo);
 //    }
 //		
 //	// Bottom Right
 //    p->lin=pt->lin+1;
 //    p->row=pt->row-1;
-//    if(b && r && checkInArea(p)&&stepvo->isWalkAble){
-//        arr->addObject(getStepVOByGPoint(p));
+//    vo=getStepVOByGPoint(p);
+//    if(b && r && checkInArea(p)&&vo->isWalkAble){
+//        arr->addObject(vo);
 //    }
     delete  p;
 	return arr;
@@ -133,9 +141,7 @@ Array* AStarModel::getALLNextToWalkableStepVOs(StepVO* stepvo)
 // Go backward from a step (the final one) to reconstruct the shortest computed path
 //从当前节点（目标节点）查找到最短路径
 void AStarModel::constructPath(StepVO* targeVO)
-{	
-	_shortPath=Array::create();
-    _shortPath->retain();
+{		
 	do {
         if(targeVO->parent!=NULL){
             _shortPath->addObject(targeVO);
@@ -150,19 +156,22 @@ void AStarModel::constructPath(StepVO* targeVO)
 
 bool AStarModel::searchPathByPoint(GPoint* pointA,GPoint* pointB){
 
+    CCLOG("起始点:(%d,%d),目标点:(%d,%d)",pointA->lin,pointA->row,pointB->lin,pointB->row);
     _openList=Array::create();
     _openList->retain();
     _closeList=Array::create();
     _closeList->retain();
-    _shortPath=NULL;
+        
+    _shortPath=Array::create();
+    _shortPath->retain();
+
     //StepVO* targetStep=getStepVOByGPoint(pointB);
     //当前节点加入open列表
     insertInOpenSteps(getStepVOByGPoint(pointA));
     
-    do{
-        //_openList[0]总是f最小的那个
+    do{        //_openList[0]总是f最小的那个
         StepVO* stepvo=dynamic_cast<StepVO*>(_openList->objectAtIndex(0));
-        
+         CCLOG("当前点:(%d,%d)",stepvo->point->lin,stepvo->point->row);
         //当前节点放入close列表
         _closeList->addObject(stepvo);
         //当前节点从open列表移除
@@ -213,6 +222,7 @@ bool AStarModel::searchPathByPoint(GPoint* pointA,GPoint* pointB){
             }
         }
         
+        nextSteps->release();        
         
     }while (_openList->count()>0);
     
