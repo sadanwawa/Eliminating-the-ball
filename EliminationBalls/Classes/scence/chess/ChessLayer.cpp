@@ -108,10 +108,14 @@ bool ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
                 
                 AStarModel::Instance()->searchPathByPoint(gptA,gptB);
                 
-//                delete gptA;
-//                delete gptB;
+                delete gptA;
+                delete gptB;
                 
-                               
+                std::string tag=POP_TAG::tag_chessball+DataFormatUtil::toString(posvo->mId);
+                BallLayer* ball=dynamic_cast<BallLayer*>(UIManager::Instance()->getLayerByType(posvo->ballVO->getPlist(),tag));
+
+                Array* paths=AStarModel::Instance()->getMovePath();
+                
             }           
         }
         
@@ -127,5 +131,8 @@ void ChessLayer::createNewBalls(){
     
 }
 
-
+void ChessLayer::moveBallToTarget(BallLayer*ball, Array*paths){
+    
+    //ball->
+}
 

@@ -171,7 +171,7 @@ bool AStarModel::searchPathByPoint(GPoint* pointA,GPoint* pointB){
     
     do{        //_openList[0]总是f最小的那个
         StepVO* stepvo=dynamic_cast<StepVO*>(_openList->objectAtIndex(0));
-         CCLOG("当前点:(%d,%d)",stepvo->point->lin,stepvo->point->row);
+        //CCLOG("当前点:(%d,%d)",stepvo->point->lin,stepvo->point->row);
         //当前节点放入close列表
         _closeList->addObject(stepvo);
         //当前节点从open列表移除
@@ -229,11 +229,11 @@ bool AStarModel::searchPathByPoint(GPoint* pointA,GPoint* pointB){
     int len=_shortPath->count();
     
     if(_shortPath->count()>0){
+        _shortPath->reverseObjects();//倒序
         //找到路径
         for(int i=0;i<len;i++){
-            StepVO* vo=dynamic_cast<StepVO*>(_shortPath->objectAtIndex(i));            
+            StepVO* vo=dynamic_cast<StepVO*>(_shortPath->objectAtIndex(i));
             CCLOG("当前点:(%d,%d)",vo->point->lin,vo->point->row);
-            
         }        
         return true;
     }    

@@ -51,6 +51,12 @@ private:
     Node* chessEffect;//特效层    
     ChessDataVO* _chessDataVO;//当前数据
     
+    /*
+     小球移动到目标位置
+     移动对象，移动路径
+     */
+    void moveBallToTarget(BallLayer*ball, Array*paths);
+    
    
     
 };

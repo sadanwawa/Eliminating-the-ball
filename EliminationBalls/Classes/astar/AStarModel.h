@@ -29,13 +29,10 @@ public:
         totalLineNum=0;
         totalRowNum=0;
         _shortPath=NULL;
-        
     };
     ~AStarModel(){
         
-        
     };    
-      
     //初始化所有节点数据 
     void initAStar(int lin,int row){
         _allStepVOs=Array::create();
@@ -55,18 +52,17 @@ public:
         totalLineNum=lin;
         totalRowNum=row;
     }
-        
     //更新节点状态
-    
     
     //取得节点数组
     Array* getAllStepVOs(){
         return _allStepVOs;
     }
-        
     //搜索路径
     bool searchPathByPoint(GPoint* pointA,GPoint* pointB);
-           
+    //取得路径
+    Array* getMovePath(){return _shortPath;};
+    
     //地图行 列
     int totalLineNum;
     int totalRowNum;
@@ -98,7 +94,6 @@ private:
     StepVO* getStepVOByGPoint(GPoint* pt);
     //检测pt是否未超出地图区域
     bool checkInArea(GPoint* pt);
-    
     //从当前节点（目标节点）逆向找到最短路径
     void constructPath(StepVO* targeVO);
     
