@@ -233,6 +233,20 @@ void UIManager::removeLayerByType(std::string fileName,std::string tag){
     }    
 }
 
+void UIManager::replaceLayerTag(std::string fileName,std::string tag,std::string tagTo){
+    
+    for(std::vector<PopData*>::iterator it=_currPops.begin(); it!=_currPops.end(); )
+    {
+        if((* it)->popType==fileName&&((* it)->tag==tag)){
+            (* it)->tag=tagTo;
+            break;
+        }else{
+            ++it;
+        }
+    }   
+}
+
+
 Node* UIManager::getLayerByType(std::string fileName,std::string tag){
     
     Node* node=NULL;

@@ -200,5 +200,15 @@ namespace DataFormatUtil{
                 
         return rStr;
     }
-    
+    unsigned time_idf;
+    int getRandom(int total){
+        time_idf++;
+        std::cout<<"时间"<<time(NULL)+time_idf<<std::endl;        
+        srand((unsigned)(time(NULL)+time_idf));
+        float ran=CCRANDOM_0_1();
+        std::cout<<"随机数"<<ran<<std::endl;
+        int index=(CCRANDOM_0_1()*total);
+        return index;
+    }
+        
 }

@@ -48,6 +48,11 @@ public:
     
     BallVO* getDataVO(){return dynamic_cast<BallVO*>(_datavo);};
     
+    //更新编号
+    void updataMid(int mid){        
+        getDataVO()->setId(mid);
+    };
+    
 private:    
 
     BaseDataVO* _datavo;

@@ -1,0 +1,91 @@
+{\rtf1\ansi\ansicpg936\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fnil\fcharset134 STHeitiSC-Light;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red63\green110\blue116;\red38\green71\blue75;\red28\green0\blue207;
+\red100\green56\blue32;\red0\green116\blue0;\red170\green13\blue145;\red196\green26\blue22;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 \'bf\'f2\'bc\'dc\'d6\'d0\'d2\'aa\'c9\'e8\'bc\'c6\'c1\'bd\'d6\'d6\'bc\'c6\'ca\'b1\'c6\'f7\'a3\'ba\
+1.\'bc\'c6\'ca\'b1\'d3\'c3\'a3\'ba\'d2\'aa\'b0\'b4\'d5\'d5\'b9\'cc\'b6\'a8\'b5\'c4\'c6\'b5\'c2\'ca\'b2\'a5\'b7\'c5 \'a3\'bb\
+2.\'bf\'d8\'d6\'c6\'b2\'a5\'b7\'c5\'cb\'d9\'b6\'c8\'d3\'c3\'a3\'ba\'b2\'bb\'c4\'dc\'d3\'b0\'cf\'ec\'b5\'bd\'bc\'c6\'ca\'b1\'d3\'c3\'bc\'c6\'ca\'b1\'c6\'f7\'a3\'bb\
+\
+\'b9\'d8\'d3\'da\'b1\'e4\'cb\'d9\'bf\'d8\'d6\'c6\
+\
+\pard\tx560\pardeftab560\pardirnatural
+
+\fs22 \cf0 \CocoaLigature0 \'a3\'af\'a3\'af\'b0\'b4\'d5\'d50.3\'b1\'b6\'b5\'c4\'cb\'d9\'c2\'ca\'b2\'a5\'b7\'c5ccscaleBy
+\f1 \
+\pard\tx560\pardeftab560\pardirnatural
+\cf2 CCEaseOut\cf0 * scale1 = \cf2 CCEaseOut\cf0 ::\cf3 create\cf0 (\cf2 CCScaleBy\cf0 ::\cf3 create\cf0 (\cf4 4\cf0 , \cf4 8.0f\cf0 ), \cf4 0.3\cf0 );\
+\
+\
+//
+\f0 \'d1\'d3\'ca\'b1\'d6\'b4\'d0\'d0\'d2\'bb\'b4\'ce\'bb\'d8\'b5\'f7
+\f1 \
+\cf3 scheduleOnce\cf0 (\cf5 schedule_selector\cf0 (\cf2 TextureAsync\cf0 ::\cf3 loadImages\cf0 ), \cf4 1.0f\cf0 );\
+\
+\
+\pard\tx560\pardeftab560\pardirnatural
+
+\f0 \cf0 //\'bf\'d8\'d6\'c6\'d5\'fb\'cc\'e5\'b2\'a5\'b7\'c5\'cb\'d9\'b6\'c8\
+\pard\tx560\pardeftab560\pardirnatural
+
+\f1 \cf2 Director\cf0 ::\cf3 sharedDirector\cf0 ()->\cf3 getScheduler\cf0 ()->\cf3 setTimeScale\cf0 (\cf4 0.5\cf0 );
+\f0 \
+\pard\tx560\pardeftab560\pardirnatural
+
+\f1 \cf0 \
+\
+
+\f0 \'b7\'d6\'b1\'f0\'bf\'d8\'d6\'c6\'cb\'d9\'b6\'c8\'b2\'a5\'b7\'c5\'a3\'ba\
+\
+\
+\pard\tx560\pardeftab560\pardirnatural
+
+\f1 \cf2 CCScheduler\cf0  *defaultScheduler = \cf2 CCDirector\cf0 ::\cf3 sharedDirector\cf0 ()->\cf3 getScheduler\cf0 ();
+\f0 \
+\pard\tx560\pardeftab560\pardirnatural
+
+\f1 \cf6 \
+//Create a new scheduler, and link it to the main scheduler\cf2 \
+CCScheduler
+\f0 *
+\f1  sched1\cf0  = \cf7 new\cf0  \cf2 CCScheduler\cf0 ();\
+defaultScheduler->\cf3 scheduleUpdateForTarget\cf0 (\cf2 sched1\cf0 , \cf4 0\cf0 , \cf7 false\cf0 );\
+\
+\cf6 //Create a new ActionManager, and link it to the new scheudler\cf0 \
+\pard\tx560\pardeftab560\pardirnatural
+\cf2 actionManager1\cf0  = \cf7 new\cf0  \cf2 CCActionManager\cf0 ();\
+\cf2 sched1\cf0 ->\cf3 scheduleUpdateForTarget\cf0 (\cf2 actionManager1\cf0 , \cf4 0\cf0 , \cf7 false\cf0 );\
+\cf2 sched1\cf0 ->\cf3 setTimeScale\cf0 (0.5);\
+\
+defaultScheduler->\cf3 unscheduleAllSelectorsForTarget\cf0 (\cf2 sched1\cf0 );\
+\cf2 sched1\cf0 ->\cf3 release\cf0 ();\
+\cf2 actionManager1\cf0 ->\cf3 release\cf0 ();\
+\
+//
+\f0 \'bc\'c6\'ca\'b1\'c6\'f7\'bc\'b0\'cf\'fa\'bb\'d9 \'a3\'a8\'d2\'bb\'b8\'f6\'b6\'d4\'cf\'f3\'bf\'c9\'d2\'d4\'cc\'ed\'bc\'d3\'b6\'e0\'b8\'f6\'bc\'c6\'ca\'b1\'c6\'f7\'a3\'a9
+\f1 \
+\cf3 schedule\cf0 (\cf5 schedule_selector\cf0 (\cf2 SchedulerAutoremove\cf0 ::\cf3 autoremove\cf0 ), \cf4 0.5f\cf0 );\
+\cf3 schedule\cf0 (\cf5 schedule_selector\cf0 (\cf2 SchedulerAutoremove\cf0 ::\cf3 tick\cf0 ), \cf4 0.5f\cf0 );\
+\
+\pard\tx560\pardeftab560\pardirnatural
+\cf7 void\cf0  \cf2 SchedulerAutoremove\cf0 ::autoremove(\cf7 float\cf0  dt)\
+\{\
+    \cf2 accum\cf0  += dt;\
+    \cf5 CCLOG\cf0 (\cf8 "Time: %f"\cf0 , \cf2 accum\cf0 );\
+    \cf7 if\cf0 ( \cf2 accum\cf0  > \cf4 3\cf0  )\
+    \{\
+        \cf3 unschedule\cf0 (\cf5 schedule_selector\cf0 (\cf2 SchedulerAutoremove\cf0 ::\cf3 autoremove\cf0 ));\
+        \cf5 CCLOG\cf0 (\cf8 "scheduler removed"\cf0 );\
+    \}\
+\}\
+\
+\
+\pard\tx560\pardeftab560\pardirnatural
+
+\f0 \cf0 //\'d4\'dd\'cd\'a3\'d2\'c0\'b8\'bd\'d3\'da\'c4\'b3\'d2\'bb\'b6\'d4\'cf\'f3\'b5\'c4\'bc\'c6\'ca\'b1\'c6\'f7
+\f1 \
+\pard\tx560\pardeftab560\pardirnatural
+\cf2 CCDirector\cf0 ::\cf3 sharedDirector\cf0 ()->\cf3 getScheduler\cf0 ()->\cf3 pauseTarget\cf0 (\cf7 this\cf0 );\
+}
