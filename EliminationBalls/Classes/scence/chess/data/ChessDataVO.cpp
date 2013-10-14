@@ -126,8 +126,11 @@ void ChessDataVO::createNewBalls(){
     for(int i=_createNum;i<len;i++){//平移数据
         _readyBallsVec[i-_createNum]=_readyBallsVec[i];       
     }
-    for(int i=_createNum;i<len;i++){//生成新数据
+    //随机 种子 设置
+    for(int i=_createNum-1;i<len;i++){//生成新数据
         _readyBallsVec[i]=getColorByRandom();
+        std::cout<<"新入："<<_readyBallsVec[i]<<std::endl;
+        
     }
 }
 

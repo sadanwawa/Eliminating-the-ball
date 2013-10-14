@@ -167,7 +167,7 @@ void ChessLayer::createNewBalls(){
 }
 
 void ChessLayer::moveBallToTarget(BallLayer*ball, std::vector<Point> paths){
-    
+    Director::sharedDirector()->getScheduler()->setTimeScale(3);
     int len=paths.size();
     float delayt=0;
     float stept=0.4;
@@ -230,8 +230,14 @@ void ChessLayer::updataBallToTarget(){
     
     //移除事件
     this->unschedule(schedule_selector(ChessLayer::onTimeMoveWithBall));
+    _moveFire->setPosition(_moveBall->getPosition());
     _moveBall->stopAllActions();
     _isMoving=false;
+    
+    //去掉选中特效
+    _chessDataVO->setCurrSelectId(-1);
+    _moveBall->getDataVO()->setSelect(false);
+    _moveFire->stopSystem();
 }
 
 void ChessLayer::onTimeMoveWithBall(float time){    
