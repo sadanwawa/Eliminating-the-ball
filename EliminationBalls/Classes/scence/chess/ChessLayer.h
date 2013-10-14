@@ -15,6 +15,7 @@
 #include "ChessBoardLayer.h"
 #include "data/ChessDataVO.h"
 #include "BallLayer.h"
+#include "ParticaleEffect.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -52,13 +53,26 @@ private:
     Node* chessEffect;//特效层    
     ChessDataVO* _chessDataVO;//当前数据
     
+    //起始位置
+    PosVO* _startPosVO;
+    //目标位置；
+    PosVO* _targetPosVO;
+    //移动小球
+    BallLayer* _moveBall;
+    //移动🔥
+    ParticaleEffect* _moveFire;
+    //小球是否正在移动
+    bool _isMoving;
+    
     /*
      小球移动到目标位置
      移动对象，移动路径
      */
     void moveBallToTarget(BallLayer*ball, std::vector<Point> paths);
     
-   
+    void updataBallToTarget();
+    
+    void onTimeMoveWithBall(float time);
     
 };
 

@@ -144,6 +144,9 @@ public:
     
     Node* getLayerByType(std::string fileName,std::string tag="pop1");
     
+    //重命名tag
+    void replaceLayerTag(std::string fileName,std::string tag,std::string tagTo);
+    
     
 protected:
        

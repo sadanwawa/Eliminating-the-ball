@@ -6,6 +6,8 @@
 //
 
 #include "ChessDataVO.h"
+#include <time.h>
+#include "DataFormatUtil.h"
 
 ChessDataVO::ChessDataVO(int lin,int row,float gra){
     _lin=lin;//行
@@ -73,14 +75,14 @@ void ChessDataVO::addPosVO(int i){
 
 //随机一种小球
 int ChessDataVO::getColorByRandom(){
-    int len=_BallsTypeVec.size();
-    int index=(CCRANDOM_0_1()*len);    
+    int len=_BallsTypeVec.size();    
+    int index=DataFormatUtil::getRandom(len);
     return _BallsTypeVec[index];
 }
 
 //随机一个位置
-int ChessDataVO::getPosByRandom(){
-    int targetIndex=(CCRANDOM_0_1()*_currEmptyNum);//目标索引(第几个空位置)    
+int ChessDataVO::getPosByRandom(){        
+    int targetIndex=DataFormatUtil::getRandom(_currEmptyNum);             
     PosVO* targetPos=getEmptyPosVOByIndex(targetIndex);    
     return targetPos->mId;
 }

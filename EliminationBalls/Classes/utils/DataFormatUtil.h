@@ -12,6 +12,9 @@
 #include <vector>
 #include <assert.h>
 
+#include "cocos2d.h"
+#include "cocos-ext.h"
+
 namespace DataFormatUtil {
     
     template <class T>
@@ -72,6 +75,8 @@ namespace DataFormatUtil {
     void strSpaceTrim(char* str);
     
     std::string replaceString(std::string str, char* startChar, char* endChar, char* replaceChars);
+    
+    int getRandom(int total);  
     
 }
 

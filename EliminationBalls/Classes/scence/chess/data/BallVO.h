@@ -45,11 +45,14 @@ public:
         return _plist;
     }
     
+    void setId(int mid){
+        _mid=mid;
+    }
+    
     int getId(){
         return _mid;
     }
-
-    
+   
     
 private:    
     int _type;//小球类型

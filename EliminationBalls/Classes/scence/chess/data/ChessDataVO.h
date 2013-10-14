@@ -22,7 +22,12 @@ struct PosVO{
     int row=0;//列
     Point point=Point(0,0);
     bool isBall=false;//是否有球    
-    BallVO* ballVO=NULL;    
+    BallVO* ballVO=NULL;//当前小球数据
+    
+    //2013－10－14添加
+    //BallLayer* ball=NULL;//当前小球实例
+    
+    
 };
 
 class ChessDataVO :public BaseDataVO{
