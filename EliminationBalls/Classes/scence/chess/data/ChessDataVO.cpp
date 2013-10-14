@@ -162,6 +162,13 @@ PosVO* ChessDataVO::getPosVOByTouch(Node* node,cocos2d::Touch *pTouch){
     return NULL;
 }
 
+//根据行列号 取得位置编号
+int ChessDataVO::getMIdByLinAndRow(int lin,int row){    
+    return  lin*_row+row;
+}
+
+
+
 
 void ChessDataVO::updataPosVO(PosVO*vo,int ballType){//更新位置数据
 

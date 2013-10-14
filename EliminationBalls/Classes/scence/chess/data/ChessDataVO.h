@@ -56,6 +56,8 @@ public:
     void updataPosVO(PosVO*vo,int ballType);//更新位置数据
     
     inline int getCurrEmptyNum(){return _currEmptyNum;};//当前空节点数
+    //根据行列号 取得位置编号
+    int getMIdByLinAndRow(int lin,int row);
     
     //根据touch取得当前位置数据
     PosVO* getPosVOByTouch(Node* node,cocos2d::Touch *pTouch);

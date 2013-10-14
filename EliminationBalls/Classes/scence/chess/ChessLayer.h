@@ -19,6 +19,7 @@
 USING_NS_CC;
 USING_NS_CC_EXT;
 
+class BallLayer;
 class ChessLayer:
 public BaseLayer
 {   
@@ -55,7 +56,7 @@ private:
      小球移动到目标位置
      移动对象，移动路径
      */
-    void moveBallToTarget(BallLayer*ball, Array*paths);
+    void moveBallToTarget(BallLayer*ball, std::vector<Point> paths);
     
    
     

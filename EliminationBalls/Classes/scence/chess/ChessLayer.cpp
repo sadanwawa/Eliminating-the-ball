@@ -85,7 +85,7 @@ bool ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
                 Point pointB=posvo->point;
                 CCLOG("起始点:(%f,%f),目标点:(%f,%f)",pointA.x,pointA.y,pointB.x,pointB.y);
                 
-                //取得A＊所有节点数据并更新=======
+                //1.取得A＊所有节点数据并更新=======
                 Array* allsteps=AStarModel::Instance()->getAllStepVOs();
                 CCLOG("leng %d",allsteps->count());
                 
@@ -98,23 +98,42 @@ bool ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
                     step->isWalkAble=!pos->isBall;
                     step->parent=NULL;
                 }
+                //==========1end
                 
+                //2.根据初始位置、目标位置搜索最短路径
                 GPoint* gptA=new GPoint();
                 GPoint* gptB=new GPoint();
                 gptA->lin=currPosVO->lin+1;
                 gptA->row=currPosVO->row+1;
                 gptB->lin=posvo->lin+1;
-                gptB->row=posvo->row+1;
-                
-                AStarModel::Instance()->searchPathByPoint(gptA,gptB);
-                
+                gptB->row=posvo->row+1;                
+                bool getPath=AStarModel::Instance()->searchPathByPoint(gptA,gptB);
                 delete gptA;
                 delete gptB;
+                //=========2end
                 
-                std::string tag=POP_TAG::tag_chessball+DataFormatUtil::toString(posvo->mId);
-                BallLayer* ball=dynamic_cast<BallLayer*>(UIManager::Instance()->getLayerByType(posvo->ballVO->getPlist(),tag));
-
-                Array* paths=AStarModel::Instance()->getMovePath();
+                if(!getPath){return true;};
+                
+                //3.取得最短路径 并转换为地图坐标                
+                std::vector<Point> pointsVec;
+                pointsVec.clear();
+                Array* paths=AStarModel::Instance()->getMovePath();                    
+                //路径转换为坐标
+                int plen=paths->count();
+                for(int i=0;i<plen;i++){                        
+                    StepVO*vo=dynamic_cast<StepVO*>(paths->objectAtIndex(i));
+                    //取得地图位置编号0,1,2...                        
+                    int mId=_chessDataVO->getMIdByLinAndRow(vo->point->lin-1,vo->point->row-1);                        
+                    PosVO* pvo=_chessDataVO->getPosVOByIndex(mId);                        
+                    pointsVec.push_back(pvo->point);                                              
+                }                              
+                //=========3end
+                
+                //4.根据路径数组移动小球
+                std::string tag=POP_TAG::tag_chessball+DataFormatUtil::toString(currPosVO->mId);
+                BallLayer* ball=dynamic_cast<BallLayer*>(UIManager::Instance()->getLayerByType(currPosVO->ballVO->getPlist(),tag));
+                
+                moveBallToTarget(ball,pointsVec);
                 
             }           
         }
@@ -131,8 +150,19 @@ void ChessLayer::createNewBalls(){
     
 }
 
-void ChessLayer::moveBallToTarget(BallLayer*ball, Array*paths){
+void ChessLayer::moveBallToTarget(BallLayer*ball, std::vector<Point> paths){
     
-    //ball->
+    int len=paths.size();
+    float delayt=0;
+    float stept=0.1;
+    for(int i=0;i<len;i++){
+        FiniteTimeAction*  action = CCSequence::create(
+                                                          DelayTime::create(delayt),
+                                                          MoveTo::create(stept,paths[i]),
+                                                          NULL);        
+        ball->runAction(action);
+        delayt+=stept;
+    }
+        
 }
 
