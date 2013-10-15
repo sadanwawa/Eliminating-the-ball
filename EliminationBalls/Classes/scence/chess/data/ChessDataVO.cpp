@@ -22,9 +22,11 @@ ChessDataVO::ChessDataVO(int lin,int row,float gra){
     //小球池子
     _BallsTypeVec={1,2,3,4,5,6,7,8,9};
     //备选区小球个数
-    _readyNum=5;
+    _readyNum=3;
     //每次生成小球个数
     _createNum=3;
+    //消去小球最少相连个数
+    _contBllNum=5;
     _readyBallsVec.clear();
     _createBallsVec.clear();
     
@@ -127,7 +129,7 @@ void ChessDataVO::createNewBalls(){
         _readyBallsVec[i-_createNum]=_readyBallsVec[i];       
     }
     //随机 种子 设置
-    for(int i=_createNum-1;i<len;i++){//生成新数据
+    for(int i=len-_createNum;i<len;i++){//生成新数据
         _readyBallsVec[i]=getColorByRandom();
         std::cout<<"新入："<<_readyBallsVec[i]<<std::endl;
         
@@ -172,12 +174,130 @@ int ChessDataVO::getMIdByLinAndRow(int lin,int row){
     return  lin*_row+row;
 }
 
-
-
-
-void ChessDataVO::updataPosVO(PosVO*vo,int ballType){//更新位置数据
-
-
+//根据行列号 取得位置数据
+PosVO* ChessDataVO::getPosVOByLinAndRow(int lin,int row){
+    int len=_PosVOVec.size();
+    PosVO* targetVO=NULL;
+    for(int i=0;i<len;i++){
+        if(_PosVOVec[i]->lin==lin&&_PosVOVec[i]->row==row){
+            targetVO=_PosVOVec[i];
+            return targetVO;
+        }
+    }
+    return targetVO;
 }
+
+//检索同色相连可消去小球
+std::vector<PosVO*> ChessDataVO::getSameColorPosVOs(PosVO* currVo){
+    int startLin=currVo->lin;
+    int startRow=currVo->row;
+    
+    //搜索1：
+    std::vector<PosVO*> posvo1;
+    
+    PosVO* nextPosvo=NULL;    
+    nextPosvo=getPosVOByLinAndRow(currVo->lin,currVo->row+1);    
+    while (nextPosvo&&nextPosvo->isBall&&nextPosvo->ballVO->getType()==currVo->ballVO->getType()){
+        posvo1.push_back(nextPosvo);
+        currVo=nextPosvo;
+        nextPosvo=getPosVOByLinAndRow(currVo->lin,currVo->row+1);        
+    }    
+    currVo=getPosVOByLinAndRow(startLin,startRow);
+    nextPosvo=getPosVOByLinAndRow(startLin,startRow-1);    
+    while (nextPosvo&&nextPosvo->isBall&&nextPosvo->ballVO->getType()==currVo->ballVO->getType())
+    {
+        posvo1.push_back(nextPosvo);        
+        currVo=nextPosvo;
+        nextPosvo=getPosVOByLinAndRow(currVo->lin,currVo->row-1);
+    }
+    if(posvo1.size()<_contBllNum){posvo1.clear();};
+    
+    //搜索2：
+    std::vector<PosVO*> posvo2;
+    
+    currVo=getPosVOByLinAndRow(startLin,startRow);    
+    nextPosvo=getPosVOByLinAndRow(currVo->lin+1,currVo->row);
+    while (nextPosvo&&nextPosvo->isBall&&nextPosvo->ballVO->getType()==currVo->ballVO->getType()){
+        posvo2.push_back(nextPosvo);
+        currVo=nextPosvo;
+        nextPosvo=getPosVOByLinAndRow(currVo->lin+1,currVo->row);
+    }
+    currVo=getPosVOByLinAndRow(startLin,startRow);
+    nextPosvo=getPosVOByLinAndRow(startLin-1,startRow);
+    while (nextPosvo&&nextPosvo->isBall&&nextPosvo->ballVO->getType()==currVo->ballVO->getType())
+    {
+        posvo2.push_back(nextPosvo);
+        currVo=nextPosvo;
+        nextPosvo=getPosVOByLinAndRow(currVo->lin-1,currVo->row);
+    }
+    if(posvo2.size()<_contBllNum-1){posvo2.clear();};
+    
+       
+    //搜索3：
+    std::vector<PosVO*> posvo3;
+    
+    currVo=getPosVOByLinAndRow(startLin,startRow);
+    nextPosvo=getPosVOByLinAndRow(currVo->lin+1,currVo->row+1);
+    while (nextPosvo&&nextPosvo->isBall&&nextPosvo->ballVO->getType()==currVo->ballVO->getType()){
+        posvo3.push_back(nextPosvo);
+        currVo=nextPosvo;
+        nextPosvo=getPosVOByLinAndRow(currVo->lin+1,currVo->row+1);
+    }
+    currVo=getPosVOByLinAndRow(startLin,startRow);
+    nextPosvo=getPosVOByLinAndRow(startLin-1,startRow-1);
+    while (nextPosvo&&nextPosvo->isBall&&nextPosvo->ballVO->getType()==currVo->ballVO->getType())
+    {
+        posvo3.push_back(nextPosvo);
+        currVo=nextPosvo;
+        nextPosvo=getPosVOByLinAndRow(currVo->lin-1,currVo->row-1);
+    }
+    if(posvo3.size()<_contBllNum-1){posvo3.clear();};
+
+       
+    //搜索4：
+    std::vector<PosVO*> posvo4;
+    
+    currVo=getPosVOByLinAndRow(startLin,startRow);
+    nextPosvo=getPosVOByLinAndRow(currVo->lin+1,currVo->row-1);
+    while (nextPosvo&&nextPosvo->isBall&&nextPosvo->ballVO->getType()==currVo->ballVO->getType()){
+        posvo4.push_back(nextPosvo);
+        currVo=nextPosvo;
+        nextPosvo=getPosVOByLinAndRow(currVo->lin+1,currVo->row-1);
+    }
+    currVo=getPosVOByLinAndRow(startLin,startRow);
+    nextPosvo=getPosVOByLinAndRow(startLin-1,startRow+1);
+    while (nextPosvo&&nextPosvo->isBall&&nextPosvo->ballVO->getType()==currVo->ballVO->getType())
+    {
+        posvo4.push_back(nextPosvo);
+        currVo=nextPosvo;
+        nextPosvo=getPosVOByLinAndRow(currVo->lin-1,currVo->row+1);
+    }
+    if(posvo4.size()<_contBllNum-1){posvo4.clear();};
+            
+    //整理消去小球数组
+    std::vector<PosVO*> targetPosVOs;
+    targetPosVOs.push_back(getPosVOByLinAndRow(startLin,startRow));    
+    int len=posvo1.size();
+    for(int i=0;i<len;i++){
+        targetPosVOs.push_back(posvo1[i]);        
+    }
+    len=posvo2.size();
+    for(int i=0;i<len;i++){        
+        targetPosVOs.push_back(posvo2[i]);                
+    }
+    len=posvo3.size();
+    for(int i=0;i<len;i++){        
+        targetPosVOs.push_back(posvo3[i]);
+    }
+    len=posvo4.size();
+    for(int i=0;i<len;i++){        
+        targetPosVOs.push_back(posvo4[i]);
+    }    
+    return targetPosVOs;
+}
+
+
+
+
 
 

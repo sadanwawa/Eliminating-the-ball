@@ -45,7 +45,10 @@ public:
     void onClickReStart(cocos2d::Object * sender, Control::EventType pControlEvent);
     void onClickStart(cocos2d::Object * sender, Control::EventType pControlEvent);
     
-    virtual bool ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);   
+    virtual bool ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);
+    
+    void newGameStep();
+    
         
 private:    
     

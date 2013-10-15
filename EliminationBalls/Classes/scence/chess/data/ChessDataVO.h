@@ -50,23 +50,24 @@ public:
     
     
     PosVO* getRandomEmptyPosVO();//随机取得空的位置数据
-    PosVO* getPosVOByIndex(int index);//根据编号取得位置数据
+    PosVO* getPosVOByIndex(int index);//根据编号取得位置数据    
+    PosVO* getPosVOByLinAndRow(int lin,int row);//根据行列号 取得位置数据
     
     std::vector<int> getReadyBallsVec(){return _readyBallsVec;};
     
     void createNewBalls();
     
     std::vector<int> getCreateBallsVec(){return _createBallsVec;};
-    
-    void updataPosVO(PosVO*vo,int ballType);//更新位置数据
-    
+            
     inline int getCurrEmptyNum(){return _currEmptyNum;};//当前空节点数
     //根据行列号 取得位置编号
     int getMIdByLinAndRow(int lin,int row);
     
     //根据touch取得当前位置数据
     PosVO* getPosVOByTouch(Node* node,cocos2d::Touch *pTouch);
-    
+       
+    //检索同色相连可消去小球
+    std::vector<PosVO*> getSameColorPosVOs(PosVO* currVo);    
         
 private:
     
@@ -113,7 +114,7 @@ private:
     
     int _selectId;//当前选中小球编号
     
-    
+    int _contBllNum;//消去小球最少相连个数
 
 };
 

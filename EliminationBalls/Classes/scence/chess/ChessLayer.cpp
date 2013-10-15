@@ -11,6 +11,7 @@
 #include "DataFormatUtil.h"
 #include "AStarModel.h"
 #include "ParticaleEffect.h"
+#include "MainUILayer.h"
 
 ChessLayer::ChessLayer()
 {    
@@ -83,8 +84,7 @@ bool ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
         }else{//当前点击位置为空            
             //有选中小球
             if(_chessDataVO->getCurrSelectId()!=-1){
-                
-                
+                                
                 //搜索最短路径
                 //起始点
                 PosVO* currPosVO =_chessDataVO->getPosVOByIndex(_chessDataVO->getCurrSelectId());
@@ -93,7 +93,7 @@ bool ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
                 Point pointB=posvo->point;
                 CCLOG("起始点:(%f,%f),目标点:(%f,%f)",pointA.x,pointA.y,pointB.x,pointB.y);
                 
-                //1.取得A＊所有节点数据并更新=======
+                //1.取得A＊所有节点数据并更新=======（为了提高效率也可在有改变时更新）
                 Array* allsteps=AStarModel::Instance()->getAllStepVOs();
                 CCLOG("leng %d",allsteps->count());
                 
@@ -140,8 +140,7 @@ bool ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
                 //4.根据路径数组移动小球
                 std::string tag=POP_TAG::tag_chessball+DataFormatUtil::toString(currPosVO->mId);
                 BallLayer* ball=dynamic_cast<BallLayer*>(UIManager::Instance()->getLayerByType(currPosVO->ballVO->getPlist(),tag));
-                
-                
+                                
                 //整理数据
                 _startPosVO=currPosVO;
                 _targetPosVO=posvo;//记录目标位置
@@ -149,8 +148,7 @@ bool ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
                 tag=POP_TAG::tag_selectball;
                 _moveFire=dynamic_cast<ParticaleEffect*>(UIManager::Instance()->getLayerByType(CCBI::eff_selectball,tag));
                 
-                moveBallToTarget(ball,pointsVec);
-                
+                moveBallToTarget(ball,pointsVec);                
             }           
         }
         
@@ -188,20 +186,7 @@ void ChessLayer::moveBallToTarget(BallLayer*ball, std::vector<Point> paths){
         }            
         ball->runAction(action);
         delayt+=stept;         
-    }
-    
-    //控制整体速度
-//    Director::sharedDirector()->getScheduler()->setTimeScale(0.5);
-//    
-//    //单独控制速度
-//    CCScheduler* sched1 = new CCScheduler();
-//    defaultScheduler->scheduleUpdateForTarget(sched1, 0, false);
-//    
-//    //Create a new ActionManager, and link it to the new scheudler
-//    actionManager1 = new CCActionManager();
-//    sched1->scheduleUpdateForTarget(actionManager1, 0, false);
-//    sched1->setTimeScale(0.5);
-    
+    }     
     //🔥跟随小球
     _isMoving=true;
     this->schedule(schedule_selector(ChessLayer::onTimeMoveWithBall),((float)1.0/60));//渲染
@@ -214,7 +199,7 @@ void ChessLayer::updataBallToTarget(){
     
     //目标位置
     _targetPosVO->isBall=true;
-    _targetPosVO->ballVO=currPosVO->ballVO;    
+    _targetPosVO->ballVO=currPosVO->ballVO;
     
     //改旗易帜  tag 编号    
     std::string tag=POP_TAG::tag_chessball+DataFormatUtil::toString(currPosVO->mId);
@@ -241,7 +226,15 @@ void ChessLayer::updataBallToTarget(){
     
     
     //检索相连同色小球  满足条件消失加分
-    
+    std::vector<PosVO*> outList=_chessDataVO->getSameColorPosVOs(_targetPosVO);
+       
+    //没有消去小球时，出现新的小球
+    if(outList.size()==0){
+        MainUILayer* layer=dynamic_cast<MainUILayer*>(this->getParent()->getParent());
+        layer->newGameStep();
+    }else{
+        removePopBalls(outList);
+    }
     
 }
 
@@ -250,3 +243,19 @@ void ChessLayer::onTimeMoveWithBall(float time){
     _moveFire->setPosition(_moveBall->getPosition());
    
 }
+
+//小球消去
+void ChessLayer::removePopBalls(std::vector<PosVO*> outList){
+    int len=outList.size();
+    for(int i=0;i<len;i++){
+        PosVO* posvo=outList[i];        
+        std::string tag=POP_TAG::tag_chessball+DataFormatUtil::toString(posvo->mId);
+        UIManager::Instance()->removeLayerByType(posvo->ballVO->getPlist(),tag);
+        
+        posvo->isBall=false;
+        posvo->ballVO=NULL;
+    }
+}
+
+
+

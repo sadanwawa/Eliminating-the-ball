@@ -87,16 +87,21 @@ void MainUILayer::onClickReStart(cocos2d::Object * sender, Control::EventType pC
     
 }
 void MainUILayer::onClickStart(cocos2d::Object * sender, Control::EventType pControlEvent){
+    newGameStep();    
+}
+
+void MainUILayer::newGameStep(){
     if(chessData->getCurrEmptyNum()<1)return;
     //消除准备区小球
     clearReadyBalls();
     //更新小球数据
     chessData->createNewBalls();
     //更新准备区小球
-    initReadyBalls();   
+    initReadyBalls();
     //放入棋盘小球
     initCreateBalls();
 }
+
 
 void MainUILayer::clearReadyBalls(){//清除备选区小球
     

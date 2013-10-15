@@ -74,6 +74,10 @@ private:
     
     void onTimeMoveWithBall(float time);
     
+    //小球消去
+    void removePopBalls(std::vector<PosVO*> outList);
+    
+    
 };
 
 

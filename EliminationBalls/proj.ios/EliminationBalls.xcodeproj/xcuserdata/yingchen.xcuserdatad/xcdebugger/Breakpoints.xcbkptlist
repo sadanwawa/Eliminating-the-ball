@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/MainUILayer.cpp"
-         timestampString = "403256836.482221"
+         timestampString = "403505079.359756"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "124"
-         endingLineNumber = "124"
+         startingLineNumber = "129"
+         endingLineNumber = "129"
          landmarkName = "MainUILayer::initReadyBalls()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/MainUILayer.cpp"
-         timestampString = "403256836.482221"
+         timestampString = "403505079.359756"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "171"
-         endingLineNumber = "171"
+         startingLineNumber = "176"
+         endingLineNumber = "176"
          landmarkName = "MainUILayer::updataUI(BaseDataVO* datavo)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -111,19 +111,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "../Classes/scence/MainUILayer.cpp"
-         timestampString = "403256836.482221"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "94"
-         endingLineNumber = "94"
-         landmarkName = "MainUILayer::onClickStart(cocos2d::Object * sender, Control::EventType pControlEvent)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "../Classes/manager/UIManager.cpp"
          timestampString = "403067279.908048"
          startingColumnNumber = "9223372036854775807"
@@ -134,7 +121,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/manager/UIManager.cpp"
@@ -151,24 +138,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/chess/data/ChessDataVO.cpp"
-         timestampString = "403442749.032552"
+         timestampString = "403512562.47734"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "136"
-         endingLineNumber = "136"
-         landmarkName = "ChessDataVO::getRandomEmptyPosVO()"
-         landmarkType = "5">
+         startingLineNumber = "138"
+         endingLineNumber = "138">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/MainUILayer.cpp"
-         timestampString = "403256836.482221"
+         timestampString = "403505079.359756"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "145"
-         endingLineNumber = "145"
+         startingLineNumber = "150"
+         endingLineNumber = "150"
          landmarkName = "MainUILayer::initCreateBalls()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +188,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/MainUILayer.cpp"
-         timestampString = "403256836.482221"
+         timestampString = "403505079.359756"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "156"
-         endingLineNumber = "156"
+         startingLineNumber = "161"
+         endingLineNumber = "161"
          landmarkName = "MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -216,11 +201,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/MainUILayer.cpp"
-         timestampString = "403256836.482221"
+         timestampString = "403505079.359756"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "158"
-         endingLineNumber = "158"
+         startingLineNumber = "163"
+         endingLineNumber = "163"
          landmarkName = "MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -229,11 +214,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/MainUILayer.cpp"
-         timestampString = "403256836.482221"
+         timestampString = "403505079.359756"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "154"
-         endingLineNumber = "154"
+         startingLineNumber = "159"
+         endingLineNumber = "159"
          landmarkName = "MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -266,11 +251,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/chess/ChessLayer.cpp"
-         timestampString = "403434767.424168"
+         timestampString = "403504994.884993"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "73"
-         endingLineNumber = "73"
+         startingLineNumber = "74"
+         endingLineNumber = "74"
          landmarkName = "ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -279,11 +264,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/chess/data/ChessDataVO.cpp"
-         timestampString = "403442749.032552"
+         timestampString = "403512562.47734"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "161"
-         endingLineNumber = "161"
+         startingLineNumber = "163"
+         endingLineNumber = "163"
          landmarkName = "ChessDataVO::getPosVOByTouch(Node* node,cocos2d::Touch *pTouch)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -292,13 +277,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/chess/data/ChessDataVO.cpp"
-         timestampString = "403442749.032552"
+         timestampString = "403512562.47734"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "158"
-         endingLineNumber = "158"
-         landmarkName = "ChessDataVO::getPosVOByTouch(Node* node,cocos2d::Touch *pTouch)"
-         landmarkType = "5">
+         startingLineNumber = "160"
+         endingLineNumber = "160">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -318,11 +301,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/chess/ChessLayer.cpp"
-         timestampString = "403434767.424168"
+         timestampString = "403504994.884993"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "42"
-         endingLineNumber = "42"
+         startingLineNumber = "43"
+         endingLineNumber = "43"
          landmarkName = "ChessLayer::initData(ChessDataVO*vo)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -331,24 +314,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/MainUILayer.cpp"
-         timestampString = "403256836.482221"
+         timestampString = "403505079.359756"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "163"
-         endingLineNumber = "163"
+         startingLineNumber = "168"
+         endingLineNumber = "168"
          landmarkName = "MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/chess/ChessLayer.cpp"
-         timestampString = "403434767.424168"
+         timestampString = "403504994.884993"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "77"
-         endingLineNumber = "77"
+         startingLineNumber = "78"
+         endingLineNumber = "78"
          landmarkName = "ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -429,11 +412,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/chess/ChessLayer.cpp"
-         timestampString = "403434767.424168"
+         timestampString = "403504994.884993"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "78"
-         endingLineNumber = "78"
+         startingLineNumber = "79"
+         endingLineNumber = "79"
          landmarkName = "ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -555,15 +538,15 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/chess/ChessLayer.cpp"
-         timestampString = "403434767.424168"
+         timestampString = "403504994.884993"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "81"
-         endingLineNumber = "81"
+         startingLineNumber = "82"
+         endingLineNumber = "82"
          landmarkName = "ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -577,6 +560,45 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "211"
          endingLineNumber = "211">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "../Classes/scence/chess/data/ChessDataVO.cpp"
+         timestampString = "403514646.004308"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "216"
+         endingLineNumber = "216"
+         landmarkName = "ChessDataVO::getSameColorPosVOs(PosVO* currVo)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "../Classes/scence/chess/data/ChessDataVO.cpp"
+         timestampString = "403514646.004308"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "200"
+         endingLineNumber = "200"
+         landmarkName = "ChessDataVO::getSameColorPosVOs(PosVO* currVo)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "../Classes/scence/chess/data/ChessDataVO.cpp"
+         timestampString = "403512842.030465"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "129"
+         endingLineNumber = "129"
+         landmarkName = "ChessDataVO::createNewBalls()"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

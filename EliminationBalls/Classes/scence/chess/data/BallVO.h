@@ -53,6 +53,7 @@ public:
         return _mid;
     }
    
+    int getType(){return _type;};
     
 private:    
     int _type;//小球类型
