@@ -26,7 +26,7 @@ ChessDataVO::ChessDataVO(int lin,int row,float gra){
     //每次生成小球个数
     _createNum=3;
     //消去小球最少相连个数
-    _contBllNum=5;
+    _contBllNum=4;
     _readyBallsVec.clear();
     _createBallsVec.clear();
     
@@ -210,7 +210,7 @@ std::vector<PosVO*> ChessDataVO::getSameColorPosVOs(PosVO* currVo){
         currVo=nextPosvo;
         nextPosvo=getPosVOByLinAndRow(currVo->lin,currVo->row-1);
     }
-    if(posvo1.size()<_contBllNum){posvo1.clear();};
+    if(posvo1.size()<_contBllNum-1){posvo1.clear();};
     
     //搜索2：
     std::vector<PosVO*> posvo2;
@@ -276,7 +276,7 @@ std::vector<PosVO*> ChessDataVO::getSameColorPosVOs(PosVO* currVo){
             
     //整理消去小球数组
     std::vector<PosVO*> targetPosVOs;
-    targetPosVOs.push_back(getPosVOByLinAndRow(startLin,startRow));    
+       
     int len=posvo1.size();
     for(int i=0;i<len;i++){
         targetPosVOs.push_back(posvo1[i]);        
@@ -292,7 +292,9 @@ std::vector<PosVO*> ChessDataVO::getSameColorPosVOs(PosVO* currVo){
     len=posvo4.size();
     for(int i=0;i<len;i++){        
         targetPosVOs.push_back(posvo4[i]);
-    }    
+    }
+    if(targetPosVOs.size()>0){targetPosVOs.push_back(getPosVOByLinAndRow(startLin,startRow));}
+    
     return targetPosVOs;
 }
 

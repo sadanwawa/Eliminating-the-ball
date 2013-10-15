@@ -165,7 +165,7 @@ void ChessLayer::createNewBalls(){
 }
 
 void ChessLayer::moveBallToTarget(BallLayer*ball, std::vector<Point> paths){
-    Director::sharedDirector()->getScheduler()->setTimeScale(3);
+    Director::getInstance()->getScheduler()->setTimeScale(3);
     int len=paths.size();
     float delayt=0;
     float stept=0.4;
