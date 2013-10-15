@@ -238,6 +238,11 @@ void ChessLayer::updataBallToTarget(){
     _chessDataVO->setCurrSelectId(-1);
     _moveBall->getDataVO()->setSelect(false);
     _moveFire->stopSystem();
+    
+    
+    //检索相连同色小球  满足条件消失加分
+    
+    
 }
 
 void ChessLayer::onTimeMoveWithBall(float time){    
