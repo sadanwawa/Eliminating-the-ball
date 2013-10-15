@@ -20,13 +20,13 @@ ChessDataVO::ChessDataVO(int lin,int row,float gra){
     //棋盘颜色
     _borderColor=Color4B(125,0,0,125);    
     //小球池子
-    _BallsTypeVec={1,2,3,4,5,6,7,8,9};
+    _BallsTypeVec={1,2,3,4,5,6};//1－9
     //备选区小球个数
     _readyNum=3;
     //每次生成小球个数
     _createNum=3;
     //消去小球最少相连个数
-    _contBllNum=4;
+    _contBllNum=5;
     _readyBallsVec.clear();
     _createBallsVec.clear();
     

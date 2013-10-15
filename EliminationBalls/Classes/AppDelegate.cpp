@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "MainScene.h"
+#include "ResourceManager.h"
 
 USING_NS_CC;
 
@@ -17,6 +18,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
     EGLView* eglView = EGLView::getInstance();
 
     director->setOpenGLView(eglView);
+    
+    eglView->setDesignResolutionSize(designResolutionSize.height, designResolutionSize.width, ResolutionPolicy::SHOW_ALL);
+    
+    director->setContentScaleFactor(iphone4HDResource.size.height/designResolutionSize.height);
+    
+    
 	
     // turn on display FPS
     director->setDisplayStats(true);
@@ -29,9 +36,19 @@ bool AppDelegate::applicationDidFinishLaunching() {
     
     // create a scene. it's an autorelease object
     Scene *scene = MainScene::scene();
-
     // run
-    director->runWithScene(scene);
+    director->runWithScene(scene);    
+    
+    // init main scene
+//    MainScene *pScene = MainScene::create();
+//    ccColor3B transitionColor;
+//    transitionColor.r = 0;
+//    transitionColor.g = 0;
+//    transitionColor.b = 0;
+//        
+//    Director::getInstance()->runWithScene(TransitionFade::create(0.5f, pScene,transitionColor));
+//    
+//    pScene->release();
 
     return true;
 }

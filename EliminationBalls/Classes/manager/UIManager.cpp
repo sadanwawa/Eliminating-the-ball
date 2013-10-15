@@ -75,7 +75,7 @@ void UIManager::addPopLayer(std::string fileName,Node* parent,int ease,float x,f
         popdata->retain();                
         popdata->pop=pNode;
         BaseLayer* layer=dynamic_cast<BaseLayer*>(node);
-        BaseNode* node=dynamic_cast<BaseNode*>(node);
+        BaseNode* Dnode=dynamic_cast<BaseNode*>(node);
         BaseParticale* particale=dynamic_cast<BaseParticale*>(node);
         BaseSprite* sprite=dynamic_cast<BaseSprite*>(node);
         
@@ -86,7 +86,7 @@ void UIManager::addPopLayer(std::string fileName,Node* parent,int ease,float x,f
         }else if(sprite){
             popdata->sprite=sprite;
         }else{
-            popdata->node=node;
+            popdata->node=Dnode;
         }
                 
         popdata->parent=parent;

@@ -15,7 +15,7 @@ bool TouchUtil::touchNode(Node*node,Touch*touch){
     }    
     Size size = node->getContentSize();     
     Point point =node->convertTouchToNodeSpace(touch);
-    Rect rect = CCRectMake(0, 0, size.width, size.height);
+    Rect rect = Rect(0, 0, size.width, size.height);
     return rect.containsPoint(point);
     return true;
 }

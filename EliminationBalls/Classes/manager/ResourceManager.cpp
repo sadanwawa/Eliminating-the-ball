@@ -20,7 +20,9 @@ ResourceManager::~ResourceManager(){
 };
 
 bool ResourceManager::initialize(){
-    //SpriteFrameCache::getInstance()->addSpriteFramesWithFile(STC::PLIST_UITEST.c_str());
+    
+    
+    
     return true;
 };
 

@@ -254,6 +254,8 @@ void ChessLayer::removePopBalls(std::vector<PosVO*> outList){
         
         posvo->isBall=false;
         posvo->ballVO=NULL;
+        
+        _chessDataVO->addEmptyPosNum();//空位增加
     }
 }
 

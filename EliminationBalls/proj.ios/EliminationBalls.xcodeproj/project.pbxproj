@@ -31,10 +31,8 @@
 		69020E0B17F67F8B006BDA07 /* ui_ball_red.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69020DFE17F67F8B006BDA07 /* ui_ball_red.ccbi */; };
 		69020E0C17F67F8B006BDA07 /* ui_ball_white.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69020DFF17F67F8B006BDA07 /* ui_ball_white.ccbi */; };
 		69020E0D17F67F8B006BDA07 /* ui_ball_yellow.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0017F67F8B006BDA07 /* ui_ball_yellow.ccbi */; };
-		69020E0E17F67F8B006BDA07 /* ui_test-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0117F67F8B006BDA07 /* ui_test-hd.plist */; };
-		69020E0F17F67F8B006BDA07 /* ui_test-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0217F67F8B006BDA07 /* ui_test-hd.pvr.ccz */; };
-		69020E1017F67F8B006BDA07 /* ui_test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0317F67F8B006BDA07 /* ui_test.plist */; };
-		69020E1117F67F8B006BDA07 /* ui_test.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0417F67F8B006BDA07 /* ui_test.pvr.ccz */; };
+		69243E4C180D513600CC364A /* ui_test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69243E4A180D513500CC364A /* ui_test.plist */; };
+		69243E4D180D513600CC364A /* ui_test.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 69243E4B180D513500CC364A /* ui_test.pvr.ccz */; };
 		6924ED9E17F9557A006F27E1 /* BaseNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6924ED9C17F9557A006F27E1 /* BaseNode.cpp */; };
 		6941C5C81807C95900DCC0D0 /* AStarModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6941C5C61807C95900DCC0D0 /* AStarModel.cpp */; };
 		6950509517F535B500EA8280 /* ChessBoardLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509317F535B500EA8280 /* ChessBoardLayer.cpp */; };
@@ -240,10 +238,8 @@
 		69020DFE17F67F8B006BDA07 /* ui_ball_red.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_ball_red.ccbi; sourceTree = "<group>"; };
 		69020DFF17F67F8B006BDA07 /* ui_ball_white.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_ball_white.ccbi; sourceTree = "<group>"; };
 		69020E0017F67F8B006BDA07 /* ui_ball_yellow.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_ball_yellow.ccbi; sourceTree = "<group>"; };
-		69020E0117F67F8B006BDA07 /* ui_test-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ui_test-hd.plist"; sourceTree = "<group>"; };
-		69020E0217F67F8B006BDA07 /* ui_test-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ui_test-hd.pvr.ccz"; sourceTree = "<group>"; };
-		69020E0317F67F8B006BDA07 /* ui_test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ui_test.plist; sourceTree = "<group>"; };
-		69020E0417F67F8B006BDA07 /* ui_test.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_test.pvr.ccz; sourceTree = "<group>"; };
+		69243E4A180D513500CC364A /* ui_test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ui_test.plist; sourceTree = "<group>"; };
+		69243E4B180D513500CC364A /* ui_test.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_test.pvr.ccz; sourceTree = "<group>"; };
 		6924ED9C17F9557A006F27E1 /* BaseNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseNode.cpp; sourceTree = "<group>"; };
 		6924ED9D17F9557A006F27E1 /* BaseNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNode.h; sourceTree = "<group>"; };
 		6941C5C61807C95900DCC0D0 /* AStarModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AStarModel.cpp; sourceTree = "<group>"; };
@@ -568,6 +564,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				69243E4A180D513500CC364A /* ui_test.plist */,
+				69243E4B180D513500CC364A /* ui_test.pvr.ccz */,
 				69F59F21180628BE0056250B /* eff_selectball.ccbi */,
 				69020DF817F67F8B006BDA07 /* ui_ball_black.ccbi */,
 				69020DF917F67F8B006BDA07 /* ui_ball_blue.ccbi */,
@@ -578,10 +576,6 @@
 				69020DFE17F67F8B006BDA07 /* ui_ball_red.ccbi */,
 				69020DFF17F67F8B006BDA07 /* ui_ball_white.ccbi */,
 				69020E0017F67F8B006BDA07 /* ui_ball_yellow.ccbi */,
-				69020E0117F67F8B006BDA07 /* ui_test-hd.plist */,
-				69020E0217F67F8B006BDA07 /* ui_test-hd.pvr.ccz */,
-				69020E0317F67F8B006BDA07 /* ui_test.plist */,
-				69020E0417F67F8B006BDA07 /* ui_test.pvr.ccz */,
 				69CEB42B17F417390088CBDE /* ui_help.ccbi */,
 				69CEB3F917F405E40088CBDE /* ccbResources */,
 				69CEB40A17F405E50088CBDE /* fonts */,
@@ -793,11 +787,9 @@
 				69020E0B17F67F8B006BDA07 /* ui_ball_red.ccbi in Resources */,
 				69020E0C17F67F8B006BDA07 /* ui_ball_white.ccbi in Resources */,
 				69020E0D17F67F8B006BDA07 /* ui_ball_yellow.ccbi in Resources */,
-				69020E0E17F67F8B006BDA07 /* ui_test-hd.plist in Resources */,
-				69020E0F17F67F8B006BDA07 /* ui_test-hd.pvr.ccz in Resources */,
-				69020E1017F67F8B006BDA07 /* ui_test.plist in Resources */,
-				69020E1117F67F8B006BDA07 /* ui_test.pvr.ccz in Resources */,
 				69F59F22180628BE0056250B /* eff_selectball.ccbi in Resources */,
+				69243E4C180D513600CC364A /* ui_test.plist in Resources */,
+				69243E4D180D513600CC364A /* ui_test.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -971,10 +963,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhiqiang Xu (WKXY767PMF)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				PROVISIONING_PROFILE = "C4ED521E-D969-488D-B3AC-9B7B74612607";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv6 armv7 i386";
 			};
@@ -984,11 +978,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhiqiang Xu (WKXY767PMF)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "C4ED521E-D969-488D-B3AC-9B7B74612607";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv6 armv7 i386";
 			};

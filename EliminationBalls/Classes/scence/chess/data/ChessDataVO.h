@@ -67,7 +67,9 @@ public:
     PosVO* getPosVOByTouch(Node* node,cocos2d::Touch *pTouch);
        
     //检索同色相连可消去小球
-    std::vector<PosVO*> getSameColorPosVOs(PosVO* currVo);    
+    std::vector<PosVO*> getSameColorPosVOs(PosVO* currVo);
+    
+    void addEmptyPosNum(){_currEmptyNum++;};
         
 private:
     
