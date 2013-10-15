@@ -79,15 +79,34 @@ bool MainUILayer::onAssignCCBCustomProperty(Object* pTarget, const char* pMember
     return false;
 }
 void MainUILayer::onNodeLoaded(cocos2d::Node * node, cocos2d::extension::NodeLoader * nodeLoader){
-    
+    btn_restart->setEnabled(false);
+    btn_restart->setVisible(false);
+        
+    btn_start->setEnabled(true);
+    btn_start->setVisible(true);
 }
 
 void MainUILayer::onClickReStart(cocos2d::Object * sender, Control::EventType pControlEvent){
+    btn_restart->setEnabled(false);
+    btn_restart->setVisible(false);
+    
+    btn_start->setEnabled(true);
+    btn_start->setVisible(true);
+    
+    //清除所有小球
+    
+    //初始化数据
     
     
 }
 void MainUILayer::onClickStart(cocos2d::Object * sender, Control::EventType pControlEvent){
-    newGameStep();    
+    newGameStep();
+    
+    btn_start->setEnabled(false);
+    btn_start->setVisible(false);
+    
+    btn_restart->setEnabled(true);
+    btn_restart->setVisible(true);
 }
 
 void MainUILayer::newGameStep(){
