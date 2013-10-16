@@ -43,7 +43,7 @@ public:
     void createNewBalls();
     
     
-       
+    void resetGame();
     
     
 private:

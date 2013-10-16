@@ -70,6 +70,8 @@ public:
     std::vector<PosVO*> getSameColorPosVOs(PosVO* currVo);
     
     void addEmptyPosNum(){_currEmptyNum++;};
+    //重置游戏数据
+    void resteData();
         
 private:
     

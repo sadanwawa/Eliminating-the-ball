@@ -14,6 +14,7 @@ ChessDataVO::ChessDataVO(int lin,int row,float gra){
     _row=row;//列
     _gra=gra;
     _selectId=-1;
+    _currEmptyNum=0;
     
     //棋盘线宽
     _lineWidth=3.0f;
@@ -298,8 +299,20 @@ std::vector<PosVO*> ChessDataVO::getSameColorPosVOs(PosVO* currVo){
     return targetPosVOs;
 }
 
-
-
+void ChessDataVO::resteData(){
+    int len=_PosVOVec.size();
+    if(len>0){
+        for(int i=0;i<len;i++){//初始化位置数据
+            _PosVOVec[i]->isBall=false;
+            _PosVOVec[i]->ballVO=NULL;
+        }
+    }else{
+        initPosVOs();
+    }
+    
+    _selectId=-1;
+    _currEmptyNum=len;
+}
 
 
 

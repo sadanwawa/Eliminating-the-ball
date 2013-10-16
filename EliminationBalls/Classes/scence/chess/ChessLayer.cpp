@@ -259,5 +259,9 @@ void ChessLayer::removePopBalls(std::vector<PosVO*> outList){
     }
 }
 
-
+//重置游戏
+void ChessLayer::resetGame(){
+    _chessDataVO->resteData();
+    
+}
 
