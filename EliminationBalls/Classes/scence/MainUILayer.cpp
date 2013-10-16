@@ -158,7 +158,8 @@ void MainUILayer::initReadyBalls(){
     std::string tag="";
     for(int i=0;i<len;i++){
         std::string ballPlist=GlobalUtil::Instance()->getPlistByBallType(readyballsVec[i]);
-        Point point=Point(readyArea->getContentSize().width-i*38-38/2,38/2+3);
+        float gra=32;
+        Point point=Point(readyArea->getContentSize().width-i*gra-gra/2+16,gra/2+6);
         tag=POP_TAG::tag_readyball;        
         BallVO* ballVO=new BallVO(readyballsVec[i]);
         ballVO->setState(0);
