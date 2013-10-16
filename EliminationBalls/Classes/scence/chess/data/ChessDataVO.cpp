@@ -15,6 +15,8 @@ ChessDataVO::ChessDataVO(int lin,int row,float gra){
     _gra=gra;
     _selectId=-1;
     _currEmptyNum=0;
+    _isMoving=false;
+    _currScores=0;
     
     //棋盘线宽
     _lineWidth=3.0f;

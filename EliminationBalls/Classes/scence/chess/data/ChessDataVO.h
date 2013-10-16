@@ -72,6 +72,14 @@ public:
     void addEmptyPosNum(){_currEmptyNum++;};
     //重置游戏数据
     void resteData();
+    
+    //小球是否正在移动
+    inline bool isMoving(){return  _isMoving;}
+    
+    inline void isMoving(bool boo){_isMoving=boo;}
+        
+    inline void addScores(int add){_currScores+=add;};
+    inline int getScores(){return _currScores;};
         
 private:
     
@@ -119,6 +127,11 @@ private:
     int _selectId;//当前选中小球编号
     
     int _contBllNum;//消去小球最少相连个数
+    
+    bool _isMoving;
+    
+    
+    int _currScores;
 
 };
 

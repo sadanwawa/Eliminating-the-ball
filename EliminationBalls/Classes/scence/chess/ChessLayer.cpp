@@ -21,8 +21,7 @@ ChessLayer::ChessLayer()
     
     _startPosVO=NULL;
     _targetPosVO=NULL;
-    _moveBall=NULL;
-    _isMoving=false;
+    _moveBall=NULL;    
 }
 ChessLayer::~ChessLayer(){
     CCLOG("ChessLayer删除。");    
@@ -71,8 +70,8 @@ void ChessLayer::onExit(){
 
 bool ChessLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
     //判断自定义触摸逻辑  如果找到目标并不再继续响应 return true;
-    if(BaseLayer::ccTouchBegan(pTouch, pEvent)){
-        if(_isMoving)return true;
+    if(BaseLayer::ccTouchBegan(pTouch, pEvent)){        
+        if(_chessDataVO->isMoving())return true;
         //表示点击到当前对象
         //根据pTouch取得当前位置数据；
         PosVO* posvo=_chessDataVO->getPosVOByTouch(chessBalls, pTouch);
@@ -188,7 +187,7 @@ void ChessLayer::moveBallToTarget(BallLayer*ball, std::vector<Point> paths){
         delayt+=stept;         
     }     
     //🔥跟随小球
-    _isMoving=true;
+    _chessDataVO->isMoving(true);
     this->schedule(schedule_selector(ChessLayer::onTimeMoveWithBall),((float)1.0/60));//渲染
 }
 
@@ -217,25 +216,26 @@ void ChessLayer::updataBallToTarget(){
     this->unschedule(schedule_selector(ChessLayer::onTimeMoveWithBall));
     _moveFire->setPosition(_moveBall->getPosition());
     _moveBall->stopAllActions();
-    _isMoving=false;
+    _chessDataVO->isMoving(false);
     
     //去掉选中特效
     _chessDataVO->setCurrSelectId(-1);
     _moveBall->getDataVO()->setSelect(false);
     _moveFire->stopSystem();
-    
-    
+        
     //检索相连同色小球  满足条件消失加分
     std::vector<PosVO*> outList=_chessDataVO->getSameColorPosVOs(_targetPosVO);
-       
+    
+    MainUILayer* layer=dynamic_cast<MainUILayer*>(this->getParent()->getParent());
     //没有消去小球时，出现新的小球
-    if(outList.size()==0){
-        MainUILayer* layer=dynamic_cast<MainUILayer*>(this->getParent()->getParent());
+    if(outList.size()==0){        
         layer->newGameStep();
     }else{
         removePopBalls(outList);
-    }
-    
+        _chessDataVO->addScores(outList.size());
+        //发送事件  或直接更新得分显示
+        layer->updataScores();
+    }    
 }
 
 void ChessLayer::onTimeMoveWithBall(float time){    
@@ -248,20 +248,37 @@ void ChessLayer::onTimeMoveWithBall(float time){
 void ChessLayer::removePopBalls(std::vector<PosVO*> outList){
     int len=outList.size();
     for(int i=0;i<len;i++){
-        PosVO* posvo=outList[i];        
-        std::string tag=POP_TAG::tag_chessball+DataFormatUtil::toString(posvo->mId);
-        UIManager::Instance()->removeLayerByType(posvo->ballVO->getPlist(),tag);
-        
-        posvo->isBall=false;
-        posvo->ballVO=NULL;
-        
-        _chessDataVO->addEmptyPosNum();//空位增加
+        PosVO* posvo=outList[i];
+        if(posvo->isBall){
+            std::string tag=POP_TAG::tag_chessball+DataFormatUtil::toString(posvo->mId);
+            UIManager::Instance()->removeLayerByType(posvo->ballVO->getPlist(),tag);            
+            posvo->isBall=false;
+            posvo->ballVO=NULL;            
+            _chessDataVO->addEmptyPosNum();//空位增加
+        }        
     }
 }
 
 //重置游戏
 void ChessLayer::resetGame(){
+    //
+    if(_chessDataVO->isMoving())return;
+    removePopBalls(_chessDataVO->getPosVoVec());
+    std::string tag=POP_TAG::tag_selectball;
+    UIManager::Instance()->removeLayerByType(CCBI::eff_selectball,tag);
     _chessDataVO->resteData();
-    
 }
 
+//清除所有舞台小球
+void ChessLayer::removeAllBalls(){
+    std::vector<PosVO*> posvoVec=_chessDataVO->getPosVoVec();
+    int len=posvoVec.size();
+    for(int i=0;i<len;i++){
+        PosVO* posvo=posvoVec[i];
+        std::string tag=POP_TAG::tag_chessball+DataFormatUtil::toString(posvo->mId);
+        UIManager::Instance()->removeLayerByType(posvo->ballVO->getPlist(),tag);
+        
+        posvo->isBall=false;
+        posvo->ballVO=NULL;        
+    }    
+}

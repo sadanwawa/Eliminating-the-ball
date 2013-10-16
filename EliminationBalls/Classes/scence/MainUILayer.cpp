@@ -24,6 +24,10 @@ btn_start(NULL)
 {
     chessData=NULL;
     chess=NULL;
+    
+    //更新当前得分
+    
+    //重新开始游戏
 }
 MainUILayer::~MainUILayer(){
     CCLOG("MainUILayer删除。");    
@@ -84,19 +88,32 @@ void MainUILayer::onNodeLoaded(cocos2d::Node * node, cocos2d::extension::NodeLoa
         
     btn_start->setEnabled(true);
     btn_start->setVisible(true);
+    
+    txt_scorces->setString("0");
+           
+    int histScorces=UserDefault::getInstance()->getIntegerForKey("histScorces", 0);
+    std::string histstr=DataFormatUtil::toString(histScorces);
+    txt_hisScorces->setString(histstr.c_str());    
+}
+
+void MainUILayer::updataScores(){
+    int scorces=chessData->getScores();    
+    std::string str=DataFormatUtil::toString(scorces);
+    txt_scorces->setString(str.c_str());
 }
 
 void MainUILayer::onClickReStart(cocos2d::Object * sender, Control::EventType pControlEvent){
+    if(chessData->isMoving()){
+        return;
+    }
+    
     btn_restart->setEnabled(false);
     btn_restart->setVisible(false);
     
     btn_start->setEnabled(true);
     btn_start->setVisible(true);
     
-    //清除所有小球
-    
-    //初始化数据
-    
+    chess->resetGame();    
     
 }
 void MainUILayer::onClickStart(cocos2d::Object * sender, Control::EventType pControlEvent){
@@ -141,7 +158,7 @@ void MainUILayer::initReadyBalls(){
     std::string tag="";
     for(int i=0;i<len;i++){
         std::string ballPlist=GlobalUtil::Instance()->getPlistByBallType(readyballsVec[i]);
-        Point point=Point(readyArea->getContentSize().width-i*38-38/2,38/2);        
+        Point point=Point(readyArea->getContentSize().width-i*38-38/2,38/2+3);
         tag=POP_TAG::tag_readyball;        
         BallVO* ballVO=new BallVO(readyballsVec[i]);
         ballVO->setState(0);
@@ -165,10 +182,10 @@ void MainUILayer::initCreateBalls(){
         UIManager::Instance()->addPopLayer(ballPlist,chess->getChessNode(),0,posVO->point.x,posVO->point.y,tag,posVO->ballVO);//添加datavo
         
         if(chessData->getCurrEmptyNum()<1){
-            //游戏结束；
+            //游戏结束；            
+            gameOver();            
             break;
-        }
-        
+        }        
     }
     UIManager::Instance()->openPopLayers(0.1);    
 }
@@ -199,5 +216,17 @@ void MainUILayer::updataUI(BaseDataVO* datavo){
     
     AStarModel::Instance()->initAStar(9,9);//初始化A*节点数据
     
+}
+
+void MainUILayer::gameOver(){
+    //当前得分高于历史记录
+    int histScorces=UserDefault::getInstance()->getIntegerForKey("histScorces", 0);
+    if(chessData->getScores()>histScorces){//庆祝得分面板
+        //新记录
+        UserDefault::getInstance()->setIntegerForKey("histScorces", chessData->getScores());
+        UserDefault::getInstance()->flush();      
+    }else{//普通得分面板
+        
+    }
 }
 
