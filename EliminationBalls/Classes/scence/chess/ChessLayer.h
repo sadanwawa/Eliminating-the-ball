@@ -46,6 +46,7 @@ public:
     void resetGame();
     
     
+    
 private:
     
     ChessBoardLayer* chessBoard;//棋盘
@@ -61,9 +62,7 @@ private:
     BallLayer* _moveBall;
     //移动🔥
     ParticaleEffect* _moveFire;
-    //小球是否正在移动
-    bool _isMoving;
-    
+            
     /*
      小球移动到目标位置
      移动对象，移动路径
@@ -76,6 +75,9 @@ private:
     
     //小球消去
     void removePopBalls(std::vector<PosVO*> outList);
+    
+    //清除所有舞台小球
+    void removeAllBalls();
     
     
 };

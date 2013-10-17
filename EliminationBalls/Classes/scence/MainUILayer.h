@@ -48,7 +48,10 @@ public:
     virtual bool ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);
     
     void newGameStep();
+    //更新得分显示
+    void updataScores();
     
+    void gameOver();
         
 private:    
     
