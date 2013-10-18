@@ -314,6 +314,7 @@ void ChessDataVO::resteData(){
     
     _selectId=-1;
     _currEmptyNum=len;
+    _currScores=0;
 }
 
 

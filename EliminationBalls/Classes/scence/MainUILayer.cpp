@@ -113,7 +113,8 @@ void MainUILayer::onClickReStart(cocos2d::Object * sender, Control::EventType pC
     btn_start->setEnabled(true);
     btn_start->setVisible(true);
     
-    chess->resetGame();    
+    chess->resetGame();
+    updataScores();
     
 }
 void MainUILayer::onClickStart(cocos2d::Object * sender, Control::EventType pControlEvent){
