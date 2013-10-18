@@ -44,6 +44,8 @@ namespace CCBI {
     static const std::string ui_ball_black="ui_ball_black.ccbi";
     
     static const std::string eff_selectball="eff_selectball.ccbi";
+    static const std::string ui_gameover="ui_gameover.ccbi";
+    
     
 }
 
@@ -141,6 +143,10 @@ public:
     void removeLayersByType(std::string fileName);
     //根据类型和tag移除某个弹窗
     void removeLayerByType(std::string fileName,std::string tag="pop1");
+    
+    //删除当前pop弹窗
+    void removeSingleLayerByNode(Node* node);
+    
     
     Node* getLayerByType(std::string fileName,std::string tag="pop1");
     

@@ -12,12 +12,20 @@
 
 USING_NS_CC;
 
-namespace STC {
+//UI触摸层级枚举
+typedef enum
+{
+    MAIN_PRIORITY     = 0,
+    POP_PRIORITY     = -300,
+    
+}UI_PRIORITY;
+
+namespace STC {//本地数据 字段
     
     static const std::string userdata_histScorces="histScorces";//历史记录
     
 }
-
+//UI tag枚举
 namespace POP_TAG {
     static const std::string tag_readyball="readyball";//准备区小球
     static const std::string tag_chessball="chessball_";//棋盘小球    

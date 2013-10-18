@@ -52,6 +52,8 @@ void MainUILayer::onEnter(){
     //this->setTouchMode(Touch::DispatchMode::ONE_BY_ONE);//ALL_AT_ONCE
     this->setTouchEnabled(true);
     Director::getInstance()->getTouchDispatcher()->addTargetedDelegate(this,0,true);
+    //Director::getInstance()->getTouchDispatcher()->addAndResetTouchDelegate(this,0);
+    
 }
 void MainUILayer::onExit(){
     BaseLayer::onExit();    
@@ -118,6 +120,7 @@ void MainUILayer::onClickReStart(cocos2d::Object * sender, Control::EventType pC
     
 }
 void MainUILayer::onClickStart(cocos2d::Object * sender, Control::EventType pControlEvent){
+           
     newGameStep();
     
     btn_start->setEnabled(false);
@@ -150,7 +153,6 @@ void MainUILayer::clearReadyBalls(){//清除备选区小球
         tag=POP_TAG::tag_readyball;
         UIManager::Instance()->removeLayerByType(ballPlist,tag);
     }
-
 }
 
 void MainUILayer::initReadyBalls(){
@@ -221,6 +223,18 @@ void MainUILayer::updataUI(BaseDataVO* datavo){
 }
 
 void MainUILayer::gameOver(){
+    
+    Director::getInstance()->getTouchDispatcher()->removeDelegate(this);
+    Size visibleSize = Director::getInstance()->getVisibleSize();
+    Point origin = Director::getInstance()->getVisibleOrigin();
+    float px=origin.x+visibleSize.width/2;
+    float py=origin.y+visibleSize.height/2;
+    UIManager::Instance()->addPopLayer(CCBI::ui_gameover,NULL,0,px,py);
+    //UIManager::Instance()->addPopLayer(CCBI::ui_gameover,NULL,0,px,py);
+    UIManager::Instance()->openPopLayer();
+    
+    return;
+   
     //当前得分高于历史记录
     int histScorces=UserDefault::getInstance()->getIntegerForKey("histScorces", 0);
     if(chessData->getScores()>histScorces){//庆祝得分面板
