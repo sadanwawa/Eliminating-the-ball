@@ -36,7 +36,7 @@ SoundManager::~SoundManager(void)
 }
 
 SimpleAudioEngine* SoundManager::AudioEngine(){
-    return SimpleAudioEngine::sharedEngine();
+    return SimpleAudioEngine::getInstance();
 }
 void SoundManager::setEffectsVolume(float val)
 {

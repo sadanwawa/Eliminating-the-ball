@@ -14,7 +14,7 @@ USING_NS_CC;
 
 namespace STC {
     
-    
+    static const std::string userdata_histScorces="histScorces";//历史记录
     
 }
 

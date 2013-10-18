@@ -267,6 +267,7 @@ void ChessLayer::resetGame(){
     std::string tag=POP_TAG::tag_selectball;
     UIManager::Instance()->removeLayerByType(CCBI::eff_selectball,tag);
     _chessDataVO->resteData();
+    
 }
 
 //清除所有舞台小球

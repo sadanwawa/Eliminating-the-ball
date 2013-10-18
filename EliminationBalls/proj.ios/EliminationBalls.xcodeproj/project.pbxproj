@@ -31,6 +31,7 @@
 		69020E0B17F67F8B006BDA07 /* ui_ball_red.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69020DFE17F67F8B006BDA07 /* ui_ball_red.ccbi */; };
 		69020E0C17F67F8B006BDA07 /* ui_ball_white.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69020DFF17F67F8B006BDA07 /* ui_ball_white.ccbi */; };
 		69020E0D17F67F8B006BDA07 /* ui_ball_yellow.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69020E0017F67F8B006BDA07 /* ui_ball_yellow.ccbi */; };
+		691FD3511810B03B00632A58 /* ScorcesModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 691FD34F1810B03B00632A58 /* ScorcesModel.cpp */; };
 		69243E4C180D513600CC364A /* ui_test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69243E4A180D513500CC364A /* ui_test.plist */; };
 		69243E4D180D513600CC364A /* ui_test.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 69243E4B180D513500CC364A /* ui_test.pvr.ccz */; };
 		6924ED9E17F9557A006F27E1 /* BaseNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6924ED9C17F9557A006F27E1 /* BaseNode.cpp */; };
@@ -239,6 +240,9 @@
 		69020DFE17F67F8B006BDA07 /* ui_ball_red.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_ball_red.ccbi; sourceTree = "<group>"; };
 		69020DFF17F67F8B006BDA07 /* ui_ball_white.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_ball_white.ccbi; sourceTree = "<group>"; };
 		69020E0017F67F8B006BDA07 /* ui_ball_yellow.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_ball_yellow.ccbi; sourceTree = "<group>"; };
+		691FD34F1810B03B00632A58 /* ScorcesModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScorcesModel.cpp; sourceTree = "<group>"; };
+		691FD3501810B03B00632A58 /* ScorcesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScorcesModel.h; sourceTree = "<group>"; };
+		691FD35D1810B27100632A58 /* ScorceVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScorceVO.h; sourceTree = "<group>"; };
 		69243E4A180D513500CC364A /* ui_test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ui_test.plist; sourceTree = "<group>"; };
 		69243E4B180D513500CC364A /* ui_test.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_test.pvr.ccz; sourceTree = "<group>"; };
 		6924ED9C17F9557A006F27E1 /* BaseNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseNode.cpp; sourceTree = "<group>"; };
@@ -429,6 +433,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		691FD34E1810B03B00632A58 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				691FD35D1810B27100632A58 /* ScorceVO.h */,
+				691FD34F1810B03B00632A58 /* ScorcesModel.cpp */,
+				691FD3501810B03B00632A58 /* ScorcesModel.h */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
 		6924ED8D17F91E12006F27E1 /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +549,7 @@
 		69CEB42617F406750088CBDE /* scence */ = {
 			isa = PBXGroup;
 			children = (
+				691FD34E1810B03B00632A58 /* main */,
 				69DF60E3180652EF005C1C22 /* effect */,
 				6950508417F532ED00EA8280 /* chess */,
 				69CEB42717F406750088CBDE /* MainUILayer.cpp */,
@@ -828,6 +843,7 @@
 				69DF60EC18065E8F005C1C22 /* GlobalUtil.cpp in Sources */,
 				6941C5C81807C95900DCC0D0 /* AStarModel.cpp in Sources */,
 				69C8C248181000BB00C58DED /* SoundManager.cpp in Sources */,
+				691FD3511810B03B00632A58 /* ScorcesModel.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
