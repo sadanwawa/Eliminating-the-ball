@@ -7,6 +7,7 @@
 #include "MainUILayerLoader.h"
 #include "BallLayerLoader.h"
 #include "ParticaleEffectLoader.h"
+#include "GameOverLayerLoader.h"
 
 // singleton instance pointer
 template<> UIManager* Singleton<UIManager>::msSingleton	= NULL;
@@ -33,7 +34,7 @@ bool UIManager::initialize()//注册所有弹窗
    ccNodeLoaderLibrary->registerNodeLoader("MainUILayer", MainUILayerLoader::loader());    
    ccNodeLoaderLibrary->registerNodeLoader("BallLayer", BallLayerLoader::loader());
    ccNodeLoaderLibrary->registerNodeLoader("ParticaleEffect", ParticaleEffectLoader::loader());
-    
+   ccNodeLoaderLibrary->registerNodeLoader("GameOverLayer", GameOverLayerLoader::loader());
     
     return true;
 }
@@ -202,6 +203,9 @@ void UIManager::removeLayerByNode(Node* node){
     }    
 }
 
+
+
+
 void UIManager::removeLayersByType(std::string fileName){
     for(std::vector<PopData*>::iterator it=_currPops.begin(); it!=_currPops.end(); )
     {
@@ -297,11 +301,101 @@ void UIManager::updataPopTotalNums(std::string fileName,int totalNums){
 
 //===================方案2end
 
+
+
+void UIManager::removeSingleLayerByNode(Node* node){
+    for(std::vector<PopData*>::iterator it=_currPops.begin(); it!=_currPops.end(); )
+    {
+        if((* it)->pop==node){
+            std::cout<<"当前还没删除popData数据"<<std::endl;
+            node->removeFromParentAndCleanup(true);
+            CC_SAFE_RELEASE(node);//保证删除node对象；
+            CC_SAFE_RELEASE((* it));//保证删除nodeData对象；
+            it = _currPops.erase(it);
+        }else{
+            ++it;
+        }
+    }    
+    openPopLayer();
+}
+
+
 //每次打开一个
 //弹窗类型：1.全屏  2.居中显示 灰色遮罩 3.固定位置显示  无灰色遮罩（焦点可切换）；
 void UIManager::openPopLayer(){//同时显示多个弹窗；（弹出可自定义时间间隔）
+    //    if(_isOpening){
+    //        return;
+    //    }
+    //    _isOpening=true;
+    int size=_onOpenList.size();    
+        
+    std::vector<Node*> popVec;
+    std::vector<BaseDataVO*> voVec;//逻辑数据
+    popVec.clear();
+    voVec.clear();
+    if(size>0){//同时打开  延时处理
+        PopData* currPopData=_onOpenList[0];
+        Node* parentNode= currPopData->parent!=NULL? currPopData->parent:main_Node->getPopsNode();
+        
+        if(currPopData->ease==0){
+            //
+            // CallFuncND is no longer needed. It can simulated with std::bind()
+            //必须是显示对象才可用 runAction();
+            parentNode->addChild(currPopData->pop);//
+            
+            Size popSize=currPopData->pop->getContentSize();
+            currPopData->pop->setPosition(currPopData->x-popSize.width/2,currPopData->y-popSize.height/2);
+            currPopData->pop->setVisible(false);
+            
+            FiniteTimeAction* actionA = Sequence::create(                                                         
+                                                         CallFuncN::create(CC_CALLBACK_1(UIManager::showPopLayer, this, currPopData)),
+                                                         NULL);
+            currPopData->pop->runAction(actionA);
+            
+            
+        }else if(currPopData->ease==1){
+            
+            parentNode->addChild(currPopData->pop);//
+            currPopData->pop->setScale(0.02);
+            currPopData->pop->setAnchorPoint(Point(0.5f,0.5f));
+            
+            Size popSize=currPopData->pop->getContentSize();
+            currPopData->pop->setPosition(currPopData->x-popSize.width/2,currPopData->y-popSize.height/2);
+            currPopData->pop->setVisible(false);
+            
+            FiniteTimeAction*  actionB = Sequence::create(                                                          
+                                                          CallFuncN::create(CC_CALLBACK_1(UIManager::showPopLayer, this, currPopData)),
+                                                          ScaleTo::create(0.8,1),
+                                                          CallFunc::create( CC_CALLBACK_0(UIManager::playOpenActionOver,this)),
+                                                          NULL);
+            currPopData->pop->runAction(actionB);
+            
+        }
+        std::cout<<"===========new Pop=========about--->"<<currPopData->popType<<std::endl;
+        _currPops.push_back(currPopData);
+        popVec.push_back(currPopData->pop);
+        voVec.push_back(currPopData->dataVo);
+        deleteFromOpenList(currPopData);        
+        //TextureCache::getInstance()->dumpCachedTextureInfo();        
+    }
     
-    
+    for(int i=0;i<popVec.size();i++){
+        //更新当前pop   updataUI()
+        BaseLayer* layer=dynamic_cast<BaseLayer*>(popVec[i]);
+        BaseNode* node=dynamic_cast<BaseNode*>(popVec[i]);
+        BaseParticale* particale=dynamic_cast<BaseParticale*>(popVec[i]);
+        BaseSprite* sprite=dynamic_cast<BaseSprite*>(popVec[i]);
+        
+        if(layer){
+            layer->updataUI(voVec[i]);
+        }else if(node){
+            node->updataUI(voVec[i]);
+        }else if(particale){
+            
+        }else if(sprite){
+            
+        }
+    }
 }
 
 

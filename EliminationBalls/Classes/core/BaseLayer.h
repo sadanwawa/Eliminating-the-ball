@@ -35,9 +35,12 @@ public:
     
     virtual BaseDataVO* getDataVO(){return _dataVo;};
     
-    
+        
 private:        
     BaseDataVO* _dataVo;
+    
+    int _basePriority;//弹窗触摸层级
+    
 };
 
 

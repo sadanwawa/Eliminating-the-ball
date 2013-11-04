@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/MainUILayer.cpp"
-         timestampString = "403747810.255727"
+         timestampString = "403768716.790662"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "149"
-         endingLineNumber = "149"
+         startingLineNumber = "160"
+         endingLineNumber = "160"
          landmarkName = "MainUILayer::clearReadyBalls()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,24 +73,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/MainUILayer.cpp"
-         timestampString = "403747810.255727"
+         timestampString = "403768716.790662"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "197"
-         endingLineNumber = "197"
-         landmarkName = "MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
-         landmarkType = "5">
+         startingLineNumber = "207"
+         endingLineNumber = "207">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/manager/UIManager.cpp"
-         timestampString = "403067279.908048"
+         timestampString = "403759967.665927"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "171"
-         endingLineNumber = "171"
+         startingLineNumber = "172"
+         endingLineNumber = "172"
          landmarkName = "UIManager::openPopLayers(float Ddelay)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +97,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/manager/UIManager.cpp"
-         timestampString = "403067279.908048"
+         timestampString = "403759967.665927"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "166"
-         endingLineNumber = "166"
+         startingLineNumber = "167"
+         endingLineNumber = "167"
          landmarkName = "UIManager::openPopLayers(float Ddelay)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,24 +110,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/manager/UIManager.cpp"
-         timestampString = "403067279.908048"
+         timestampString = "403759967.665927"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "223"
-         endingLineNumber = "223"
-         landmarkName = "UIManager::removeLayerByType(std::string fileName,std::string tag)"
-         landmarkType = "5">
+         startingLineNumber = "224"
+         endingLineNumber = "224">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/manager/UIManager.cpp"
-         timestampString = "403067279.908048"
+         timestampString = "403759967.665927"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "210"
-         endingLineNumber = "210"
+         startingLineNumber = "211"
+         endingLineNumber = "211"
          landmarkName = "UIManager::removeLayersByType(std::string fileName)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -151,11 +147,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/MainUILayer.cpp"
-         timestampString = "403747810.255727"
+         timestampString = "403768716.790662"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "171"
-         endingLineNumber = "171">
+         startingLineNumber = "181"
+         endingLineNumber = "181"
+         landmarkName = "MainUILayer::initReadyBalls()"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -188,11 +186,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/MainUILayer.cpp"
-         timestampString = "403747810.255727"
+         timestampString = "403768716.790662"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "182"
-         endingLineNumber = "182"
+         startingLineNumber = "192"
+         endingLineNumber = "192"
          landmarkName = "MainUILayer::initCreateBalls()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -201,11 +199,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/MainUILayer.cpp"
-         timestampString = "403747810.255727"
+         timestampString = "403768716.790662"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "184"
-         endingLineNumber = "184"
+         startingLineNumber = "194"
+         endingLineNumber = "194"
          landmarkName = "MainUILayer::initCreateBalls()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -214,11 +212,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/MainUILayer.cpp"
-         timestampString = "403747810.255727"
+         timestampString = "403768716.790662"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "180"
-         endingLineNumber = "180"
+         startingLineNumber = "190"
+         endingLineNumber = "190"
          landmarkName = "MainUILayer::initCreateBalls()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -314,11 +312,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../Classes/scence/MainUILayer.cpp"
-         timestampString = "403747810.255727"
+         timestampString = "403768716.790662"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "190"
-         endingLineNumber = "190"
+         startingLineNumber = "200"
+         endingLineNumber = "200"
          landmarkName = "MainUILayer::initCreateBalls()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -598,6 +596,58 @@
          startingLineNumber = "131"
          endingLineNumber = "131"
          landmarkName = "ChessDataVO::createNewBalls()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "../Classes/scence/main/GameOverLayer.cpp"
+         timestampString = "403773655.705869"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "69"
+         endingLineNumber = "69"
+         landmarkName = "GameOverLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "../Classes/scence/MainUILayer.cpp"
+         timestampString = "403767283.649694"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "96"
+         endingLineNumber = "96"
+         landmarkName = "MainUILayer::onNodeLoaded(cocos2d::Node * node, cocos2d::extension::NodeLoader * nodeLoader)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "../Classes/scence/MainUILayer.cpp"
+         timestampString = "403768716.790662"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "211"
+         endingLineNumber = "211"
+         landmarkName = "MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "../Classes/scence/MainUILayer.cpp"
+         timestampString = "403768716.790662"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "210"
+         endingLineNumber = "210"
+         landmarkName = "MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
