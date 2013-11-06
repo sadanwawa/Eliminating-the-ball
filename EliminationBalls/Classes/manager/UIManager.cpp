@@ -8,6 +8,9 @@
 #include "BallLayerLoader.h"
 #include "ParticaleEffectLoader.h"
 #include "GameOverLayerLoader.h"
+#include "ScorcesListLayerLoader.h"
+#include "AnimationSpriteLoader.h"
+#include "ScoreItemNodeLoader.h"
 
 // singleton instance pointer
 template<> UIManager* Singleton<UIManager>::msSingleton	= NULL;
@@ -35,6 +38,8 @@ bool UIManager::initialize()//注册所有弹窗
    ccNodeLoaderLibrary->registerNodeLoader("BallLayer", BallLayerLoader::loader());
    ccNodeLoaderLibrary->registerNodeLoader("ParticaleEffect", ParticaleEffectLoader::loader());
    ccNodeLoaderLibrary->registerNodeLoader("GameOverLayer", GameOverLayerLoader::loader());
+   ccNodeLoaderLibrary->registerNodeLoader("ScorcesListLayer", ScorcesListLayerLoader::loader());
+   ccNodeLoaderLibrary->registerNodeLoader("ScoreItemNode", ScoreItemNodeLoader::loader());
     
     return true;
 }
@@ -57,28 +62,31 @@ void UIManager::setCurrScene(Node* node){
 }
 
 void UIManager::addPopLayer(std::string fileName,Node* parent,int ease,float x,float y,std::string tag,BaseDataVO* vo)
-{   //只添加数据。。。。
+{
+    if(tag==""){tag="pop1";}
+    //只添加数据。。。。
     Node* pNode=NULL;    
     /* Create an autorelease CCBReader. */
     cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);    
     /* Read a ccbi file. */
-    Node * node = ccbReader->readNodeGraphFromFile(fileName.c_str(), parent);
+    Node * ccNode = ccbReader->readNodeGraphFromFile(fileName.c_str(), parent?parent:main_Node->getPopsNode());
     
-    //BaseLayer
+    AnimationSprite* animaSprite=dynamic_cast<AnimationSprite*>(ccNode) ;
+	if(animaSprite){
+		animaSprite->setAnimationManager(ccbReader->getAnimationManager());
+	}
     
-    //BaseNode    
-    
-    node->retain();//为了保证创建的对象不会自动回收；
+    ccNode->retain();//为了保证创建的对象不会自动回收；
     ccbReader->release();//用完接着release    
-    if(node != NULL) {
-        pNode=node;
+    if(ccNode != NULL) {
+        pNode=ccNode;
         PopData* popdata=new PopData();
         popdata->retain();                
         popdata->pop=pNode;
-        BaseLayer* layer=dynamic_cast<BaseLayer*>(node);
-        BaseNode* Dnode=dynamic_cast<BaseNode*>(node);
-        BaseParticale* particale=dynamic_cast<BaseParticale*>(node);
-        BaseSprite* sprite=dynamic_cast<BaseSprite*>(node);
+        BaseLayer* layer=dynamic_cast<BaseLayer*>(ccNode);
+        BaseNode* node=dynamic_cast<BaseNode*>(ccNode);
+        BaseParticale* particale=dynamic_cast<BaseParticale*>(ccNode);
+        BaseSprite* sprite=dynamic_cast<BaseSprite*>(ccNode);
         
         if(layer){
             popdata->layer=layer;
@@ -87,7 +95,7 @@ void UIManager::addPopLayer(std::string fileName,Node* parent,int ease,float x,f
         }else if(sprite){
             popdata->sprite=sprite;
         }else{
-            popdata->node=Dnode;
+            popdata->node=node;
         }
                 
         popdata->parent=parent;
@@ -95,6 +103,8 @@ void UIManager::addPopLayer(std::string fileName,Node* parent,int ease,float x,f
         popdata->tag=tag;
         popdata->x=x;
         popdata->y=y;
+        CCLOG("弹窗坐标：%f,%f", x,y);
+        
         popdata->ease=ease;
         popdata->dataVo=vo;        
         _onOpenList.push_back(popdata);        
@@ -127,12 +137,16 @@ void UIManager::openPopLayers(float Ddelay){//同时显示多个弹窗；（弹�
             currPopData->pop->setPosition(currPopData->x,currPopData->y);
             currPopData->pop->setVisible(false);
             
+            //------
             FiniteTimeAction* actionA = Sequence::create(
                                            DelayTime::create(delay),//延时 
                                            CallFuncN::create(CC_CALLBACK_1(UIManager::showPopLayer, this, currPopData)),
                                            NULL);            
-            currPopData->pop->runAction(actionA);
-                       
+            main_Node->getPopsNode()->runAction(actionA);//防止action被取消
+            //------or
+            //showPopLayer(NULL,currPopData);//或者直接显示  //防止action被取消
+            //-------
+            
             
         }else if(currPopData->ease==1){
             
@@ -316,13 +330,13 @@ void UIManager::removeSingleLayerByNode(Node* node){
             ++it;
         }
     }    
-    openPopLayer();
+    openSinglePopLayer();
 }
 
 
 //每次打开一个
 //弹窗类型：1.全屏  2.居中显示 灰色遮罩 3.固定位置显示  无灰色遮罩（焦点可切换）；
-void UIManager::openPopLayer(){//同时显示多个弹窗；（弹出可自定义时间间隔）
+void UIManager::openSinglePopLayer(){//同时显示多个弹窗；（弹出可自定义时间间隔）
     //    if(_isOpening){
     //        return;
     //    }
@@ -342,9 +356,7 @@ void UIManager::openPopLayer(){//同时显示多个弹窗；（弹出可自定�
             // CallFuncND is no longer needed. It can simulated with std::bind()
             //必须是显示对象才可用 runAction();
             parentNode->addChild(currPopData->pop);//
-            
-            Size popSize=currPopData->pop->getContentSize();
-            currPopData->pop->setPosition(currPopData->x-popSize.width/2,currPopData->y-popSize.height/2);
+            currPopData->pop->setPosition(currPopData->x,currPopData->y);
             currPopData->pop->setVisible(false);
             
             FiniteTimeAction* actionA = Sequence::create(                                                         
@@ -358,9 +370,7 @@ void UIManager::openPopLayer(){//同时显示多个弹窗；（弹出可自定�
             parentNode->addChild(currPopData->pop);//
             currPopData->pop->setScale(0.02);
             currPopData->pop->setAnchorPoint(Point(0.5f,0.5f));
-            
-            Size popSize=currPopData->pop->getContentSize();
-            currPopData->pop->setPosition(currPopData->x-popSize.width/2,currPopData->y-popSize.height/2);
+            currPopData->pop->setPosition(currPopData->x,currPopData->y);
             currPopData->pop->setVisible(false);
             
             FiniteTimeAction*  actionB = Sequence::create(                                                          

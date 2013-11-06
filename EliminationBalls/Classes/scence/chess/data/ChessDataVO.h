@@ -80,6 +80,8 @@ public:
         
     inline void addScores(int add){_currScores+=add;};
     inline int getScores(){return _currScores;};
+    
+    void clearData();
         
 private:
     

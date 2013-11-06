@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A3FC0034-950D-4504-AAAA-038D78D5B904</string>
+	<key>IDESourceControlProjectName</key>
+	<string>EliminationBalls</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E21D27BC-F83F-475D-84C4-05BC814062CB</key>
+		<string>https://github.com/sadanwawa/Eliminating-the-ball.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>EliminationBalls/proj.ios/EliminationBalls.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E21D27BC-F83F-475D-84C4-05BC814062CB</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sadanwawa/Eliminating-the-ball.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E21D27BC-F83F-475D-84C4-05BC814062CB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E21D27BC-F83F-475D-84C4-05BC814062CB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Eliminating-the-ball</string>
+		</dict>
+	</array>
+</dict>
+</plist>

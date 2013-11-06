@@ -38,6 +38,14 @@
 		6950509517F535B500EA8280 /* ChessBoardLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509317F535B500EA8280 /* ChessBoardLayer.cpp */; };
 		6950509817F54EC300EA8280 /* ChessLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509617F54EC300EA8280 /* ChessLayer.cpp */; };
 		6950509D17F5897600EA8280 /* ChessDataVO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509C17F5897600EA8280 /* ChessDataVO.cpp */; };
+		69AB7EE81828E95F00AD63A1 /* ScorcesListLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69AB7EE51828E95F00AD63A1 /* ScorcesListLayer.cpp */; };
+		69AB7EF51828EED800AD63A1 /* ui_scorelist.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69AB7EF41828EED800AD63A1 /* ui_scorelist.ccbi */; };
+		69AB7F061829D36000AD63A1 /* TableViewItemCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69AB7F021829D36000AD63A1 /* TableViewItemCell.cpp */; };
+		69AB7F071829D36000AD63A1 /* TableViewLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69AB7F041829D36000AD63A1 /* TableViewLayer.cpp */; };
+		69AB7F0A182A10A700AD63A1 /* ui_scoreitem.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69AB7F09182A10A700AD63A1 /* ui_scoreitem.ccbi */; };
+		69AB7F1C182A16EE00AD63A1 /* AnimationSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69AB7F17182A16EE00AD63A1 /* AnimationSprite.cpp */; };
+		69AB7F1D182A16EE00AD63A1 /* PartVO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69AB7F1A182A16EE00AD63A1 /* PartVO.cpp */; };
+		69AB7F21182A1A1000AD63A1 /* ScoreItemNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69AB7F1E182A1A1000AD63A1 /* ScoreItemNode.cpp */; };
 		69ACFE2317F9CC1F004A365C /* BallLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69ACFE2017F9CC1F004A365C /* BallLayer.cpp */; };
 		69C8C248181000BB00C58DED /* SoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69C8C246181000BB00C58DED /* SoundManager.cpp */; };
 		69C8C2571810DA5C00C58DED /* ui_gameover.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 69C8C2561810DA5C00C58DED /* ui_gameover.ccbi */; };
@@ -256,6 +264,23 @@
 		6950509A17F5697000EA8280 /* ChessDataVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessDataVO.h; sourceTree = "<group>"; };
 		6950509B17F5842000EA8280 /* BallVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallVO.h; sourceTree = "<group>"; };
 		6950509C17F5897600EA8280 /* ChessDataVO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChessDataVO.cpp; sourceTree = "<group>"; };
+		69AB7EE51828E95F00AD63A1 /* ScorcesListLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScorcesListLayer.cpp; sourceTree = "<group>"; };
+		69AB7EE61828E95F00AD63A1 /* ScorcesListLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScorcesListLayer.h; sourceTree = "<group>"; };
+		69AB7EE71828E95F00AD63A1 /* ScorcesListLayerLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScorcesListLayerLoader.h; sourceTree = "<group>"; };
+		69AB7EF41828EED800AD63A1 /* ui_scorelist.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_scorelist.ccbi; sourceTree = "<group>"; };
+		69AB7F021829D36000AD63A1 /* TableViewItemCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TableViewItemCell.cpp; sourceTree = "<group>"; };
+		69AB7F031829D36000AD63A1 /* TableViewItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewItemCell.h; sourceTree = "<group>"; };
+		69AB7F041829D36000AD63A1 /* TableViewLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TableViewLayer.cpp; sourceTree = "<group>"; };
+		69AB7F051829D36000AD63A1 /* TableViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewLayer.h; sourceTree = "<group>"; };
+		69AB7F09182A10A700AD63A1 /* ui_scoreitem.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_scoreitem.ccbi; sourceTree = "<group>"; };
+		69AB7F17182A16EE00AD63A1 /* AnimationSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationSprite.cpp; sourceTree = "<group>"; };
+		69AB7F18182A16EE00AD63A1 /* AnimationSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationSprite.h; sourceTree = "<group>"; };
+		69AB7F19182A16EE00AD63A1 /* AnimationSpriteLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationSpriteLoader.h; sourceTree = "<group>"; };
+		69AB7F1A182A16EE00AD63A1 /* PartVO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartVO.cpp; sourceTree = "<group>"; };
+		69AB7F1B182A16EE00AD63A1 /* PartVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartVO.h; sourceTree = "<group>"; };
+		69AB7F1E182A1A1000AD63A1 /* ScoreItemNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScoreItemNode.cpp; sourceTree = "<group>"; };
+		69AB7F1F182A1A1000AD63A1 /* ScoreItemNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreItemNode.h; sourceTree = "<group>"; };
+		69AB7F20182A1A1000AD63A1 /* ScoreItemNodeLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreItemNodeLoader.h; sourceTree = "<group>"; };
 		69ACFE2017F9CC1F004A365C /* BallLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BallLayer.cpp; sourceTree = "<group>"; };
 		69ACFE2117F9CC1F004A365C /* BallLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallLayer.h; sourceTree = "<group>"; };
 		69ACFE2217F9CC1F004A365C /* BallLayerLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallLayerLoader.h; sourceTree = "<group>"; };
@@ -366,6 +391,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				69AB7EF71829CFEA00AD63A1 /* component */,
 				6941C5BA1807AA8F00DCC0D0 /* astar */,
 				69DF60E818065E8E005C1C22 /* common */,
 				6924ED8D17F91E12006F27E1 /* utils */,
@@ -442,7 +468,13 @@
 		691FD34E1810B03B00632A58 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				69AB7F1E182A1A1000AD63A1 /* ScoreItemNode.cpp */,
+				69AB7F1F182A1A1000AD63A1 /* ScoreItemNode.h */,
+				69AB7F20182A1A1000AD63A1 /* ScoreItemNodeLoader.h */,
 				69C8C2631810DB0700C58DED /* data */,
+				69AB7EE51828E95F00AD63A1 /* ScorcesListLayer.cpp */,
+				69AB7EE61828E95F00AD63A1 /* ScorcesListLayer.h */,
+				69AB7EE71828E95F00AD63A1 /* ScorcesListLayerLoader.h */,
 				69C8C2671810DB0700C58DED /* GameOverLayer.cpp */,
 				69C8C2681810DB0700C58DED /* GameOverLayer.h */,
 				69C8C2691810DB0700C58DED /* GameOverLayerLoader.h */,
@@ -498,6 +530,38 @@
 			path = data;
 			sourceTree = "<group>";
 		};
+		69AB7EF71829CFEA00AD63A1 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				69AB7EF81829CFEA00AD63A1 /* tableview */,
+			);
+			name = component;
+			path = ../Classes/component;
+			sourceTree = "<group>";
+		};
+		69AB7EF81829CFEA00AD63A1 /* tableview */ = {
+			isa = PBXGroup;
+			children = (
+				69AB7F021829D36000AD63A1 /* TableViewItemCell.cpp */,
+				69AB7F031829D36000AD63A1 /* TableViewItemCell.h */,
+				69AB7F041829D36000AD63A1 /* TableViewLayer.cpp */,
+				69AB7F051829D36000AD63A1 /* TableViewLayer.h */,
+			);
+			path = tableview;
+			sourceTree = "<group>";
+		};
+		69AB7F16182A16EE00AD63A1 /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				69AB7F17182A16EE00AD63A1 /* AnimationSprite.cpp */,
+				69AB7F18182A16EE00AD63A1 /* AnimationSprite.h */,
+				69AB7F19182A16EE00AD63A1 /* AnimationSpriteLoader.h */,
+				69AB7F1A182A16EE00AD63A1 /* PartVO.cpp */,
+				69AB7F1B182A16EE00AD63A1 /* PartVO.h */,
+			);
+			path = animation;
+			sourceTree = "<group>";
+		};
 		69C8C2631810DB0700C58DED /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +575,7 @@
 		69CEB3D717F2EF380088CBDE /* core */ = {
 			isa = PBXGroup;
 			children = (
+				69AB7F16182A16EE00AD63A1 /* animation */,
 				69DF60D218064CF5005C1C22 /* BaseParticale.cpp */,
 				69DF60D318064CF5005C1C22 /* BaseParticale.h */,
 				69DF60D418064CF5005C1C22 /* BaseSprite.cpp */,
@@ -601,6 +666,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				69AB7F09182A10A700AD63A1 /* ui_scoreitem.ccbi */,
+				69AB7EF41828EED800AD63A1 /* ui_scorelist.ccbi */,
 				69C8C2561810DA5C00C58DED /* ui_gameover.ccbi */,
 				69243E4A180D513500CC364A /* ui_test.plist */,
 				69243E4B180D513500CC364A /* ui_test.pvr.ccz */,
@@ -665,6 +732,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = CMSX8QHJBJ;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "EliminationBalls" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -797,11 +869,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69AB7F0A182A10A700AD63A1 /* ui_scoreitem.ccbi in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
+				69AB7EF51828EED800AD63A1 /* ui_scorelist.ccbi in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
@@ -842,9 +916,14 @@
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				1AC3624916D4A1E8000847F2 /* AppController.mm in Sources */,
 				1AC3624B16D4A1E8000847F2 /* main.m in Sources */,
+				69AB7F1D182A16EE00AD63A1 /* PartVO.cpp in Sources */,
 				1AFCDA8216D4A25900906EA6 /* RootViewController.mm in Sources */,
+				69AB7EE81828E95F00AD63A1 /* ScorcesListLayer.cpp in Sources */,
+				69AB7F1C182A16EE00AD63A1 /* AnimationSprite.cpp in Sources */,
 				69CEB3E317F2EF380088CBDE /* BaseLayer.cpp in Sources */,
 				69CEB3E417F2EF380088CBDE /* BaseScene.cpp in Sources */,
+				69AB7F21182A1A1000AD63A1 /* ScoreItemNode.cpp in Sources */,
+				69AB7F071829D36000AD63A1 /* TableViewLayer.cpp in Sources */,
 				69CEB3E517F2EF380088CBDE /* ResourceManager.cpp in Sources */,
 				69CEB3E617F2EF380088CBDE /* UIManager.cpp in Sources */,
 				69CEB3F417F2F1A80088CBDE /* MainScene.cpp in Sources */,
@@ -855,6 +934,7 @@
 				6924ED9E17F9557A006F27E1 /* BaseNode.cpp in Sources */,
 				69ACFE2317F9CC1F004A365C /* BallLayer.cpp in Sources */,
 				69DF60C218050EF6005C1C22 /* DataFormatUtil.cpp in Sources */,
+				69AB7F061829D36000AD63A1 /* TableViewItemCell.cpp in Sources */,
 				69DF60D018056262005C1C22 /* TouchUtil.cpp in Sources */,
 				69DF60D618064CF5005C1C22 /* BaseParticale.cpp in Sources */,
 				69DF60D718064CF5005C1C22 /* BaseSprite.cpp in Sources */,
@@ -934,7 +1014,7 @@
 					"\"$(SRCROOT)/../../../cocos2dx/platform/ios/Simulation\"",
 				);
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\"",
 					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",
@@ -942,10 +1022,10 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-O2";
 				PRODUCT_NAME = EliminationBalls;
-				PROVISIONING_PROFILE = "8505A31D-4369-4284-9F2B-E90B4783CFF4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8505A31D-4369-4284-9F2B-E90B4783CFF4";
+				PROVISIONING_PROFILE = "270C2215-D6DC-4C0C-B63C-A0924B02F85A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F32202C9-FC5E-437A-A135-1055E84B8B4E";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = NO;
 				VALID_ARCHS = "armv6 armv7 i386";
@@ -986,17 +1066,17 @@
 					"\"$(SRCROOT)/../../../cocos2dx/platform/ios/Simulation\"",
 				);
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\"",
 					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = EliminationBalls;
-				PROVISIONING_PROFILE = "8505A31D-4369-4284-9F2B-E90B4783CFF4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8505A31D-4369-4284-9F2B-E90B4783CFF4";
+				PROVISIONING_PROFILE = "270C2215-D6DC-4C0C-B63C-A0924B02F85A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CCCFC5F8-A741-43A1-AD63-F53568BD883E";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = NO;
 			};

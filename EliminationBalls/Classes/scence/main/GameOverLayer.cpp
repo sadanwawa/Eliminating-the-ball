@@ -39,7 +39,9 @@ void GameOverLayer::onEnter(){
     //Director::getInstance()->getTouchDispatcher()->addAndResetTouchDelegate(btn_ok,-1);
 }
 void GameOverLayer::onExit(){
-    BaseLayer::onExit();       
+    BaseLayer::onExit();
+    Director::getInstance()->getTouchDispatcher()->removeDelegate(this);
+    Director::getInstance()->getTouchDispatcher()->removeDelegate(btn_ok);
 }
 
 SEL_MenuHandler GameOverLayer::onResolveCCBCCMenuItemSelector(cocos2d::Object * pTarget, const char * pSelectorName){
@@ -82,4 +84,10 @@ void GameOverLayer::updataUI(BaseDataVO* datavo){
 
 void GameOverLayer::onClickOk(cocos2d::Object * sender, Control::EventType pControlEvent){   
     UIManager::Instance()->removeSingleLayerByNode(this);
+    
+    //当前积分列表
+    UIManager::Instance()->addPopLayer(CCBI::ui_scorceslist);
+    UIManager::Instance()->openSinglePopLayer();
+    
+    
 }

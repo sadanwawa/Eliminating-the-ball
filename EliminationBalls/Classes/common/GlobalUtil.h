@@ -19,9 +19,9 @@ typedef enum
     BALL_YELLOW     = 2,
     BALL_BLUE       = 3,
     BALL_RED        = 4,
-    BALL_PURPLE     = 5,
+    BALL_GREEN      = 5,
     BALL_BROWN      = 6,
-    BALL_GREEN      = 7,
+    BALL_PURPLE     = 7,
     BALL_FUCHSIA    = 8,
     BALL_BLACK      = 9,
     

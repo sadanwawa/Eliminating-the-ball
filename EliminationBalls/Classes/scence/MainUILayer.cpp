@@ -37,7 +37,10 @@ MainUILayer::~MainUILayer(){
     CC_SAFE_RELEASE(drawNode);
     CC_SAFE_RELEASE(btn_restart);
     CC_SAFE_RELEASE(btn_start);
-    if(chessData){delete chessData;chessData=NULL;}
+    if(chessData){
+        chessData->clearData();
+        delete chessData;chessData=NULL;
+    }
 }
 //执行顺序构造函数->init->onNodeLoaded->(addchild)->onEnter
 bool MainUILayer::init(){
@@ -57,7 +60,7 @@ void MainUILayer::onEnter(){
 }
 void MainUILayer::onExit(){
     BaseLayer::onExit();    
-   
+    Director::getInstance()->getTouchDispatcher()->removeDelegate(this);
 }
 
 SEL_MenuHandler MainUILayer::onResolveCCBCCMenuItemSelector(cocos2d::Object * pTarget, const char * pSelectorName){
@@ -93,7 +96,7 @@ void MainUILayer::onNodeLoaded(cocos2d::Node * node, cocos2d::extension::NodeLoa
     
     txt_scorces->setString("0");
            
-    int histScorces=UserDefault::getInstance()->getIntegerForKey("histScorces", 0);
+    int histScorces=UserDefault::getInstance()->getIntegerForKey(STC::userdata_histScorces.c_str(), 0);
     std::string histstr=DataFormatUtil::toString(histScorces);
     txt_hisScorces->setString(histstr.c_str());    
 }
@@ -118,9 +121,17 @@ void MainUILayer::onClickReStart(cocos2d::Object * sender, Control::EventType pC
     chess->resetGame();
     updataScores();
     
+    onClickStart(NULL,Control::EventType::TOUCH_UP_OUTSIDE);
+    
 }
 void MainUILayer::onClickStart(cocos2d::Object * sender, Control::EventType pControlEvent){
-           
+    
+    //更新最高分
+    int histScorces=UserDefault::getInstance()->getIntegerForKey(STC::userdata_histScorces.c_str(), 0);
+    std::string histstr=DataFormatUtil::toString(histScorces);
+    txt_hisScorces->setString(histstr.c_str());
+    
+    
     newGameStep();
     
     btn_start->setEnabled(false);
@@ -161,14 +172,14 @@ void MainUILayer::initReadyBalls(){
     std::string tag="";
     for(int i=0;i<len;i++){
         std::string ballPlist=GlobalUtil::Instance()->getPlistByBallType(readyballsVec[i]);
-        float gra=32;
+        float gra=36;
         Point point=Point(readyArea->getContentSize().width-i*gra-gra/2+16,gra/2+6);
         tag=POP_TAG::tag_readyball;        
         BallVO* ballVO=new BallVO(readyballsVec[i]);
         ballVO->setState(0);
         UIManager::Instance()->addPopLayer(ballPlist,readyArea,0,point.x,point.y,tag,ballVO);
     }
-    UIManager::Instance()->openPopLayers(0.1);
+    UIManager::Instance()->openPopLayers();
 }
 
 void MainUILayer::initCreateBalls(){
@@ -186,12 +197,16 @@ void MainUILayer::initCreateBalls(){
         UIManager::Instance()->addPopLayer(ballPlist,chess->getChessNode(),0,posVO->point.x,posVO->point.y,tag,posVO->ballVO);//添加datavo
         
         if(chessData->getCurrEmptyNum()<1){
-            //游戏结束；            
-            gameOver();            
             break;
         }        
     }
-    UIManager::Instance()->openPopLayers(0.1);    
+    UIManager::Instance()->openPopLayers();
+    
+    if(chessData->getCurrEmptyNum()<1){
+        //游戏结束；
+        gameOver();
+    }
+    
 }
 
 bool MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){   
@@ -209,37 +224,35 @@ bool MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent){
 }
 
 void MainUILayer::updataUI(BaseDataVO* datavo){
+    
+//    UIManager::Instance()->addPopLayer(CCBI::ui_gameover,NULL);
+//    UIManager::Instance()->openPopLayers();
+    
     //棋
     chess=ChessLayer::create();
-    chessData=new ChessDataVO(9,9,32);
+    chessData=new ChessDataVO(4,4,60);
     chess->initData(chessData);
     drawNode->addChild(chess);
     
     //初始化随机小球
     initReadyBalls();//初始化备选区小球
     
-    AStarModel::Instance()->initAStar(9,9);//初始化A*节点数据
+    AStarModel::Instance()->initAStar(4,4);//初始化A*节点数据
     
 }
 
 void MainUILayer::gameOver(){
     
-    Director::getInstance()->getTouchDispatcher()->removeDelegate(this);
-    Size visibleSize = Director::getInstance()->getVisibleSize();
-    Point origin = Director::getInstance()->getVisibleOrigin();
-    float px=origin.x+visibleSize.width/2;
-    float py=origin.y+visibleSize.height/2;
-    UIManager::Instance()->addPopLayer(CCBI::ui_gameover,NULL,0,px,py);
-    //UIManager::Instance()->addPopLayer(CCBI::ui_gameover,NULL,0,px,py);
-    UIManager::Instance()->openPopLayer();
+    UIManager::Instance()->addPopLayer(CCBI::ui_gameover,NULL);
+    UIManager::Instance()->openSinglePopLayer();
     
-    return;
+    //return;
    
     //当前得分高于历史记录
-    int histScorces=UserDefault::getInstance()->getIntegerForKey("histScorces", 0);
+    int histScorces=UserDefault::getInstance()->getIntegerForKey(STC::userdata_histScorces.c_str(), 0);
     if(chessData->getScores()>histScorces){//庆祝得分面板
         //新记录
-        UserDefault::getInstance()->setIntegerForKey("histScorces", chessData->getScores());
+        UserDefault::getInstance()->setIntegerForKey(STC::userdata_histScorces.c_str(), chessData->getScores());
         UserDefault::getInstance()->flush();      
     }else{//普通得分面板
         

@@ -12,3 +12,15 @@
 // singleton instance pointer
 template<> ScorcesModel* Singleton<ScorcesModel>::msSingleton	= NULL;
 
+bool ScorcesModel::initialize(){
+    
+    return true;
+}
+
+//更新数据
+void ScorcesModel::initData(){
+    
+    
+    
+    
+}

@@ -25,10 +25,28 @@ public:
     };
     ~ScorcesModel(){
         
-    };    
+    };
+    
+    virtual bool initialize();
+    
+    //更新数据
+    void initData();
+    
+    
+    Array* getScoreVOs(){
+        return _allScoreVOs;
+    }
+    
+    
+    
     
    
 private:
+    
+    //积分列表
+    Array* _allScoreVOs;
+    
+    
     
 };
 

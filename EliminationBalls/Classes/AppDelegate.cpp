@@ -19,12 +19,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     director->setOpenGLView(eglView);
     
-    eglView->setDesignResolutionSize(designResolutionSize.height, designResolutionSize.width, ResolutionPolicy::SHOW_ALL);
-    
-    director->setContentScaleFactor(iphone4HDResource.size.height/designResolutionSize.height);
-    
-    
-	
     // turn on display FPS
     director->setDisplayStats(false);
 
@@ -32,6 +26,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / (60));
     //随机 种子 设置
     srand((unsigned)(time(NULL)));
+    
+    ResourceManager::Instance()->initialize();
     UIManager::Instance()->initialize();
     
     // create a scene. it's an autorelease object

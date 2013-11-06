@@ -36,24 +36,8 @@ static Resource iphone5HDResource    =  { cocos2d::Size(640, 1136),  "media" };
 static Resource ipad2Resource        =  { cocos2d::Size(768, 1024),  "media"   };
 static Resource ipad2HDResource      =  { cocos2d::Size(1536, 2048), "media" };
 
-
-#if (TARGET_DESIGN_RESOLUTION_SIZE == DESIGN_RESOLUTION_480X320)
-static cocos2d::Size designResolutionSize = cocos2d::Size(320, 480);
-#elif (TARGET_DESIGN_RESOLUTION_SIZE == DESIGN_RESOLUTION_960X640)
+//当前设计尺寸
 static cocos2d::Size designResolutionSize = cocos2d::Size(640, 960);
-#elif (TARGET_DESIGN_RESOLUTION_SIZE == DESIGN_RESOLUTION_568X320)
-static cocos2d::Size designResolutionSize = cocos2d::Size(320, 568);
-#elif (TARGET_DESIGN_RESOLUTION_SIZE == DESIGN_RESOLUTION_1136X640)
-static cocos2d::Size designResolutionSize = cocos2d::Size(640, 1136);
-#elif (TARGET_DESIGN_RESOLUTION_SIZE == DESIGN_RESOLUTION_1024X768)
-static cocos2d::Size designResolutionSize = cocos2d::Size(768, 1024);
-#elif (TARGET_DESIGN_RESOLUTION_SIZE == DESIGN_RESOLUTION_2048X1536)
-static cocos2d::Size designResolutionSize = cocos2d::Size(1536, 2048);
-#else
-#error unknown target design resolution!
-#endif
-
-
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -65,6 +49,26 @@ public:
     ~ResourceManager();
     
     virtual bool initialize();
+    //设备实际分辨率
+    Size getScreenSize(){return screenSize;};
+    //设备长宽比 >=1
+    float getScreenWHR(){return screenwhR;};
+    
+    //当前设计长宽比 >=1
+    float getDesignWHR(){return designwhR;};
+    
+    //缩放因子
+    float getScaleFactor(){return scalefactor;};
+    
+private:
+    
+    Size screenSize;
+    
+    float screenwhR;
+    
+    float designwhR;
+    
+    float scalefactor;
     
 };
 

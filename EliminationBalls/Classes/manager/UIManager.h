@@ -45,7 +45,8 @@ namespace CCBI {
     
     static const std::string eff_selectball="eff_selectball.ccbi";
     static const std::string ui_gameover="ui_gameover.ccbi";
-    
+    static const std::string ui_scorceslist="ui_scorelist.ccbi";
+    static const std::string ui_scoreitem="ui_scoreitem.ccbi";
     
 }
 
@@ -132,8 +133,8 @@ public:
     NodeLoaderLibrary * ccNodeLoaderLibrary;
             
     void addPopLayer(std::string fileName,Node* parent=NULL,int ease=0,float x=0,float y=0,std::string tag="pop1",BaseDataVO* vo=NULL);
-    void openPopLayers(float Ddelay=0.3);//同时打开多个 时间间隔
-    void openPopLayer();//一个关闭再打开另一个
+    void openPopLayers(float Ddelay=0.0f);//同时打开多个 时间间隔
+    void openSinglePopLayer();//一个关闭再打开另一个
     
     void setCurrScene(Node* node);
     
@@ -146,7 +147,6 @@ public:
     
     //删除当前pop弹窗
     void removeSingleLayerByNode(Node* node);
-    
     
     Node* getLayerByType(std::string fileName,std::string tag="pop1");
     

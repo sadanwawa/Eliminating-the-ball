@@ -100,6 +100,7 @@ PosVO* ChessDataVO::getEmptyPosVOByIndex(int targetIndex){
         if(!_PosVOVec[i]->ballVO){
             if(index==targetIndex){
                 _currEmptyNum--;
+                CCLOG("剩余空格数：%d",_currEmptyNum);
                 return _PosVOVec[i];
             }
             index++;
@@ -317,5 +318,18 @@ void ChessDataVO::resteData(){
     _currScores=0;
 }
 
+void ChessDataVO::clearData(){
+    int len=_PosVOVec.size();
+    if(len>0){
+        for(int i=0;i<len;i++){//
+            delete _PosVOVec[i];
+        }
+    }
+    _PosVOVec.clear();
+    _readyBallsVec.clear();
+    _createBallsVec.clear();
+    _BallsTypeVec.clear();
+    _emptyPosVec.clear();
+}
 
 

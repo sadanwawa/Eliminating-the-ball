@@ -45,8 +45,8 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>0.0</real>
-										<real>160</real>
+										<real>50</real>
+										<real>110.69200134277344</real>
 									</array>
 								</dict>
 								<dict>
@@ -63,8 +63,8 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>0.0</real>
-										<real>0.0</real>
+										<real>50</real>
+										<real>50</real>
 									</array>
 								</dict>
 								<dict>
@@ -81,8 +81,8 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>0.0</real>
-										<real>-12</real>
+										<real>50</real>
+										<real>45</real>
 									</array>
 								</dict>
 								<dict>
@@ -99,8 +99,8 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>0.0</real>
-										<real>0.0</real>
+										<real>50</real>
+										<real>50</real>
 									</array>
 								</dict>
 							</array>
@@ -117,13 +117,13 @@
 				<array>
 					<dict>
 						<key>baseClass</key>
-						<string>CCLayerColor</string>
+						<string>CCScale9Sprite</string>
 						<key>children</key>
 						<array/>
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>CCLayerColor</string>
+						<string>CCScale9Sprite</string>
 						<key>memberVarAssignmentName</key>
 						<string></string>
 						<key>memberVarAssignmentType</key>
@@ -140,18 +140,6 @@
 									<real>0.0</real>
 									<real>0.0</real>
 									<integer>4</integer>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>contentSize</string>
-								<key>type</key>
-								<string>Size</string>
-								<key>value</key>
-								<array>
-									<real>160</real>
-									<real>110</real>
-									<integer>0</integer>
 								</array>
 							</dict>
 							<dict>
@@ -184,38 +172,29 @@
 								<key>type</key>
 								<string>Check</string>
 								<key>value</key>
-								<true/>
+								<false/>
 							</dict>
 							<dict>
 								<key>name</key>
-								<string>touchEnabled</string>
-								<key>platform</key>
-								<string>iOS</string>
+								<string>spriteFrame</string>
 								<key>type</key>
-								<string>Check</string>
-								<key>value</key>
-								<true/>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>mouseEnabled</string>
-								<key>platform</key>
-								<string>Mac</string>
-								<key>type</key>
-								<string>Check</string>
-								<key>value</key>
-								<true/>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>color</string>
-								<key>type</key>
-								<string>Color3</string>
+								<string>SpriteFrame</string>
 								<key>value</key>
 								<array>
-									<integer>133</integer>
-									<integer>169</integer>
-									<integer>157</integer>
+									<string>ccbResources/ccbDefaultImages.plist</string>
+									<string>ccbButton.png</string>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>preferedSize</string>
+								<key>type</key>
+								<string>Size</string>
+								<key>value</key>
+								<array>
+									<real>300</real>
+									<real>200</real>
+									<integer>0</integer>
 								</array>
 							</dict>
 							<dict>
@@ -228,14 +207,47 @@
 							</dict>
 							<dict>
 								<key>name</key>
-								<string>blendFunc</string>
+								<string>color</string>
 								<key>type</key>
-								<string>Blendmode</string>
+								<string>Color3</string>
 								<key>value</key>
 								<array>
-									<integer>770</integer>
-									<integer>771</integer>
+									<integer>197</integer>
+									<integer>251</integer>
+									<integer>165</integer>
 								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>insetLeft</string>
+								<key>type</key>
+								<string>Float</string>
+								<key>value</key>
+								<real>3</real>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>insetTop</string>
+								<key>type</key>
+								<string>Float</string>
+								<key>value</key>
+								<real>3</real>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>insetRight</string>
+								<key>type</key>
+								<string>Float</string>
+								<key>value</key>
+								<real>3</real>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>insetBottom</string>
+								<key>type</key>
+								<string>Float</string>
+								<key>value</key>
+								<real>3</real>
 							</dict>
 						</array>
 					</dict>
@@ -261,8 +273,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>81</real>
-									<real>96</real>
+									<real>0.0</real>
+									<real>61</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -313,7 +325,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>12</real>
+									<real>24</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -377,8 +389,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>81</real>
-									<real>22</real>
+									<real>-4.9263997077941895</real>
+									<real>-46.294403076171875</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -457,7 +469,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>12</real>
+									<real>24</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -479,8 +491,8 @@
 								<string>Size</string>
 								<key>value</key>
 								<array>
-									<real>80</real>
-									<real>30</real>
+									<real>120</real>
+									<real>45</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -585,8 +597,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>25</real>
-									<real>64</real>
+									<real>-84.368003845214844</real>
+									<real>10.662403106689453</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -637,7 +649,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>12</real>
+									<real>24</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -701,8 +713,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>53</real>
-									<real>48</real>
+									<real>-39.147201538085938</real>
+									<real>-3.4847979545593262</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -775,9 +787,9 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
-							<integer>0</integer>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
 						</array>
 					</dict>
 					<dict>
@@ -787,8 +799,8 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>0.5</real>
+							<real>0.5</real>
 						</array>
 					</dict>
 					<dict>
@@ -813,8 +825,6 @@
 						<false/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -836,9 +846,9 @@
 				<string>Size</string>
 				<key>value</key>
 				<array>
-					<real>160</real>
-					<real>110</real>
-					<integer>0</integer>
+					<real>100</real>
+					<real>100</real>
+					<integer>1</integer>
 				</array>
 			</dict>
 			<dict>
@@ -905,13 +915,13 @@
 			<key>ext</key>
 			<string>iphone</string>
 			<key>height</key>
-			<integer>320</integer>
+			<integer>640</integer>
 			<key>name</key>
 			<string>iPhone Landscape</string>
 			<key>scale</key>
 			<real>1</real>
 			<key>width</key>
-			<integer>480</integer>
+			<integer>960</integer>
 		</dict>
 	</array>
 	<key>sequences</key>
@@ -935,7 +945,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.76666665077209473</real>
+			<real>0.80000001192092896</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
