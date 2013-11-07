@@ -20,6 +20,21 @@ void BaseNode::updataUI(BaseDataVO* datavo){
     
 }
 
+void BaseNode::onEnter(){
+     Node::onEnter();
+}
+void BaseNode::onExit(){
+     Node::onExit();
+}
 
+bool BaseNode::init(){
+    if(!Node::init()){
+        return false;
+    }
+    return true;
+}
 
-
+void BaseNode::onNodeLoaded(cocos2d::Node * node, NodeLoader * nodeLoader){
+    
+    
+}

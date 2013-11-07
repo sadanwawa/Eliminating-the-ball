@@ -2,6 +2,7 @@
 #include "TableViewItemCell.h"
 #include "ScoreItemNode.h"
 #include "UIManager.h"
+#include "ScorcesModel.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -14,11 +15,20 @@ USING_NS_CC_EXT;
 
 TableViewLayer::TableViewLayer(){
 
-
+    TableView* tableView = TableView::create(this, Size(400, 460));
+	tableView->setDirection(ScrollView::Direction::VERTICAL);
+	tableView->setPosition(Point(0,0));
+	tableView->setDelegate(this);
+	tableView->setVerticalFillOrder(TableView::VerticalFillOrder::TOP_DOWN);
+	this->addChild(tableView);
+	tableView->reloadData();
+    tableView->setTouchPriority(-501);
 };
 
 TableViewLayer::~TableViewLayer(){
+    
     Director::getInstance()->getTouchDispatcher()->removeDelegate(this);
+    
 };
 
 // on "init" you need to initialize your instance
@@ -29,14 +39,7 @@ bool TableViewLayer::init()
         return false;
     }
 
-	TableView* tableView = TableView::create(this, Size(400, 460));
-	tableView->setDirection(ScrollView::Direction::VERTICAL);
-	tableView->setPosition(Point(0,0));
-	tableView->setDelegate(this);
-	tableView->setVerticalFillOrder(TableView::VerticalFillOrder::TOP_DOWN);
-	this->addChild(tableView);
-	tableView->reloadData();
-    tableView->setTouchPriority(-501);
+	
     return true;
 }
 
@@ -48,7 +51,7 @@ void TableViewLayer::tableCellTouched(TableView* table, TableViewCell* cell)
 //item尺寸
 Size TableViewLayer::tableCellSizeForIndex(TableView *table, unsigned int idx)
 {
-    return Size(400,60);
+    return Size(400,53);
 }
 
 //根据编号取得item 如果不存在直接创建
@@ -58,7 +61,7 @@ TableViewCell* TableViewLayer::tableCellAtIndex(TableView *table, unsigned int i
     TableViewCell *cell = table->dequeueCell();//取得当前编号下的item
     if (!cell) {
         cell = new TableViewItemCell();
-        cell->autorelease();
+        cell->retain();
 //        Sprite *sprite = Sprite::create("CloseNormal.png");
 //        sprite->setAnchorPoint(Point::ZERO);
 //        sprite->setPosition(Point(0, 0));
@@ -71,8 +74,9 @@ TableViewCell* TableViewLayer::tableCellAtIndex(TableView *table, unsigned int i
         
        // ScoreItemNode * node=ScoreItemNode
         
-        
-        UIManager::Instance()->addPopLayer(CCBI::ui_scoreitem,cell,0,0,0,(std::string)string->getCString(),NULL);
+        ScorceVO*vo=ScorcesModel::Instance()->getScorceVOByIndex(idx);
+        vo->mid=idx+1;
+        UIManager::Instance()->addPopLayer(CCBI::ui_scoreitem,cell,0,0,0,(std::string)string->getCString(),vo);
         UIManager::Instance()->openPopLayers();
         
         ScoreItemNode * node=dynamic_cast<ScoreItemNode*>(UIManager::Instance()->getLayerByType(CCBI::ui_scoreitem,(std::string)string->getCString()));
@@ -95,7 +99,9 @@ TableViewCell* TableViewLayer::tableCellAtIndex(TableView *table, unsigned int i
         CCLOG("更新显示 %d", idx);
         //根据idx取得数据
         ScoreItemNode * node=(ScoreItemNode*)cell->getChildByTag(123);
-        node->updataUI();
+        ScorceVO*vo=ScorcesModel::Instance()->getScorceVOByIndex(idx);
+        vo->mid=idx+1;
+        node->updataUI(vo);
         
     }
     return cell;
@@ -104,7 +110,7 @@ TableViewCell* TableViewLayer::tableCellAtIndex(TableView *table, unsigned int i
 //设置item数据总数量
 unsigned int TableViewLayer::numberOfCellsInTableView(TableView *table)
 {
-    return 5;
+    return ScorcesModel::Instance()->getTotalNum();
 }
 
 void TableViewLayer::initInfo(int director,Size viewSize,Size itemSize,std::string itemType,std::string itemCcbi){

@@ -63,9 +63,7 @@ public:
     //取得路径
     Array* getMovePath(){return _shortPath;};
     
-    //地图行 列
-    int totalLineNum;
-    int totalRowNum;
+    void clearData();
     
    
 private:
@@ -96,6 +94,10 @@ private:
     bool checkInArea(GPoint* pt);
     //从当前节点（目标节点）逆向找到最短路径
     void constructPath(StepVO* targeVO);
+    
+    //地图行 列
+    int totalLineNum;
+    int totalRowNum;
     
     
 };

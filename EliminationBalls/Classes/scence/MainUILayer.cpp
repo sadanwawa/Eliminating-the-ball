@@ -13,6 +13,7 @@
 #include "DataFormatUtil.h"
 #include "StaticConstant.h"
 #include "AStarModel.h"
+#include "ScorcesModel.h"
 
 MainUILayer::MainUILayer()
 :txt_hisScorces(NULL),
@@ -95,8 +96,11 @@ void MainUILayer::onNodeLoaded(cocos2d::Node * node, cocos2d::extension::NodeLoa
     btn_start->setVisible(true);
     
     txt_scorces->setString("0");
-           
-    int histScorces=UserDefault::getInstance()->getIntegerForKey(STC::userdata_histScorces.c_str(), 0);
+    
+    //是否第一次启动游戏
+    ScorcesModel::Instance()->initGlobleData();
+
+    int histScorces=ScorcesModel::Instance()->getCurrTopScores();
     std::string histstr=DataFormatUtil::toString(histScorces);
     txt_hisScorces->setString(histstr.c_str());    
 }

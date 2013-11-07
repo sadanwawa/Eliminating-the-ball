@@ -21,6 +21,9 @@ btn_close(NULL)
 }
 ScorcesListLayer::~ScorcesListLayer(){
     CCLOG("ScorcesListLayer删除。");
+    CC_SAFE_RELEASE(listArea);
+    CC_SAFE_RELEASE(btn_close);
+    UIManager::Instance()->removeLayersByType(CCBI::ui_scoreitem);
 }
 //执行顺序构造函数->init->onNodeLoaded->(addchild)->onEnter
 bool ScorcesListLayer::init(){
@@ -83,11 +86,10 @@ void ScorcesListLayer::updataUI(BaseDataVO* datavo){
     _datavo=datavo;
 
     Size winSize = Director::getInstance()->getWinSize();
-    TableViewLayer* layer=TableViewLayer::create();
+    //TableViewLayer* layer=TableViewLayer::create();
+    TableViewLayer* layer=new TableViewLayer();
     listArea->addChild(layer);
-    
-    
-    
+    layer->release();
 }
 
 void ScorcesListLayer::onClickClose(cocos2d::Object * sender, Control::EventType pControlEvent){

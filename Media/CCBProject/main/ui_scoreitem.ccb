@@ -272,7 +272,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>87</real>
+							<real>88</real>
 							<real>23</real>
 							<integer>0</integer>
 						</array>
@@ -365,6 +365,8 @@
 						<string>马英臣</string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>baseClass</key>

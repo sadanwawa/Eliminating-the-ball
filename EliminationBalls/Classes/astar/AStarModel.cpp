@@ -240,3 +240,14 @@ bool AStarModel::searchPathByPoint(GPoint* pointA,GPoint* pointB){
     return false;
 }
 
+void AStarModel::clearData(){
+    _allStepVOs->removeAllObjects();
+    _allStepVOs->release();
+    _openList->release();
+    _closeList->release();
+    _shortPath->release();
+}
+
+
+
+

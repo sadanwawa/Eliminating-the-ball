@@ -22,6 +22,7 @@ typedef enum
 
 namespace STC {//本地数据 字段
     
+    static const std::string userdata_oldplayer="oldplayer";//进入过游戏
     static const std::string userdata_histScorces="histScorces";//历史记录
     
 }

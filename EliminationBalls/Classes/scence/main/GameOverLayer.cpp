@@ -11,6 +11,7 @@
 #include "GlobalUtil.h"
 #include "ParticaleEffect.h"
 #include "StaticConstant.h"
+#include "EditBoxLayer.h"
 
 GameOverLayer::GameOverLayer():
 inputArea(NULL),
@@ -20,6 +21,8 @@ btn_ok(NULL)
 }
 GameOverLayer::~GameOverLayer(){
     CCLOG("GameOverLayer删除。");
+    CC_SAFE_RELEASE(inputArea);
+    CC_SAFE_RELEASE(btn_ok);
 }
 //执行顺序构造函数->init->onNodeLoaded->(addchild)->onEnter
 bool GameOverLayer::init(){
@@ -80,14 +83,17 @@ bool GameOverLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)
 
 void GameOverLayer::updataUI(BaseDataVO* datavo){
     _datavo=datavo;
+    EditBoxLayer* layer=new EditBoxLayer();
+    inputArea->addChild(layer);
+    layer->release();
 }
 
 void GameOverLayer::onClickOk(cocos2d::Object * sender, Control::EventType pControlEvent){   
     UIManager::Instance()->removeSingleLayerByNode(this);
+    //写入本地数据
     
     //当前积分列表
     UIManager::Instance()->addPopLayer(CCBI::ui_scorceslist);
     UIManager::Instance()->openSinglePopLayer();
-    
     
 }

@@ -19,7 +19,7 @@ class TableViewLayer : public cocos2d::Layer, public cocos2d::extension::TableVi
 {
 public:
     
-    CREATE_FUNC(TableViewLayer);
+    //CREATE_FUNC(TableViewLayer);
     
     TableViewLayer();
     virtual ~TableViewLayer();

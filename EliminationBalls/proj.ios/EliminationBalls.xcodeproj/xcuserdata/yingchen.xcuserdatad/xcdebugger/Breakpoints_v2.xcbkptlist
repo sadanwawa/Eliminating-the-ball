@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/MainUILayer.cpp"
-            timestampString = "405419850.05912"
+            timestampString = "405498408.774089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "MainUILayer::initReadyBalls()"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/MainUILayer.cpp"
-            timestampString = "405419850.05912"
+            timestampString = "405498408.774089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "MainUILayer::init()"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/MainUILayer.cpp"
-            timestampString = "403256836.482221"
+            timestampString = "405498408.774089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "MainUILayer::MainUILayer()"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/MainUILayer.cpp"
-            timestampString = "405419850.05912"
+            timestampString = "405498408.774089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "MainUILayer::onEnter()"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/MainUILayer.cpp"
-            timestampString = "405419850.05912"
+            timestampString = "405498408.774089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
             landmarkType = "5">
          </BreakpointContent>
@@ -184,11 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/MainUILayer.cpp"
-            timestampString = "405419850.05912"
+            timestampString = "405498408.774089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "MainUILayer::initCreateBalls()"
             landmarkType = "5">
          </BreakpointContent>
@@ -232,11 +232,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/MainUILayer.cpp"
-            timestampString = "405419850.05912"
+            timestampString = "405498408.774089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "MainUILayer::initCreateBalls()"
             landmarkType = "5">
          </BreakpointContent>
@@ -248,11 +248,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/MainUILayer.cpp"
-            timestampString = "405419850.05912"
+            timestampString = "405498408.774089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "MainUILayer::initCreateBalls()"
             landmarkType = "5">
          </BreakpointContent>
@@ -372,11 +372,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/MainUILayer.cpp"
-            timestampString = "405419850.05912"
+            timestampString = "405498408.774089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "MainUILayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
             landmarkType = "5">
          </BreakpointContent>
@@ -732,13 +732,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/main/GameOverLayer.cpp"
-            timestampString = "405327740.845559"
+            timestampString = "405513470.536767"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "GameOverLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
-            landmarkType = "5">
+            startingLineNumber = "72"
+            endingLineNumber = "72">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -748,11 +746,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/MainUILayer.cpp"
-            timestampString = "405419850.05912"
+            timestampString = "405498408.774089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "MainUILayer::onNodeLoaded(cocos2d::Node * node, cocos2d::extension::NodeLoader * nodeLoader)"
             landmarkType = "5">
          </BreakpointContent>
@@ -764,11 +762,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/MainUILayer.cpp"
-            timestampString = "405419850.05912"
+            timestampString = "405498408.774089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226">
+            startingLineNumber = "230"
+            endingLineNumber = "230">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -778,11 +776,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/MainUILayer.cpp"
-            timestampString = "405419850.05912"
+            timestampString = "405498408.774089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225">
+            startingLineNumber = "229"
+            endingLineNumber = "229">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -792,11 +790,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/MainUILayer.cpp"
-            timestampString = "405419850.05912"
+            timestampString = "405498408.774089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "MainUILayer::updataUI(BaseDataVO* datavo)"
             landmarkType = "5">
          </BreakpointContent>
@@ -886,11 +884,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/MainUILayer.cpp"
-            timestampString = "405419850.05912"
+            timestampString = "405498408.774089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "MainUILayer::initCreateBalls()"
             landmarkType = "5">
          </BreakpointContent>
@@ -934,11 +932,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scence/main/ScorcesListLayer.cpp"
-            timestampString = "405396130.449171"
+            timestampString = "405515278.138972"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "ScorcesListLayer::updataUI(BaseDataVO* datavo)"
             landmarkType = "5">
          </BreakpointContent>
@@ -949,28 +947,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Classes/component/tableview/TableViewLayer.cpp"
-            timestampString = "405415975.143263"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "TableViewLayer::init()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../Classes/scence/main/ScorcesListLayer.cpp"
-            timestampString = "405396380.508125"
+            timestampString = "405515278.138972"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "ScorcesListLayer::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
             landmarkType = "5">
             <Locations>
@@ -1026,11 +1008,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/component/tableview/TableViewLayer.cpp"
-            timestampString = "405415975.143263"
+            timestampString = "405514511.079399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "TableViewLayer::tableCellTouched(TableView* table, TableViewCell* cell)"
             landmarkType = "5">
             <Locations>
@@ -1072,13 +1054,689 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/component/tableview/TableViewLayer.cpp"
-            timestampString = "405417703.232912"
+            timestampString = "405514511.079399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "TableViewLayer::tableCellAtIndex(TableView *table, unsigned int idx)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/scence/main/ScoreItemNode.cpp"
+            timestampString = "405501385.474443"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "ScoreItemNode::updataUI(BaseDataVO* datavo)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/component/tableview/TableViewLayer.cpp"
+            timestampString = "405514511.079399"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "TableViewLayer::tableCellAtIndex(TableView *table, unsigned int idx)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/component/tableview/TableViewLayer.cpp"
+            timestampString = "405514511.079399"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "TableViewLayer::tableCellAtIndex(TableView *table, unsigned int idx)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/component/editBox/EditBoxLayer.cpp"
+            timestampString = "405513890.609199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "EditBoxLayer::EditBoxLayer()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/component/editBox/EditBoxLayer.cpp"
+            timestampString = "405513933.433979"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "EditBoxLayer::~EditBoxLayer()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EditBoxLayer::~EditBoxLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/editBox/EditBoxLayer.cpp"
+                  timestampString = "405515278.468708"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EditBoxLayer::~EditBoxLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/editBox/EditBoxLayer.cpp"
+                  timestampString = "405515278.468902"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to EditBoxLayer::~EditBoxLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/editBox/EditBoxLayer.cpp"
+                  timestampString = "405515278.469089"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to EditBoxLayer::~EditBoxLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/editBox/EditBoxLayer.cpp"
+                  timestampString = "405515278.46928"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "89">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EditBoxLayer::~EditBoxLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/editBox/EditBoxLayer.cpp"
+                  timestampString = "405515278.469503"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to EditBoxLayer::~EditBoxLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/editBox/EditBoxLayer.cpp"
+                  timestampString = "405515278.469726"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to EditBoxLayer::~EditBoxLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/editBox/EditBoxLayer.cpp"
+                  timestampString = "405515278.469923"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "89">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/component/editBox/EditBoxLayer.cpp"
+            timestampString = "405514017.701115"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "EditBoxLayer::editBoxEditingDidBegin(cocos2d::extension::EditBox* editBox)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EditBoxLayer::editBoxEditingDidBegin(cocos2d::extension::EditBox*)"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/editBox/EditBoxLayer.cpp"
+                  timestampString = "405515278.470142"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to EditBoxLayer::editBoxEditingDidBegin(cocos2d::extension::EditBox*)"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/editBox/EditBoxLayer.cpp"
+                  timestampString = "405515278.470346"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/component/editBox/EditBoxLayer.cpp"
+            timestampString = "405514018.989203"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "EditBoxLayer::editBoxEditingDidEnd(cocos2d::extension::EditBox* editBox)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EditBoxLayer::editBoxEditingDidEnd(cocos2d::extension::EditBox*)"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/editBox/EditBoxLayer.cpp"
+                  timestampString = "405515278.470553"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to EditBoxLayer::editBoxEditingDidEnd(cocos2d::extension::EditBox*)"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/editBox/EditBoxLayer.cpp"
+                  timestampString = "405515278.470756"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/component/editBox/EditBoxLayer.cpp"
+            timestampString = "405514020.022469"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "EditBoxLayer::editBoxTextChanged(cocos2d::extension::EditBox* editBox, const std::string&amp; text)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EditBoxLayer::editBoxTextChanged(cocos2d::extension::EditBox*, std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;)"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/editBox/EditBoxLayer.cpp"
+                  timestampString = "405515278.470988"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "29">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to EditBoxLayer::editBoxTextChanged(cocos2d::extension::EditBox*, std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;)"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/editBox/EditBoxLayer.cpp"
+                  timestampString = "405515278.471174"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/component/editBox/EditBoxLayer.cpp"
+            timestampString = "405514022.396106"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "EditBoxLayer::editBoxReturn(EditBox* editBox)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EditBoxLayer::editBoxReturn(cocos2d::extension::EditBox*)"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/editBox/EditBoxLayer.cpp"
+                  timestampString = "405515278.471382"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to EditBoxLayer::editBoxReturn(cocos2d::extension::EditBox*)"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/editBox/EditBoxLayer.cpp"
+                  timestampString = "405515278.471576"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/component/tableview/TableViewLayer.cpp"
+            timestampString = "405515118.799876"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "TableViewLayer::~TableViewLayer()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.47179"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "73">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.471983"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.472175"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "73">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.47237"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.47256"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.472752"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.472944"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.473133"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.473323"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.473521"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "73">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.473711"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.473905"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.474899"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.475414"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.479495"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to TableViewLayer::~TableViewLayer()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.479707"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to ScorcesModel::~ScorcesModel()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.ios/../classes/../Classes/scence/main/data/ScorcesModel.h"
+                  timestampString = "405515278.479906"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "9">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to ScorcesModel::~ScorcesModel()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.480105"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "17">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to ScorcesModel::~ScorcesModel()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/proj.ios/../classes/../Classes/scence/main/data/ScorcesModel.h"
+                  timestampString = "405515278.480305"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to ScorcesModel::~ScorcesModel()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.480503"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to ScorcesModel::~ScorcesModel()"
+                  moduleName = "EliminationBalls"
+                  urlString = "file:///Users/yingchen/Desktop/cocos2d-x-3.0/Eliminating-the-ball/EliminationBalls/Classes/component/tableview/TableViewLayer.cpp"
+                  timestampString = "405515278.480702"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -34,6 +34,10 @@
 		69243E4C180D513600CC364A /* ui_test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69243E4A180D513500CC364A /* ui_test.plist */; };
 		69243E4D180D513600CC364A /* ui_test.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 69243E4B180D513500CC364A /* ui_test.pvr.ccz */; };
 		6924ED9E17F9557A006F27E1 /* BaseNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6924ED9C17F9557A006F27E1 /* BaseNode.cpp */; };
+		69334803182B9B3000680275 /* EditBoxLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69334801182B9B3000680275 /* EditBoxLayer.cpp */; };
+		69334808182BA5BB00680275 /* green_edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 69334805182BA5BB00680275 /* green_edit.png */; };
+		69334809182BA5BB00680275 /* orange_edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 69334806182BA5BB00680275 /* orange_edit.png */; };
+		6933480A182BA5BB00680275 /* yellow_edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 69334807182BA5BB00680275 /* yellow_edit.png */; };
 		6941C5C81807C95900DCC0D0 /* AStarModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6941C5C61807C95900DCC0D0 /* AStarModel.cpp */; };
 		6950509517F535B500EA8280 /* ChessBoardLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509317F535B500EA8280 /* ChessBoardLayer.cpp */; };
 		6950509817F54EC300EA8280 /* ChessLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6950509617F54EC300EA8280 /* ChessLayer.cpp */; };
@@ -254,6 +258,11 @@
 		69243E4B180D513500CC364A /* ui_test.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = ui_test.pvr.ccz; sourceTree = "<group>"; };
 		6924ED9C17F9557A006F27E1 /* BaseNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseNode.cpp; sourceTree = "<group>"; };
 		6924ED9D17F9557A006F27E1 /* BaseNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNode.h; sourceTree = "<group>"; };
+		69334801182B9B3000680275 /* EditBoxLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EditBoxLayer.cpp; sourceTree = "<group>"; };
+		69334802182B9B3000680275 /* EditBoxLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditBoxLayer.h; sourceTree = "<group>"; };
+		69334805182BA5BB00680275 /* green_edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_edit.png; sourceTree = "<group>"; };
+		69334806182BA5BB00680275 /* orange_edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange_edit.png; sourceTree = "<group>"; };
+		69334807182BA5BB00680275 /* yellow_edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_edit.png; sourceTree = "<group>"; };
 		6941C5C61807C95900DCC0D0 /* AStarModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AStarModel.cpp; sourceTree = "<group>"; };
 		6941C5C71807C95900DCC0D0 /* AStarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStarModel.h; sourceTree = "<group>"; };
 		6941C5C91807D36000DCC0D0 /* StepVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepVO.h; sourceTree = "<group>"; };
@@ -494,6 +503,32 @@
 			path = ../Classes/utils;
 			sourceTree = "<group>";
 		};
+		693347EE182B97DE00680275 /* editBox */ = {
+			isa = PBXGroup;
+			children = (
+				69334801182B9B3000680275 /* EditBoxLayer.cpp */,
+				69334802182B9B3000680275 /* EditBoxLayer.h */,
+			);
+			path = editBox;
+			sourceTree = "<group>";
+		};
+		693347F1182B97DE00680275 /* textInput */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = textInput;
+			sourceTree = "<group>";
+		};
+		69334804182BA5BB00680275 /* editbox */ = {
+			isa = PBXGroup;
+			children = (
+				69334805182BA5BB00680275 /* green_edit.png */,
+				69334806182BA5BB00680275 /* orange_edit.png */,
+				69334807182BA5BB00680275 /* yellow_edit.png */,
+			);
+			path = editbox;
+			sourceTree = "<group>";
+		};
 		6941C5BA1807AA8F00DCC0D0 /* astar */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,6 +568,8 @@
 		69AB7EF71829CFEA00AD63A1 /* component */ = {
 			isa = PBXGroup;
 			children = (
+				693347EE182B97DE00680275 /* editBox */,
+				693347F1182B97DE00680275 /* textInput */,
 				69AB7EF81829CFEA00AD63A1 /* tableview */,
 			);
 			name = component;
@@ -666,6 +703,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				69334804182BA5BB00680275 /* editbox */,
 				69AB7F09182A10A700AD63A1 /* ui_scoreitem.ccbi */,
 				69AB7EF41828EED800AD63A1 /* ui_scorelist.ccbi */,
 				69C8C2561810DA5C00C58DED /* ui_gameover.ccbi */,
@@ -883,10 +921,12 @@
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 				69CEB40D17F405E50088CBDE /* ccbDefaultImages.plist in Resources */,
 				69CEB40E17F405E50088CBDE /* ccbDefaultImages.png in Resources */,
+				69334808182BA5BB00680275 /* green_edit.png in Resources */,
 				69CEB40F17F405E50088CBDE /* ccbParticleFire.png in Resources */,
 				69CEB41017F405E50088CBDE /* ccbParticleSmoke.png in Resources */,
 				69CEB41117F405E50088CBDE /* ccbParticleSnow.png in Resources */,
 				69CEB41217F405E50088CBDE /* ccbParticleStars.png in Resources */,
+				6933480A182BA5BB00680275 /* yellow_edit.png in Resources */,
 				69CEB41917F405E50088CBDE /* Marker Felt.ttf in Resources */,
 				69CEB41A17F405E50088CBDE /* ui_main.ccbi in Resources */,
 				69CEB42C17F4173A0088CBDE /* ui_help.ccbi in Resources */,
@@ -903,6 +943,7 @@
 				69243E4C180D513600CC364A /* ui_test.plist in Resources */,
 				69243E4D180D513600CC364A /* ui_test.pvr.ccz in Resources */,
 				69C8C2571810DA5C00C58DED /* ui_gameover.ccbi in Resources */,
+				69334809182BA5BB00680275 /* orange_edit.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -926,6 +967,7 @@
 				69AB7F071829D36000AD63A1 /* TableViewLayer.cpp in Sources */,
 				69CEB3E517F2EF380088CBDE /* ResourceManager.cpp in Sources */,
 				69CEB3E617F2EF380088CBDE /* UIManager.cpp in Sources */,
+				69334803182B9B3000680275 /* EditBoxLayer.cpp in Sources */,
 				69CEB3F417F2F1A80088CBDE /* MainScene.cpp in Sources */,
 				69CEB42A17F406750088CBDE /* MainUILayer.cpp in Sources */,
 				6950509517F535B500EA8280 /* ChessBoardLayer.cpp in Sources */,
